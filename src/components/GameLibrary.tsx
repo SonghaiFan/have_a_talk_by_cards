@@ -66,9 +66,9 @@ const GameLibrary: React.FC<GameLibraryProps> = ({ games, onGameSelect }) => {
               <AnimatePresence>
                 {hoveredGame === game.testType && (
                   <>
-                    {/* Card 3 - Deepest */}
+                    {/* Card 2 - Back card */}
                     <motion.div
-                      className="absolute top-0 left-0 bg-gray-300 border border-gray-300 rounded-2xl w-full max-w-[400px] h-[250px] shadow-sm"
+                      className="absolute top-0 left-0 bg-white border-4 border-black rounded-2xl w-full max-w-[400px] h-[250px]"
                       style={{ aspectRatio: "400/250" }}
                       initial={{
                         x: 0,
@@ -78,11 +78,11 @@ const GameLibrary: React.FC<GameLibraryProps> = ({ games, onGameSelect }) => {
                         opacity: 0,
                       }}
                       animate={{
-                        x: -12,
-                        y: -6,
-                        rotate: -3,
-                        scale: 0.95,
-                        opacity: 0.7,
+                        x: -24,
+                        y: -16,
+                        rotate: -5,
+                        scale: 0.92,
+                        opacity: 1,
                       }}
                       exit={{
                         x: 0,
@@ -94,12 +94,13 @@ const GameLibrary: React.FC<GameLibraryProps> = ({ games, onGameSelect }) => {
                       transition={{
                         duration: 0.3,
                         ease: "easeOut",
+                        delay: 0.1,
                       }}
                     />
 
-                    {/* Card 2 - Middle */}
+                    {/* Card 1 - Middle card */}
                     <motion.div
-                      className="absolute top-0 left-0 bg-gray-200 border border-gray-300 rounded-2xl w-full max-w-[400px] h-[250px] shadow-md"
+                      className="absolute top-0 left-0 bg-white border-4 border-black rounded-2xl w-full max-w-[400px] h-[250px]"
                       style={{ aspectRatio: "400/250" }}
                       initial={{
                         x: 0,
@@ -109,11 +110,11 @@ const GameLibrary: React.FC<GameLibraryProps> = ({ games, onGameSelect }) => {
                         opacity: 0,
                       }}
                       animate={{
-                        x: -6,
-                        y: -3,
-                        rotate: -1.5,
-                        scale: 0.98,
-                        opacity: 0.8,
+                        x: -12,
+                        y: -8,
+                        rotate: -2.5,
+                        scale: 0.96,
+                        opacity: 1,
                       }}
                       exit={{
                         x: 0,
@@ -132,28 +133,35 @@ const GameLibrary: React.FC<GameLibraryProps> = ({ games, onGameSelect }) => {
                 )}
               </AnimatePresence>
 
-              {/* Main Card Pack - Always on top */}
+              {/* Main Card - Always visible */}
               <motion.div
-                className="relative z-10 bg-gray-50 text-center mx-auto border border-gray-200 rounded-2xl w-full max-w-[400px] h-[250px] flex flex-col justify-center items-center px-10 py-8 shadow-lg"
+                className="relative z-10 bg-white border-4 border-black rounded-2xl p-8 cursor-pointer w-full max-w-[400px] h-[250px] flex flex-col justify-between"
                 style={{ aspectRatio: "400/250" }}
                 whileHover={{
-                  y: -8,
                   scale: 1.02,
-                  transition: { duration: 0.3, ease: "easeOut" },
+                  y: -4,
                 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{
+                  duration: 0.2,
+                  ease: "easeOut",
+                }}
+                onClick={() => onGameSelect(game)}
+                onMouseEnter={() => setHoveredGame(game.testType)}
+                onMouseLeave={() => setHoveredGame(null)}
               >
                 {/* Game Title */}
-                <h2 className="text-2xl font-bold text-primary mb-4 text-center leading-tight">
+                <h2 className="text-2xl font-bold text-black mb-4 text-center leading-tight">
                   {game.ui.startScreen.title}
                 </h2>
 
                 {/* Game Description */}
-                <p className="text-sm text-secondary font-light text-center leading-relaxed">
+                <p className="text-sm text-gray-700 font-medium text-center leading-relaxed">
                   {game.ui.startScreen.description[0]}
                 </p>
 
                 {/* Card Count Indicator */}
-                <div className="mt-4 text-xs text-gray-400 font-medium uppercase tracking-wider">
+                <div className="mt-4 text-xs text-gray-600 font-semibold uppercase tracking-wider text-center">
                   {game.questions.reduce(
                     (total: number, category: any) =>
                       total + category.questions.length,
@@ -172,9 +180,9 @@ const GameLibrary: React.FC<GameLibraryProps> = ({ games, onGameSelect }) => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.5 }}
-        className="text-center text-secondary font-light"
+        className="text-center text-gray-600 font-medium"
       >
-        <p className="text-sm opacity-70">Select a conversation to begin</p>
+        <p className="text-sm">Select a conversation to begin</p>
       </motion.div>
 
       {/* Floating Action Text - Subtle */}
@@ -182,7 +190,7 @@ const GameLibrary: React.FC<GameLibraryProps> = ({ games, onGameSelect }) => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.4 }}
         transition={{ delay: 1 }}
-        className="fixed bottom-8 right-8 text-xs text-secondary font-light opacity-40"
+        className="fixed bottom-8 right-8 text-xs text-gray-500 font-medium"
       >
         <p>Tap to start</p>
       </motion.div>
