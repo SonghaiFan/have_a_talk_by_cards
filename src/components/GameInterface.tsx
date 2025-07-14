@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from "motion/react";
 import { useState } from "react";
 import { ConversationGame } from "../types/ConversationGame";
+import Card from "./Card";
 
 interface GameInterfaceProps {
   game: ConversationGame;
@@ -214,8 +215,14 @@ const GameInterface: React.FC<GameInterfaceProps> = ({ game, onExit }) => {
           {/* Question Card - Animated Poker Card */}
           <div className="relative perspective-1000">
             <AnimatePresence mode="wait" custom={direction}>
-              <motion.div
+              <Card
                 key={currentQuestionIndex}
+                size="large"
+                variant="question"
+                className="text-center mx-auto relative shadow-2xl"
+                style={{
+                  aspectRatio: "520/340",
+                }}
                 custom={direction}
                 variants={cardVariants}
                 initial="enter"
@@ -227,16 +234,12 @@ const GameInterface: React.FC<GameInterfaceProps> = ({ game, onExit }) => {
                   scale: { duration: 0.3 },
                   rotateY: { duration: 0.4 },
                 }}
-                className="bg-white text-center mx-auto relative shadow-2xl rounded-3xl border-2 border-gray-100 w-full max-w-[520px] h-[340px] flex flex-col justify-center items-center px-14 py-12"
-                style={{
-                  aspectRatio: "520/340",
-                }}
               >
                 {/* Question Content - Bold Typography */}
                 <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 leading-tight text-center font-sans tracking-tight">
                   {currentQuestion?.question}
                 </h2>
-              </motion.div>
+              </Card>
             </AnimatePresence>
           </div>
 

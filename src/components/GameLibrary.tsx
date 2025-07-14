@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from "motion/react";
 import { useState } from "react";
 import { ConversationGame } from "../types/ConversationGame";
+import Card from "./Card";
 
 interface GameLibraryProps {
   games: ConversationGame[];
@@ -67,8 +68,10 @@ const GameLibrary: React.FC<GameLibraryProps> = ({ games, onGameSelect }) => {
                 {hoveredGame === game.testType && (
                   <>
                     {/* Card 2 - Back card */}
-                    <motion.div
-                      className="absolute top-0 left-0 bg-white border-4 border-black rounded-2xl w-full max-w-[400px] h-[250px]"
+                    <Card
+                      size="medium"
+                      variant="game"
+                      className="absolute top-0 left-0"
                       style={{ aspectRatio: "400/250" }}
                       initial={{
                         x: 0,
@@ -99,8 +102,10 @@ const GameLibrary: React.FC<GameLibraryProps> = ({ games, onGameSelect }) => {
                     />
 
                     {/* Card 1 - Middle card */}
-                    <motion.div
-                      className="absolute top-0 left-0 bg-white border-4 border-black rounded-2xl w-full max-w-[400px] h-[250px]"
+                    <Card
+                      size="medium"
+                      variant="game"
+                      className="absolute top-0 left-0"
                       style={{ aspectRatio: "400/250" }}
                       initial={{
                         x: 0,
@@ -134,8 +139,10 @@ const GameLibrary: React.FC<GameLibraryProps> = ({ games, onGameSelect }) => {
               </AnimatePresence>
 
               {/* Main Card - Always visible */}
-              <motion.div
-                className="relative z-10 bg-white border-4 border-black rounded-2xl p-8 cursor-pointer w-full max-w-[400px] h-[250px] flex flex-col justify-between"
+              <Card
+                size="medium"
+                variant="game"
+                className="relative z-10 cursor-pointer"
                 style={{ aspectRatio: "400/250" }}
                 whileHover={{
                   scale: 1.02,
@@ -169,7 +176,7 @@ const GameLibrary: React.FC<GameLibraryProps> = ({ games, onGameSelect }) => {
                   )}{" "}
                   Cards
                 </div>
-              </motion.div>
+              </Card>
             </div>
           </motion.div>
         ))}
