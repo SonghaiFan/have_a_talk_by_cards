@@ -1,8 +1,10 @@
 {
   "games": [
     "deep-connections.json",
-    "relationship-check.json"
+    "relationship-check.json",
+    "test-love.json",
+    "test-love-36.json"
   ],
-  "lastUpdated": "2025-07-14T21:30:00Z",
+  "lastUpdated": "2025-07-15T21:30:00Z",
   "version": "1.0.0"
 }
