@@ -1,0 +1,153 @@
+{
+  "testType": "deep-connections",
+  "app": {
+    "title": "DEEP CONNECTIONS",
+    "subtitle": "Thoughtful questions for meaningful conversations",
+    "type": "conversation",
+    "version": "1.0.0"
+  },
+  "ui": {
+    "startScreen": {
+      "title": "Deep Connections",
+      "description": [
+        "Carefully crafted questions to foster genuine understanding.",
+        "Take your time. Listen deeply. Share authentically."
+      ],
+      "startButton": "Begin"
+    },
+    "navigation": {
+      "nextButton": "Next",
+      "prevButton": "Back"
+    },
+    "results": {
+      "title": "Well done",
+      "subtitle": "Thank you for sharing with intention",
+      "exportButton": "Save",
+      "restartButton": "Restart"
+    }
+  },
+  "theme": {
+    "categories": {
+      "values": {
+        "name": "Values",
+        "color": "#2563eb",
+        "description": "What matters most to you"
+      },
+      "dreams": {
+        "name": "Dreams",
+        "color": "#059669",
+        "description": "Your hopes and aspirations"
+      },
+      "memories": {
+        "name": "Memories",
+        "color": "#dc2626",
+        "description": "Moments that shaped you"
+      },
+      "relationships": {
+        "name": "Connection",
+        "color": "#7c3aed",
+        "description": "How you relate to others"
+      }
+    },
+    "cardStyle": {
+      "backgroundColor": "#ffffff",
+      "textColor": "#1f2937",
+      "borderColor": "#f3f4f6",
+      "borderRadius": "24px",
+      "fontFamily": "Inter, sans-serif",
+      "fontSize": "18px",
+      "cardShadow": "0 8px 32px rgba(0, 0, 0, 0.12)"
+    }
+  },
+  "export": {
+    "filename": "Deep Connection Responses",
+    "template": {
+      "header": "=== {title} ===\n\n",
+      "category": "\n【{category}】\n{separator}\n",
+      "question": "Q: {question}\nA: {answer}\n\n",
+      "separator": "="
+    }
+  },
+  "questions": [
+    {
+      "category": "values",
+      "questions": [
+        {
+          "type": "open",
+          "question": "WHAT PRINCIPLE DO YOU LIVE BY THAT MOST PEOPLE DON'T UNDERSTAND?",
+          "options": {}
+        },
+        {
+          "type": "open",
+          "question": "WHAT WOULD YOU CHANGE ABOUT HOW SOCIETY WORKS?",
+          "options": {}
+        },
+        {
+          "type": "open",
+          "question": "WHAT DO YOU BELIEVE THAT YOU CAN'T PROVE?",
+          "options": {}
+        }
+      ]
+    },
+    {
+      "category": "dreams",
+      "questions": [
+        {
+          "type": "open",
+          "question": "WHAT WOULD YOU ATTEMPT IF YOU KNEW YOU COULDN'T FAIL?",
+          "options": {}
+        },
+        {
+          "type": "open",
+          "question": "HOW WOULD YOU SPEND YOUR DAYS IF MONEY WASN'T A FACTOR?",
+          "options": {}
+        },
+        {
+          "type": "open",
+          "question": "WHAT DO YOU WANT TO BE REMEMBERED FOR?",
+          "options": {}
+        }
+      ]
+    },
+    {
+      "category": "memories",
+      "questions": [
+        {
+          "type": "open",
+          "question": "DESCRIBE A MOMENT WHEN YOU FELT MOST ALIVE.",
+          "options": {}
+        },
+        {
+          "type": "open",
+          "question": "TELL ME ABOUT A STRANGER WHO CHANGED YOUR DAY.",
+          "options": {}
+        },
+        {
+          "type": "open",
+          "question": "WHAT'S THE BEST ADVICE YOU'VE RECEIVED AND WHO GAVE IT?",
+          "options": {}
+        }
+      ]
+    },
+    {
+      "category": "relationships",
+      "questions": [
+        {
+          "type": "open",
+          "question": "WHAT'S THE MOST IMPORTANT QUALITY IN A FRIEND?",
+          "options": {}
+        },
+        {
+          "type": "open",
+          "question": "HOW DO YOU SHOW SOMEONE YOU CARE?",
+          "options": {}
+        },
+        {
+          "type": "open",
+          "question": "WHAT DO YOU WISH PEOPLE UNDERSTOOD ABOUT YOU WITHOUT EXPLAINING?",
+          "options": {}
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,153 @@
+{
+  "testType": "relationship-check",
+  "app": {
+    "title": "RELATIONSHIP CHECK-IN",
+    "subtitle": "Strengthen your bond through honest conversation",
+    "type": "couples",
+    "version": "1.0.0"
+  },
+  "ui": {
+    "startScreen": {
+      "title": "Relationship Check-In",
+      "description": [
+        "Questions designed to deepen understanding between partners.",
+        "Take turns or discuss together—whatever feels right."
+      ],
+      "startButton": "Begin"
+    },
+    "navigation": {
+      "nextButton": "Next",
+      "prevButton": "Back"
+    },
+    "results": {
+      "title": "Well done",
+      "subtitle": "Thank you for connecting with intention",
+      "exportButton": "Save",
+      "restartButton": "Restart"
+    }
+  },
+  "theme": {
+    "categories": {
+      "communication": {
+        "name": "Communication",
+        "color": "#1e40af",
+        "description": "How we talk and listen to each other"
+      },
+      "intimacy": {
+        "name": "Intimacy",
+        "color": "#be123c",
+        "description": "Deepening our emotional and physical connection"
+      },
+      "future": {
+        "name": "Future",
+        "color": "#6b21a8",
+        "description": "Dreams and plans we share together"
+      },
+      "appreciation": {
+        "name": "Gratitude",
+        "color": "#0891b2",
+        "description": "What we value about each other"
+      }
+    },
+    "cardStyle": {
+      "backgroundColor": "#ffffff",
+      "textColor": "#1f2937",
+      "borderColor": "#f3f4f6",
+      "borderRadius": "24px",
+      "fontFamily": "Inter, sans-serif",
+      "fontSize": "18px",
+      "cardShadow": "0 8px 32px rgba(0, 0, 0, 0.12)"
+    }
+  },
+  "export": {
+    "filename": "Our Relationship Check-In",
+    "template": {
+      "header": "=== {title} ===\n\n",
+      "category": "\n【{category}】\n{separator}\n",
+      "question": "Q: {question}\nA: {answer}\n\n",
+      "separator": "="
+    }
+  },
+  "questions": [
+    {
+      "category": "communication",
+      "questions": [
+        {
+          "type": "discussion",
+          "question": "WHAT'S ONE THING I DO THAT MAKES YOU FEEL TRULY HEARD?",
+          "options": {}
+        },
+        {
+          "type": "discussion",
+          "question": "IS THERE SOMETHING YOU'VE BEEN WANTING TO TELL ME?",
+          "options": {}
+        },
+        {
+          "type": "discussion",
+          "question": "WHEN WE DISAGREE, WHAT HELPS YOU FEEL LIKE WE'RE ON THE SAME TEAM?",
+          "options": {}
+        }
+      ]
+    },
+    {
+      "category": "intimacy",
+      "questions": [
+        {
+          "type": "discussion",
+          "question": "HOW DO YOU MOST FEEL LOVED BY ME?",
+          "options": {}
+        },
+        {
+          "type": "discussion",
+          "question": "WHAT SMALL GESTURE ALWAYS BRIGHTENS YOUR DAY?",
+          "options": {}
+        },
+        {
+          "type": "discussion",
+          "question": "HOW CAN WE CREATE MORE TIME FOR JUST US?",
+          "options": {}
+        }
+      ]
+    },
+    {
+      "category": "future",
+      "questions": [
+        {
+          "type": "discussion",
+          "question": "WHAT'S SOMETHING NEW YOU'D LIKE US TO TRY TOGETHER?",
+          "options": {}
+        },
+        {
+          "type": "discussion",
+          "question": "DESCRIBE OUR PERFECT WEEKEND GETAWAY.",
+          "options": {}
+        },
+        {
+          "type": "discussion",
+          "question": "WHAT GOAL OR DREAM CAN I SUPPORT YOU WITH?",
+          "options": {}
+        }
+      ]
+    },
+    {
+      "category": "appreciation",
+      "questions": [
+        {
+          "type": "discussion",
+          "question": "WHAT HAVE I DONE RECENTLY THAT YOU'RE GRATEFUL FOR?",
+          "options": {}
+        },
+        {
+          "type": "discussion",
+          "question": "WHAT QUALITY DO YOU MOST ADMIRE ABOUT ME?",
+          "options": {}
+        },
+        {
+          "type": "discussion",
+          "question": "WHAT'S YOUR FAVORITE MEMORY OF US FROM THIS PAST MONTH?",
+          "options": {}
+        }
+      ]
+    }
+  ]
+}
