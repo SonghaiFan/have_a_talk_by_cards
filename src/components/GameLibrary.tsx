@@ -19,6 +19,20 @@ const GameLibrary: React.FC<GameLibraryProps> = ({ games, onGameSelect }) => {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="text-center max-w-2xl mb-16"
       >
+        {/* App Icon */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="flex justify-center mb-8"
+        >
+          <img
+            src="/card-icon.svg"
+            alt="CueCards Icon"
+            className="w-40 h-40 md:w-44 md:h-44 object-contain"
+          />
+        </motion.div>
+
         <h1 className="text-6xl md:text-7xl font-black text-primary mb-6 tracking-tight leading-none">
           CueCards
         </h1>

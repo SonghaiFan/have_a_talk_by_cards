@@ -1,8 +1,18 @@
 {
-  "name": "conversation-cards",
+  "name": "cuecards",
   "private": true,
   "version": "0.1.0",
   "type": "module",
+  "description": "Thoughtfully curated conversation cards for deeper human connection",
+  "author": "CueCards",
+  "keywords": [
+    "conversation",
+    "cards",
+    "communication",
+    "relationships",
+    "tauri",
+    "react"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
