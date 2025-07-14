@@ -1,5 +1,6 @@
-import React from 'react';
-import { ConversationGame } from '../types/ConversationGame';
+import { motion, AnimatePresence } from "motion/react";
+import { useState } from "react";
+import { ConversationGame } from "../types/ConversationGame";
 
 interface GameLibraryProps {
   games: ConversationGame[];
@@ -7,87 +8,170 @@ interface GameLibraryProps {
 }
 
 const GameLibrary: React.FC<GameLibraryProps> = ({ games, onGameSelect }) => {
+  const [hoveredGame, setHoveredGame] = useState<string | null>(null);
+
   return (
     <div className="min-h-screen bg-white flex flex-col items-center justify-center px-8 py-16">
       {/* Header - Bold Typography */}
-      <div className="text-center max-w-2xl mb-16">
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="text-center max-w-2xl mb-16"
+      >
         <h1 className="text-6xl md:text-7xl font-black text-primary mb-6 tracking-tight leading-none">
-          Connect
+          CueCards
         </h1>
         <p className="text-xl text-secondary text-intimate font-light">
-          Thoughtfully curated conversations<br />
+          Thoughtfully curated conversations
+          <br />
           for deeper human connection
         </p>
-      </div>
+      </motion.div>
 
-      {/* Games Grid - Card Focused */}
-      <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-        {games.map((game) => (
-          <div
+      {/* Games Grid - Animated Card Packs */}
+      <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+        {games.map((game, index) => (
+          <motion.div
             key={game.testType}
-            className="group cursor-pointer"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.6,
+              delay: index * 0.2,
+              ease: "easeOut",
+            }}
+            className="cursor-pointer relative"
+            onHoverStart={() => setHoveredGame(game.testType)}
+            onHoverEnd={() => setHoveredGame(null)}
             onClick={() => onGameSelect(game)}
           >
-            <div className="bg-white border-intimate rounded-2xl p-10 transition-all duration-300 hover:shadow-intimate hover:-translate-y-1">
-              {/* Game Title - Bold Typography */}
-              <h2 className="text-3xl font-bold text-primary mb-4 tracking-tight">
-                {game.app.title}
-              </h2>
-              
-              {/* Subtitle */}
-              <p className="text-lg text-secondary text-intimate mb-8 font-light">
-                {game.app.subtitle}
-              </p>
+            {/* Card Pack Container */}
+            <div className="relative">
+              {/* Background Cards - Always visible, animated on hover */}
+              <AnimatePresence>
+                {hoveredGame === game.testType && (
+                  <>
+                    {/* Card 3 - Deepest */}
+                    <motion.div
+                      className="absolute top-0 left-0 bg-gray-300 border border-gray-300 rounded-2xl w-full max-w-[400px] h-[250px] shadow-sm"
+                      style={{ aspectRatio: "400/250" }}
+                      initial={{
+                        x: 0,
+                        y: 0,
+                        rotate: 0,
+                        scale: 1,
+                        opacity: 0,
+                      }}
+                      animate={{
+                        x: -12,
+                        y: -6,
+                        rotate: -3,
+                        scale: 0.95,
+                        opacity: 0.7,
+                      }}
+                      exit={{
+                        x: 0,
+                        y: 0,
+                        rotate: 0,
+                        scale: 1,
+                        opacity: 0,
+                      }}
+                      transition={{
+                        duration: 0.3,
+                        ease: "easeOut",
+                      }}
+                    />
 
-              {/* Question Count - Minimal Info */}
-              <div className="flex justify-between items-center text-sm text-secondary mb-8">
-                <span className="font-medium">
-                  {game.questions.reduce((total: number, cat: any) => total + cat.questions.length, 0)} questions
-                </span>
-                <span className="text-xs uppercase tracking-wider opacity-60">
-                  {game.app.type.replace('-', ' ')}
-                </span>
-              </div>
-
-              {/* Categories - Minimal Indicators */}
-              <div className="flex flex-wrap gap-2 mb-8">
-                {Object.values(game.theme.categories).slice(0, 3).map((category: any, index: number) => (
-                  <div
-                    key={index}
-                    className="w-3 h-3 rounded-full opacity-60"
-                    style={{ backgroundColor: category.color }}
-                  />
-                ))}
-                {Object.values(game.theme.categories).length > 3 && (
-                  <div className="w-3 h-3 rounded-full bg-gray-300 opacity-40" />
+                    {/* Card 2 - Middle */}
+                    <motion.div
+                      className="absolute top-0 left-0 bg-gray-200 border border-gray-300 rounded-2xl w-full max-w-[400px] h-[250px] shadow-md"
+                      style={{ aspectRatio: "400/250" }}
+                      initial={{
+                        x: 0,
+                        y: 0,
+                        rotate: 0,
+                        scale: 1,
+                        opacity: 0,
+                      }}
+                      animate={{
+                        x: -6,
+                        y: -3,
+                        rotate: -1.5,
+                        scale: 0.98,
+                        opacity: 0.8,
+                      }}
+                      exit={{
+                        x: 0,
+                        y: 0,
+                        rotate: 0,
+                        scale: 1,
+                        opacity: 0,
+                      }}
+                      transition={{
+                        duration: 0.3,
+                        ease: "easeOut",
+                        delay: 0.05,
+                      }}
+                    />
+                  </>
                 )}
-              </div>
+              </AnimatePresence>
 
-              {/* Call to Action - Minimal */}
-              <div className="text-primary text-sm font-medium uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                {game.ui.startScreen.startButton} →
-              </div>
+              {/* Main Card Pack - Always on top */}
+              <motion.div
+                className="relative z-10 bg-gray-50 text-center mx-auto border border-gray-200 rounded-2xl w-full max-w-[400px] h-[250px] flex flex-col justify-center items-center px-10 py-8 shadow-lg"
+                style={{ aspectRatio: "400/250" }}
+                whileHover={{
+                  y: -8,
+                  scale: 1.02,
+                  transition: { duration: 0.3, ease: "easeOut" },
+                }}
+              >
+                {/* Game Title */}
+                <h2 className="text-2xl font-bold text-primary mb-4 text-center leading-tight">
+                  {game.ui.startScreen.title}
+                </h2>
+
+                {/* Game Description */}
+                <p className="text-sm text-secondary font-light text-center leading-relaxed">
+                  {game.ui.startScreen.description[0]}
+                </p>
+
+                {/* Card Count Indicator */}
+                <div className="mt-4 text-xs text-gray-400 font-medium uppercase tracking-wider">
+                  {game.questions.reduce(
+                    (total: number, category: any) =>
+                      total + category.questions.length,
+                    0
+                  )}{" "}
+                  Cards
+                </div>
+              </motion.div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
 
-      {/* Empty State */}
-      {games.length === 0 && (
-        <div className="text-center max-w-md">
-          <h3 className="text-2xl font-bold text-primary mb-4">No conversations yet</h3>
-          <p className="text-secondary text-intimate">
-            Add conversation games to begin meaningful dialogues
-          </p>
-        </div>
-      )}
+      {/* Footer - Minimal */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.5 }}
+        className="text-center text-secondary font-light"
+      >
+        <p className="text-sm opacity-70">Select a conversation to begin</p>
+      </motion.div>
 
-      {/* Footer - Brand Consistency */}
-      <div className="text-center opacity-40">
-        <p className="text-xs uppercase tracking-wider text-secondary">
-          Conversation Cards
-        </p>
-      </div>
+      {/* Floating Action Text - Subtle */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.4 }}
+        transition={{ delay: 1 }}
+        className="fixed bottom-8 right-8 text-xs text-secondary font-light opacity-40"
+      >
+        <p>Tap to start</p>
+      </motion.div>
     </div>
   );
 };
