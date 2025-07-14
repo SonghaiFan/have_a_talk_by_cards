@@ -15,9 +15,10 @@
   ],
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "npm run generate-games && tsc && vite build",
     "preview": "vite preview",
-    "tauri": "tauri"
+    "tauri": "tauri",
+    "generate-games": "node scripts/generate-game-index.js"
   },
   "dependencies": {
     "@tauri-apps/api": "^2",

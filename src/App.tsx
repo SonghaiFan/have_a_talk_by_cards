@@ -15,16 +15,18 @@ function App() {
 
   const loadGames = async () => {
     try {
-      // First, try to get the games index file
-      const indexResponse = await fetch('/games/index.json');
       let gameFiles: string[] = [];
       
-      if (indexResponse.ok) {
-        const index = await indexResponse.json();
-        gameFiles = index.games || [];
-      } else {
-        // Fallback: try to load known games
-        gameFiles = ['deep-connections.json', 'relationship-check.json'];
+      // Load games from index.json
+      try {
+        const indexResponse = await fetch('/games/index.json');
+        if (indexResponse.ok) {
+          const index = await indexResponse.json();
+          gameFiles = index.games || [];
+        }
+      } catch (indexError) {
+        console.warn('Could not load index.json, using hardcoded games');
+        gameFiles = ['deep-connections.json', 'relationship-check.json', 'test-love.json', 'test-love-36.json'];
       }
       
       const loadedGames: ConversationGame[] = [];

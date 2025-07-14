@@ -2,9 +2,11 @@
   "games": [
     "deep-connections.json",
     "relationship-check.json",
-    "test-love.json",
-    "test-love-36.json"
+    "test-love-36.json",
+    "test-love.json"
   ],
-  "lastUpdated": "2025-07-15T21:30:00Z",
-  "version": "1.0.0"
+  "lastUpdated": "2025-01-14T12:00:00.000Z",
+  "version": "1.0.0",
+  "generatedAt": "2025-01-14T12:00:00.000Z",
+  "totalGames": 4
 }
