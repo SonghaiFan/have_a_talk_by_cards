@@ -55,7 +55,7 @@ const GameLibrary: React.FC<GameLibraryProps> = ({ games, onGameSelect }) => {
   }, [selectedGameIndex, games]);
 
   return (
-    <div className="min-h-screen bg-white flex flex-col items-center justify-center px-4 sm:px-8 py-8 sm:py-16">
+    <div className="min-h-screen bg-white flex flex-col items-center px-4 sm:px-8 py-8 sm:py-16">
       {/* Language Switcher */}
       <div className="absolute top-4 right-4 sm:top-8 sm:right-8">
         <LanguageSwitcher />
@@ -66,29 +66,29 @@ const GameLibrary: React.FC<GameLibraryProps> = ({ games, onGameSelect }) => {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
-        className="text-center max-w-2xl mb-8 sm:mb-16"
+        className="text-center max-w-2xl mb-8 sm:mb-16 mt-8 sm:mt-0"
       >
         {/* App Title with Inline Icon */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 mb-4 sm:mb-6">
           <motion.img
             src="/card-icon.svg"
             alt="CueCards Icon"
-            className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain"
+            className="w-20 h-20 md:w-24 md:h-24 object-contain"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
           />
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-black text-primary tracking-tight leading-none text-center">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-black text-primary tracking-tight leading-none text-center">
             CueCards
           </h1>
         </div>
-        <p className="text-lg sm:text-xl text-secondary text-intimate font-light px-4">
+        <p className="text-lg sm:text-xl text-secondary text-intimate font-light px-4 mb-24 sm:mb-6">
           {t("gameLibrary.subtitle")}
         </p>
       </motion.div>
 
       {/* Games Grid - Animated Card Packs */}
-      <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-12 mb-8 sm:mb-16 px-4 sm:px-0">
+      <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-12 mb-8 sm:mb-16 justify-items-center">
         {games.map((game, index) => (
           <motion.div
             key={game.testType}

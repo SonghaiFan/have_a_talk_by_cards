@@ -66,8 +66,8 @@
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 24px;
-  height: 24px;
+  width: 25px;
+  height: 25px;
   background: var(--color-primary);
   border-radius: 50%;
   cursor: pointer;
@@ -75,7 +75,7 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   position: relative;
   z-index: 30;
-  margin-top: -12px; /* Center the thumb on the track */
+  margin-top: -25px; /* Center the thumb on the track */
 }
 
 .slider::-webkit-slider-thumb:hover {
