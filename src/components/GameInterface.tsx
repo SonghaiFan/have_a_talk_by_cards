@@ -12,6 +12,7 @@ const GameInterface: React.FC<GameInterfaceProps> = ({ game, onExit }) => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [showStartScreen, setShowStartScreen] = useState(true);
   const [gameComplete, setGameComplete] = useState(false);
+  const [isCardFlipped, setIsCardFlipped] = useState(false);
 
   const allQuestions = game.questions.flatMap(
     (category: any, catIndex: number) =>
@@ -30,6 +31,7 @@ const GameInterface: React.FC<GameInterfaceProps> = ({ game, onExit }) => {
 
   const handleNext = () => {
     setDirection(1);
+    setIsCardFlipped(false);
     if (currentQuestionIndex < allQuestions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
     } else {
@@ -39,8 +41,15 @@ const GameInterface: React.FC<GameInterfaceProps> = ({ game, onExit }) => {
 
   const handlePrevious = () => {
     setDirection(-1);
+    setIsCardFlipped(false);
     if (currentQuestionIndex > 0) {
       setCurrentQuestionIndex(currentQuestionIndex - 1);
+    }
+  };
+
+  const handleCardClick = () => {
+    if (currentQuestion?.options) {
+      setIsCardFlipped(!isCardFlipped);
     }
   };
 
@@ -212,66 +221,120 @@ const GameInterface: React.FC<GameInterfaceProps> = ({ game, onExit }) => {
             </motion.div>
           )}
 
-          {/* Question Card - Animated Poker Card */}
-          <div className="relative perspective-1000">
-            <AnimatePresence mode="wait" custom={direction}>
-              <Card
-                key={currentQuestionIndex}
-                size="large"
-                variant="question"
-                className="text-center mx-auto relative shadow-2xl"
-                style={{
-                  aspectRatio: "520/340",
-                }}
-                custom={direction}
-                variants={cardVariants}
-                initial="enter"
-                animate="center"
-                exit="exit"
-                transition={{
-                  x: { type: "spring", stiffness: 300, damping: 30 },
-                  opacity: { duration: 0.3 },
-                  scale: { duration: 0.3 },
-                  rotateY: { duration: 0.4 },
-                }}
-              >
-                {/* Question Content - Bold Typography */}
-                <div className="text-center">
-                  <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 leading-tight font-sans tracking-tight mb-4">
-                    {currentQuestion?.question}
-                  </h2>
-                  {/* Options - Light gray small text */}
-                  {currentQuestion?.options && (
-                    <div className="space-y-2 text-left">
-                      {Array.isArray(currentQuestion.options)
-                        ? // Handle array format (conversation prompts)
-                          currentQuestion.options.map(
-                            (option: string, index: number) => (
-                              <p
-                                key={index}
-                                className="text-xs text-gray-500 font-light leading-relaxed"
-                              >
-                                {option}
-                              </p>
-                            )
-                          )
-                        : // Handle object format (multiple choice)
-                          Object.entries(currentQuestion.options).map(
-                            ([key, value]) => (
-                              <p
-                                key={key}
-                                className="text-xs text-gray-500 font-light leading-relaxed"
-                              >
-                                <span className="font-medium">{key}.</span>{" "}
-                                {value}
-                              </p>
-                            )
-                          )}
-                    </div>
-                  )}
-                </div>
-              </Card>
-            </AnimatePresence>
+          {/* Question Card - Animated Poker Card with Flip */}
+          <div className="flex justify-center items-center">
+            <div className="relative perspective-1000">
+              <AnimatePresence mode="wait" custom={direction}>
+                <motion.div
+                  key={currentQuestionIndex}
+                  className="relative"
+                  style={{
+                    width: "520px",
+                    height: "340px",
+                    transformStyle: "preserve-3d",
+                  }}
+                  custom={direction}
+                  variants={cardVariants}
+                  initial="enter"
+                  animate="center"
+                  exit="exit"
+                  transition={{
+                    x: { type: "spring", stiffness: 300, damping: 30 },
+                    opacity: { duration: 0.3 },
+                    scale: { duration: 0.3 },
+                    rotateY: { duration: 0.4 },
+                  }}
+                >
+                  {/* Card Container with Flip Animation */}
+                  <motion.div
+                    className="relative w-full h-full"
+                    style={{
+                      transformStyle: "preserve-3d",
+                    }}
+                    animate={{
+                      rotateY: isCardFlipped ? 180 : 0,
+                    }}
+                    transition={{
+                      duration: 0.6,
+                      ease: "easeInOut",
+                    }}
+                  >
+                    {/* Front Side - Question */}
+                    <Card
+                      size="large"
+                      variant="question"
+                      className="absolute inset-0 text-center shadow-2xl cursor-pointer"
+                      style={{
+                        backfaceVisibility: "hidden",
+                      }}
+                      onClick={handleCardClick}
+                    >
+                      <div className="text-center h-full flex flex-col justify-center">
+                        <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 leading-tight font-sans tracking-tight">
+                          {currentQuestion?.question}
+                        </h2>
+                        {currentQuestion?.options && (
+                          <p className="mt-6 text-sm text-gray-400 font-light">
+                            Click to view options
+                          </p>
+                        )}
+                      </div>
+                    </Card>
+
+                    {/* Back Side - Options */}
+                    <Card
+                      size="large"
+                      variant="question"
+                      className="absolute inset-0 shadow-2xl cursor-pointer"
+                      style={{
+                        backfaceVisibility: "hidden",
+                        transform: "rotateY(180deg)",
+                      }}
+                      onClick={handleCardClick}
+                    >
+                      <div className="text-center h-full flex flex-col justify-center">
+                        <h3 className="text-lg font-semibold text-gray-800 mb-6">
+                          Options
+                        </h3>
+                        {currentQuestion?.options && (
+                          <div className="space-y-3 text-left">
+                            {Array.isArray(currentQuestion.options)
+                              ? // Handle array format (conversation prompts)
+                                currentQuestion.options.map(
+                                  (option: string, index: number) => (
+                                    <p
+                                      key={index}
+                                      className="text-sm text-gray-600 font-light leading-relaxed"
+                                    >
+                                      • {option}
+                                    </p>
+                                  )
+                                )
+                              : // Handle object format (multiple choice)
+                                Object.entries(currentQuestion.options).map(
+                                  ([key, value]) => (
+                                    <p
+                                      key={key}
+                                      className="text-sm text-gray-600 font-light leading-relaxed"
+                                    >
+                                      <span className="font-medium text-gray-800">
+                                        {key}.
+                                      </span>{" "}
+                                      {value as string}
+                                    </p>
+                                  )
+                                )}
+                          </div>
+                        )}
+                        <p className="mt-6 text-sm text-gray-400 font-light">
+                          Click to return to the question
+                        </p>
+                      </div>
+                    </Card>
+                  </motion.div>
+                </motion.div>
+              </AnimatePresence>
+            </div>
           </div>
 
           {/* Category Description - Subtle */}
