@@ -15,14 +15,14 @@ const GameEnding: React.FC<GameEndingProps> = ({ onRestart, onExit }) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
-      className="min-h-screen bg-white flex flex-col items-center justify-center px-8 py-16"
+      className="min-h-screen bg-white flex flex-col items-center justify-center px-4 sm:px-8 py-8 sm:py-16"
     >
       <div className="text-center max-w-2xl">
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="text-4xl md:text-5xl font-bold text-primary mb-6 tracking-tight"
+          className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-4 sm:mb-6 tracking-tight"
         >
           {t("gameInterface.wellDone")}
         </motion.h1>
@@ -31,7 +31,7 @@ const GameEnding: React.FC<GameEndingProps> = ({ onRestart, onExit }) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
-          className="text-xl text-secondary text-intimate font-light mb-12"
+          className="text-lg sm:text-xl text-secondary text-intimate font-light mb-8 sm:mb-12 px-4"
         >
           {t("gameInterface.thankYou")}
         </motion.p>
@@ -40,12 +40,12 @@ const GameEnding: React.FC<GameEndingProps> = ({ onRestart, onExit }) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center"
+          className="flex flex-col sm:flex-row gap-4 justify-center px-4"
         >
           <motion.button
             whileHover={{ y: -2, transition: { duration: 0.2 } }}
             whileTap={{ scale: 0.98 }}
-            className="bg-primary text-white px-8 py-3 rounded-lg font-medium transition-all duration-200 hover:bg-secondary"
+            className="bg-primary text-white px-8 py-4 rounded-lg font-medium transition-all duration-200 hover:bg-secondary touch-manipulation min-h-[48px] flex items-center justify-center"
             onClick={onRestart}
           >
             {t("common.restart")}
@@ -54,7 +54,7 @@ const GameEnding: React.FC<GameEndingProps> = ({ onRestart, onExit }) => {
           <motion.button
             whileHover={{ y: -2, transition: { duration: 0.2 } }}
             whileTap={{ scale: 0.98 }}
-            className="border-2 border-primary text-primary px-8 py-3 rounded-lg font-medium transition-all duration-200 hover:bg-primary hover:text-white"
+            className="border-2 border-primary text-primary px-8 py-4 rounded-lg font-medium transition-all duration-200 hover:bg-primary hover:text-white touch-manipulation min-h-[48px] flex items-center justify-center"
             onClick={onExit}
           >
             {t("common.exit")}

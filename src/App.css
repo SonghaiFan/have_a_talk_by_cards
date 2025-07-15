@@ -66,8 +66,8 @@
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   background: var(--color-primary);
   border-radius: 50%;
   cursor: pointer;
@@ -75,7 +75,7 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   position: relative;
   z-index: 30;
-  margin-top: -15px; /* Center the thumb on the track */
+  margin-top: -12px; /* Center the thumb on the track */
 }
 
 .slider::-webkit-slider-thumb:hover {
@@ -84,8 +84,8 @@
 }
 
 .slider::-moz-range-thumb {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   background: var(--color-primary);
   border-radius: 50%;
   cursor: pointer;

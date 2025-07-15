@@ -37,20 +37,20 @@ const TimePercentageSlider: React.FC<TimePercentageSliderProps> = ({
   const progressPercentage = ((percentage - 10) / (100 - 10)) * 100;
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-6 sm:space-y-8 px-4 sm:px-6">
       {/* Section Header */}
       <div className="space-y-2">
-        <h2 className="text-2xl font-light text-primary">
+        <h2 className="text-xl sm:text-2xl font-light text-primary">
           {t("timePercentage.title")}
         </h2>
-        <p className="text-secondary text-intimate font-light">
+        <p className="text-sm sm:text-base text-secondary text-intimate font-light">
           {t("timePercentage.subtitle")}
         </p>
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
-          className="text-sm text-secondary/70 font-light"
+          className="text-xs sm:text-sm text-secondary/70 font-light"
         >
           {estimatedQuestions} questions • ~{estimatedTime} minutes together
         </motion.div>
@@ -60,8 +60,8 @@ const TimePercentageSlider: React.FC<TimePercentageSliderProps> = ({
       <div className="space-y-6">
         <div className="text-center space-y-4">
           {/* Slider */}
-          <div className="px-4">
-            <div className="relative h-2 mb-6">
+          <div className="px-2 sm:px-4">
+            <div className="relative h-3 sm:h-2 mb-6 py-2">
               <div
                 className="absolute inset-0 w-full h-2 bg-gray-100 rounded-full"
                 style={{

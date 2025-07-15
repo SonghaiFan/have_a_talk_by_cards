@@ -117,15 +117,15 @@ const GamePlay: React.FC<GamePlayProps> = ({
       style={{ backgroundColor: currentCategory?.color || "#ffffff" }}
     >
       {/* Header - Minimal Navigation */}
-      <header className="flex justify-between items-center p-8">
+      <header className="flex justify-between items-center p-4 sm:p-8">
         <button
-          className="w-12 h-12 flex items-center justify-center text-2xl text-white hover:text-gray-200 transition-colors duration-200"
+          className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center text-xl sm:text-2xl text-white hover:text-gray-200 transition-colors duration-200"
           onClick={onExit}
         >
           ←
         </button>
 
-        <div className="text-sm font-medium text-white opacity-90">
+        <div className="text-xs sm:text-sm font-medium text-white opacity-90">
           {t("gameInterface.progressIndicator", {
             current: currentQuestionIndex + 1,
             total: questions.length,
@@ -134,7 +134,7 @@ const GamePlay: React.FC<GamePlayProps> = ({
       </header>
 
       {/* Main Card - Centered & Focused */}
-      <div className="flex-1 flex items-center justify-center px-8 py-16">
+      <div className="flex-1 flex items-center justify-center px-4 sm:px-8 py-8 sm:py-16">
         <div className="w-full max-w-4xl">
           {/* Category Indicator - Minimal */}
           {currentCategory && (
@@ -142,16 +142,16 @@ const GamePlay: React.FC<GamePlayProps> = ({
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-center mb-8"
+              className="text-center mb-4 sm:mb-8"
             >
               <div className="inline-flex items-center gap-3">
                 <motion.div
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   transition={{ delay: 0.4, type: "spring", stiffness: 200 }}
-                  className="w-2 h-2 rounded-full bg-white opacity-90"
+                  className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-white opacity-90"
                 />
-                <span className="text-sm font-medium text-white opacity-90 uppercase tracking-wider">
+                <span className="text-xs sm:text-sm font-medium text-white opacity-90 uppercase tracking-wider">
                   {currentCategory.name}
                 </span>
               </div>
@@ -164,10 +164,8 @@ const GamePlay: React.FC<GamePlayProps> = ({
               <AnimatePresence mode="wait" custom={direction}>
                 <motion.div
                   key={currentQuestionIndex}
-                  className="relative"
+                  className="relative w-[340px] sm:w-[440px] md:w-[520px] h-[220px] sm:h-[280px] md:h-[340px]"
                   style={{
-                    width: "520px",
-                    height: "340px",
                     transformStyle: "preserve-3d",
                   }}
                   custom={direction}
@@ -213,7 +211,7 @@ const GamePlay: React.FC<GamePlayProps> = ({
                       }
                     >
                       <div className="text-center h-full flex flex-col justify-center">
-                        <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 leading-tight font-sans tracking-tight">
+                        <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 leading-tight font-sans tracking-tight px-2">
                           {currentQuestion?.question}
                         </h2>
                       </div>
@@ -239,7 +237,7 @@ const GamePlay: React.FC<GamePlayProps> = ({
                                   (option: string, index: number) => (
                                     <p
                                       key={index}
-                                      className="text-sm text-gray-600 font-light leading-relaxed"
+                                      className="text-xs sm:text-sm text-gray-600 font-light leading-relaxed"
                                     >
                                       • {option}
                                     </p>
@@ -250,7 +248,7 @@ const GamePlay: React.FC<GamePlayProps> = ({
                                   ([key, value]) => (
                                     <p
                                       key={key}
-                                      className="text-sm text-gray-600 font-light leading-relaxed"
+                                      className="text-xs sm:text-sm text-gray-600 font-light leading-relaxed"
                                     >
                                       <span className="font-medium text-gray-800">
                                         {key}.
@@ -275,9 +273,9 @@ const GamePlay: React.FC<GamePlayProps> = ({
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="text-center mt-8"
+              className="text-center mt-4 sm:mt-8"
             >
-              <p className="text-sm text-white opacity-70 font-light">
+              <p className="text-xs sm:text-sm text-white opacity-70 font-light px-4">
                 {currentCategory.description}
               </p>
             </motion.div>
@@ -290,21 +288,21 @@ const GamePlay: React.FC<GamePlayProps> = ({
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.6 }}
-        className="flex justify-between items-center p-8"
+        className="flex justify-between items-center p-4 sm:p-8"
       >
         <motion.button
           whileHover={{ scale: 1.08, x: -2, transition: { duration: 0.2 } }}
           whileTap={{ scale: 0.95 }}
-          className="flex items-center gap-2 text-white transition-colors duration-200 disabled:opacity-40 disabled:cursor-not-allowed"
+          className="flex items-center gap-1 sm:gap-2 text-white transition-colors duration-200 disabled:opacity-40 disabled:cursor-not-allowed"
           onClick={handlePrevious}
           disabled={currentQuestionIndex === 0}
         >
-          <span className="text-xl">←</span>
-          <span>{t("common.previous")}</span>
+          <span className="text-lg sm:text-xl">←</span>
+          <span className="text-sm sm:text-base">{t("common.previous")}</span>
         </motion.button>
 
         {/* Progress Indicator - Animated */}
-        <div className="flex-1 mx-8 h-1 bg-white/20 rounded-full overflow-hidden">
+        <div className="flex-1 mx-4 sm:mx-8 h-1 bg-white/20 rounded-full overflow-hidden">
           <motion.div
             className="h-full bg-white rounded-full"
             animate={{
@@ -322,11 +320,11 @@ const GamePlay: React.FC<GamePlayProps> = ({
         <motion.button
           whileHover={{ scale: 1.08, x: 2, transition: { duration: 0.2 } }}
           whileTap={{ scale: 0.95 }}
-          className="flex items-center gap-2 text-white transition-colors duration-200"
+          className="flex items-center gap-1 sm:gap-2 text-white transition-colors duration-200"
           onClick={handleNext}
         >
-          <span>{t("common.next")}</span>
-          <span className="text-xl">→</span>
+          <span className="text-sm sm:text-base">{t("common.next")}</span>
+          <span className="text-lg sm:text-xl">→</span>
         </motion.button>
       </motion.div>
 
@@ -335,7 +333,7 @@ const GamePlay: React.FC<GamePlayProps> = ({
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.3 }}
         transition={{ delay: 1 }}
-        className="fixed bottom-4 left-1/2 -translate-x-1/2 text-xs text-white text-opacity-60 font-light text-center"
+        className="fixed bottom-4 left-1/2 -translate-x-1/2 text-xs text-white text-opacity-60 font-light text-center hidden sm:block"
       >
         <p>{t("navigation.keyboardHints")}</p>
       </motion.div>
