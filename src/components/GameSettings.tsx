@@ -44,7 +44,6 @@ const GameSettings: React.FC<GameSettingsProps> = ({
         ←
       </motion.button>
 
-
       {/* Main Content Container */}
       <div className="text-center max-w-2xl w-full space-y-12">
         {/* Header Section */}
@@ -54,7 +53,7 @@ const GameSettings: React.FC<GameSettingsProps> = ({
           transition={{ delay: 0.2, duration: 0.8 }}
           className="space-y-4"
         >
-          <h1 className="text-4xl md:text-5xl font-light text-primary tracking-tight leading-tight">
+          <h1 className="text-4xl md:text-5xl font-bold text-primary tracking-tight leading-tight">
             {t("gameInterface.createYourJourney")}
           </h1>
           <p className="text-lg text-secondary text-intimate font-light max-w-md mx-auto">

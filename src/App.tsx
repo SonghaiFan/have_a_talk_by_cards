@@ -74,7 +74,7 @@ function App() {
       // If there's a current game, update it with the new language version
       if (currentGame) {
         const updatedGame = loadedGames.find(
-          (game) => game.testType === currentGame.testType
+          (game) => game.testID === currentGame.testID
         );
         if (updatedGame) {
           setCurrentGame(updatedGame);
@@ -133,7 +133,7 @@ function App() {
   if (currentGame) {
     return (
       <GameInterface
-        key={currentGame.testType}
+        key={currentGame.testID}
         game={currentGame}
         onExit={handleGameExit}
       />

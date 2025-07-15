@@ -1,5 +1,5 @@
 {
-  "testType": "love-36",
+  "testID": "love-36",
   "app": {
     "title": "Arthur Aron's 36 Questions",
     "subtitle": "An Intimate Relationship Experiment Based on Arthur Aron’s Psychological Research",
@@ -29,18 +29,18 @@
   },
   "theme": {
     "categories": {
-      "Group One": {
-        "name": "Group One",
+      "share": {
+        "name": "share",
         "color": "#FDC7C7",
         "description": "Beginner Intimacy: Basic Personal Sharing"
       },
-      "Second Group": {
-        "name": "Second Group",
+      "reveal": {
+        "name": "reveal",
         "color": "#FF8687",
         "description": "Intermediate Intimacy: Deeper Self-Disclosure"
       },
-      "Group 3": {
-        "name": "Group 3",
+      "vulnerable": {
+        "name": "vulnerable",
         "color": "#C92026",
         "description": "Advanced Intimacy: The Deepest Level of Vulnerable Sharing"
       }
@@ -48,12 +48,12 @@
   },
   "questions": [
     {
-      "category": "Group One",
+      "category": "share",
       "questions": [
         {
           "type": "open",
           "question": "If you could choose anyone in the world, who would you invite to dinner?",
-          "options": [
+          "more": [
             "Think about historical figures, celebrities, or people you admire",
             "Share the reason why you chose this person",
             "Describe the topics you want to discuss with them"
@@ -106,7 +106,7 @@
       ]
     },
     {
-      "category": "Second Group",
+      "category": "reveal",
       "questions": [
         {
           "type": "open",
@@ -159,7 +159,7 @@
       ]
     },
     {
-      "category": "Group Three",
+      "category": "vulnerable",
       "questions": [
         {
           "type": "open",

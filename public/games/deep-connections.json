@@ -1,5 +1,5 @@
 {
-  "testType": "deep-connections",
+  "testID": "deep-connections",
   "app": {
     "title": "DEEP CONNECTIONS",
     "subtitle": "Thoughtful questions for meaningful conversations",
@@ -29,22 +29,22 @@
     "categories": {
       "values": {
         "name": "Values",
-        "color": "#2563eb",
+        "color": "#fde68a",
         "description": "What matters most to you"
       },
       "dreams": {
         "name": "Dreams",
-        "color": "#059669",
+        "color": "#a7f3d0",
         "description": "Your hopes and aspirations"
       },
       "memories": {
         "name": "Memories",
-        "color": "#dc2626",
+        "color": "#fbcfe8",
         "description": "Moments that shaped you"
       },
       "relationships": {
         "name": "Connection",
-        "color": "#7c3aed",
+        "color": "#fcd34d",
         "description": "How you relate to others"
       }
     }

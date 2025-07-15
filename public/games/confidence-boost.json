@@ -1,0 +1,88 @@
+{
+  "testID": "confidence-boost",
+  "app": {
+    "title": "Confidence Boost",
+    "subtitle": "10 Questions to Remind You of Your Strengths",
+    "language": "english",
+    "version": "1.0.0"
+  },
+  "ui": {
+    "startScreen": {
+      "title": "Confidence Boost",
+      "description": [
+        "When should you ask yourself these 10 questions?",
+        "a. before a date or job interview",
+        "b. before your first day of school",
+        "c. after someone hurt your feelings",
+        "d. any day that you feel like \"I can't\"",
+        "e. all of the above"
+      ],
+      "startButton": "Begin"
+    },
+    "navigation": {
+      "nextButton": "Next",
+      "prevButton": "Back"
+    },
+    "results": {
+      "title": "You Did It!",
+      "subtitle": "You took time to remember your strengths. Carry this confidence with you—you're more capable than you think.",
+      "restartButton": "Do It Again"
+    }
+  },
+  "theme": {
+    "categories": {
+      "confidence": {
+        "name": "Confidence",
+        "color": "#FFA500",
+        "description": "Questions to help you remember your strengths and resilience."
+      }
+    }
+  },
+  "questions": [
+    {
+      "category": "confidence",
+      "questions": [
+        {
+          "type": "open",
+          "question": "Describe a time when something unexpectedly worked out for you."
+        },
+        {
+          "type": "open",
+          "question": "What's something that you used to feel insecure about, but don't anymore?"
+        },
+        {
+          "type": "open",
+          "question": "What about your life would your childhood self be in awe of?"
+        },
+        {
+          "type": "open",
+          "question": "Who inspires you? In what ways are you like them?"
+        },
+        {
+          "type": "open",
+          "question": "Describe a situation where you said \"no,\" and you're really glad that you did."
+        },
+        {
+          "type": "open",
+          "question": "Describe a situation where you said \"yes,\" and you're really glad that you did."
+        },
+        {
+          "type": "open",
+          "question": "What's something you're proud of yourself for but haven't celebrated?"
+        },
+        {
+          "type": "open",
+          "question": "When was the last time you spoke up for yourself or someone else? How did it make you feel?"
+        },
+        {
+          "type": "open",
+          "question": "What's a promise you've made to yourself and kept?"
+        },
+        {
+          "type": "open",
+          "question": "Think of someone who believes in you. What would they say your strengths are?"
+        }
+      ]
+    }
+  ]
+}

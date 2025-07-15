@@ -1,0 +1,104 @@
+{
+  "testID": "xxx",
+  "app": {
+    "title": "XXX",
+    "subtitle": "Intimate, honest questions about sex and desire",
+    "language": "english",
+    "version": "1.0.0"
+  },
+  "ui": {
+    "startScreen": {
+      "title": "XXX",
+      "description": [
+        "A minimalist, emotionally intimate game for honest conversations about sex, desire, and vulnerability.",
+        "Take turns answering. Listen deeply. Share honestly."
+      ],
+      "startButton": "Begin"
+    },
+    "navigation": {
+      "nextButton": "Next",
+      "prevButton": "Back"
+    },
+    "results": {
+      "title": "Conversation Complete",
+      "subtitle": "Thank you for your honesty and openness.",
+      "restartButton": "Restart"
+    }
+  },
+  "theme": {
+    "categories": {
+      "xxx": {
+        "name": "xxx",
+        "color": "#7f1d1d",
+        "description": "Intimate, honest questions about sex and desire"
+      }
+    }
+  },
+  "questions": [
+    {
+      "category": "xxx",
+      "questions": [
+        {
+          "type": "open",
+          "question": "What do you wish you knew about other people's sex lives?"
+        },
+        {
+          "type": "open",
+          "question": "When was the last time something turned you on?"
+        },
+        {
+          "type": "open",
+          "question": "I wish I didn't have to ask for _____"
+        },
+        {
+          "type": "open",
+          "question": "What do you feel guilty for wanting? Not wanting?"
+        },
+        {
+          "type": "open",
+          "question": "Think about one thing you wish you had done differently in bed. Why?"
+        },
+        {
+          "type": "open",
+          "question": "When was the last time something turned you off?"
+        },
+        {
+          "type": "open",
+          "question": "Have you ever tried something and didn't like it? Why?"
+        },
+        {
+          "type": "open",
+          "question": "Think about the best sex you've ever had. What stands out?"
+        },
+        {
+          "type": "open",
+          "question": "Besides pleasure, what do you use sex for?"
+        },
+        {
+          "type": "open",
+          "question": "What part does shame play in your sex life?"
+        },
+        {
+          "type": "open",
+          "question": "What have you come to like?"
+        },
+        {
+          "type": "open",
+          "question": "If you could relive one moment in bed, what would it be?"
+        },
+        {
+          "type": "open",
+          "question": "What kind of sexual partner are you to yourself?"
+        },
+        {
+          "type": "open",
+          "question": "What would you ask for in bed if there were no consequences?"
+        },
+        {
+          "type": "open",
+          "question": "What are you craving in your life right now?"
+        }
+      ]
+    }
+  ]
+}

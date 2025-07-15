@@ -1,5 +1,5 @@
 {
-  "testType": "relationship-check",
+  "testID": "relationship-check",
   "app": {
     "title": "RELATIONSHIP CHECK-IN",
     "subtitle": "Strengthen your bond through honest conversation",

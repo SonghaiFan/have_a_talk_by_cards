@@ -50,7 +50,7 @@ const GameLibrary: React.FC<GameLibraryProps> = ({ games, onGameSelect }) => {
   // Update hover when keyboard selection changes
   useEffect(() => {
     if (games[selectedGameIndex]) {
-      setHoveredGame(games[selectedGameIndex].testType);
+      setHoveredGame(games[selectedGameIndex].testID);
     }
   }, [selectedGameIndex, games]);
 
@@ -91,7 +91,7 @@ const GameLibrary: React.FC<GameLibraryProps> = ({ games, onGameSelect }) => {
       <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-12 mb-8 sm:mb-16 justify-items-center">
         {games.map((game, index) => (
           <motion.div
-            key={game.testType}
+            key={game.testID}
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
@@ -100,7 +100,7 @@ const GameLibrary: React.FC<GameLibraryProps> = ({ games, onGameSelect }) => {
               ease: "easeOut",
             }}
             className="cursor-pointer relative"
-            onHoverStart={() => setHoveredGame(game.testType)}
+            onHoverStart={() => setHoveredGame(game.testID)}
             onHoverEnd={() => setHoveredGame(null)}
             onClick={() => onGameSelect(game)}
           >
@@ -108,7 +108,7 @@ const GameLibrary: React.FC<GameLibraryProps> = ({ games, onGameSelect }) => {
             <div className="relative">
               {/* Background Cards - Dynamic based on categories */}
               <AnimatePresence>
-                {hoveredGame === game.testType && (
+                {hoveredGame === game.testID && (
                   <>
                     {Object.entries(game.theme.categories).map(
                       (categoryEntry, cardIndex) => {
@@ -182,7 +182,7 @@ const GameLibrary: React.FC<GameLibraryProps> = ({ games, onGameSelect }) => {
                 }}
                 onClick={() => onGameSelect(game)}
                 onMouseEnter={() => {
-                  setHoveredGame(game.testType);
+                  setHoveredGame(game.testID);
                   setSelectedGameIndex(index);
                 }}
                 onMouseLeave={() => setHoveredGame(null)}

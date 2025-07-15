@@ -23,7 +23,7 @@ const GameInterface: React.FC<GameInterfaceProps> = ({ game, onExit }) => {
     GameStage.LANDING
   );
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
-  const [questionPercentage, setQuestionPercentage] = useState(50);
+  const [questionPercentage, setQuestionPercentage] = useState(100);
   const [customQuestions, setCustomQuestions] = useState<any[]>([]);
 
   // Initialize default categories (all selected)
@@ -174,7 +174,7 @@ const GameInterface: React.FC<GameInterfaceProps> = ({ game, onExit }) => {
   const handleRestart = () => {
     setCurrentStage(GameStage.LANDING);
     setCustomQuestions([]);
-    setQuestionPercentage(50);
+    setQuestionPercentage(100);
     const categories = Object.keys(game.theme.categories);
     setSelectedCategories(categories);
   };

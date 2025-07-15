@@ -48,7 +48,7 @@ export interface ExportTemplate {
 export interface Question {
   type?: string;
   question: string;
-  options?: string[] | Record<string, string>;
+  more?: string[] | Record<string, string>;
 }
 
 export interface QuestionCategory {
@@ -57,7 +57,7 @@ export interface QuestionCategory {
 }
 
 export interface ConversationGame {
-  testType: string;
+  testID: string;
   app: AppInfo;
   ui: UIConfig;
   theme: ThemeConfig;

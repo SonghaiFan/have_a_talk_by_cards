@@ -1,5 +1,5 @@
 {
-  "testType": "relationship-check",
+  "testID": "relationship-check",
   "app": {
     "title": "关系签到",
     "subtitle": "通过诚实的对话加强你们的纽带",

@@ -46,7 +46,7 @@ const GamePlay: React.FC<GamePlayProps> = ({
   };
 
   const handleCardClick = () => {
-    if (currentQuestion?.options) {
+    if (currentQuestion?.more) {
       setIsCardFlipped(!isCardFlipped);
     }
   };
@@ -70,7 +70,7 @@ const GamePlay: React.FC<GamePlayProps> = ({
         case "ArrowDown":
         case "Enter":
           event.preventDefault();
-          if (currentQuestion?.options) {
+          if (currentQuestion?.more) {
             handleCardClick();
           }
           break;
@@ -199,7 +199,7 @@ const GamePlay: React.FC<GamePlayProps> = ({
                       size="large"
                       variant="question"
                       className={`absolute inset-0 text-center shadow-2xl ${
-                        currentQuestion?.options
+                        currentQuestion?.more
                           ? "cursor-pointer"
                           : "cursor-default"
                       }`}
@@ -207,7 +207,7 @@ const GamePlay: React.FC<GamePlayProps> = ({
                         backfaceVisibility: "hidden",
                       }}
                       onClick={
-                        currentQuestion?.options ? handleCardClick : undefined
+                        currentQuestion?.more ? handleCardClick : undefined
                       }
                     >
                       <div className="text-center h-full flex flex-col justify-center">
@@ -217,7 +217,7 @@ const GamePlay: React.FC<GamePlayProps> = ({
                       </div>
                     </Card>
 
-                    {/* Back Side - Options */}
+                    {/* Back Side - more */}
                     <Card
                       size="large"
                       variant="question"
@@ -229,11 +229,11 @@ const GamePlay: React.FC<GamePlayProps> = ({
                       onClick={handleCardClick}
                     >
                       <div className="text-center h-full flex flex-col justify-center">
-                        {currentQuestion?.options && (
+                        {currentQuestion?.more && (
                           <div className="space-y-3 text-left">
-                            {Array.isArray(currentQuestion.options)
+                            {Array.isArray(currentQuestion.more)
                               ? // Handle array format (conversation prompts)
-                                currentQuestion.options.map(
+                                currentQuestion.more.map(
                                   (option: string, index: number) => (
                                     <p
                                       key={index}
@@ -244,7 +244,7 @@ const GamePlay: React.FC<GamePlayProps> = ({
                                   )
                                 )
                               : // Handle object format (multiple choice)
-                                Object.entries(currentQuestion.options).map(
+                                Object.entries(currentQuestion.more).map(
                                   ([key, value]) => (
                                     <p
                                       key={key}

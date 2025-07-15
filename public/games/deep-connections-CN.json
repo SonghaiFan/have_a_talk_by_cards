@@ -1,5 +1,5 @@
 {
-  "testType": "deep-connections",
+  "testID": "deep-connections",
   "app": {
     "title": "深度连接",
     "subtitle": "引发深思的问题，促进有意义的对话",
@@ -29,22 +29,22 @@
     "categories": {
       "values": {
         "name": "价值观",
-        "color": "#2563eb",
+        "color": "#fde68a",
         "description": "对你来说最重要的事"
       },
       "dreams": {
         "name": "梦想",
-        "color": "#059669",
+        "color": "#a7f3d0",
         "description": "你的希望和愿望"
       },
       "memories": {
         "name": "回忆",
-        "color": "#dc2626",
+        "color": "#fbcfe8",
         "description": "塑造你的时刻"
       },
       "relationships": {
         "name": "连接",
-        "color": "#7c3aed",
+        "color": "#fcd34d",
         "description": "你与他人的相处方式"
       }
     }

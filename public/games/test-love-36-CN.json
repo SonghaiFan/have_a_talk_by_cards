@@ -1,5 +1,5 @@
 {
-  "testType": "love-36",
+  "testID": "love-36",
   "app": {
     "title": "阿瑟·亚伦的36个问题",
     "subtitle": "基于阿瑟·亚伦心理学研究的亲密关系实验",
@@ -29,31 +29,31 @@
   },
   "theme": {
     "categories": {
-      "Group One": {
-        "name": "第一组",
+      "share": {
+        "name": "分享",
         "color": "#FDC7C7",
-        "description": "初级亲密：基础的个人分享"
+        "description": "基础的个人分享"
       },
-      "Group Two": {
-        "name": "第二组",
+      "reveal": {
+        "name": "袒露",
         "color": "#FF8687",
-        "description": "中级亲密：更深层的自我袒露"
+        "description": "更深层的自我袒露"
       },
-      "Group Three": {
-        "name": "第三组",
+      "vulnerable": {
+        "name": "脆弱",
         "color": "#C92026",
-        "description": "高级亲密：最深层的脆弱分享"
+        "description": "最深层的脆弱分享"
       }
     }
   },
   "questions": [
     {
-      "category": "Group One",
+      "category": "share",
       "questions": [
         {
           "type": "open",
           "question": "如果可以在世界上所有人中任意选择，你想邀请谁共进晚餐？",
-          "options": [
+          "more": [
             "想想历史人物、名人或你崇拜的人",
             "分享你选择这个人的原因",
             "描述你想和他们聊什么话题"
@@ -106,7 +106,7 @@
       ]
     },
     {
-      "category": "Group Two",
+      "category": "reveal",
       "questions": [
         {
           "type": "open",
@@ -159,7 +159,7 @@
       ]
     },
     {
-      "category": "Group Three",
+      "category": "vulnerable",
       "questions": [
         {
           "type": "open",

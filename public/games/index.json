@@ -11,10 +11,12 @@
     "we-are-not-really-strangers-CN.json",
     "we-are-not-really-strangers.json",
     "we-are-not-strangers-CN.json",
-    "we-are-not-strangers.json"
+    "we-are-not-strangers.json",
+    "confidence-boost.json",
+    "xxx.json"
   ],
   "lastUpdated": "2025-07-15T13:08:45.764Z",
   "version": "1.0.0",
   "generatedAt": "2025-07-15T13:08:45.766Z",
-  "totalGames": 12
+  "totalGames": 14
 }
