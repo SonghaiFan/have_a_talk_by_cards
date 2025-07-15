@@ -74,18 +74,15 @@
       "questions": [
         {
           "type": "discussion",
-          "question": "WHAT'S ONE THING I DO THAT MAKES YOU FEEL TRULY HEARD?",
-          "options": {}
+          "question": "WHAT'S ONE THING I DO THAT MAKES YOU FEEL TRULY HEARD?"
         },
         {
           "type": "discussion",
-          "question": "IS THERE SOMETHING YOU'VE BEEN WANTING TO TELL ME?",
-          "options": {}
+          "question": "IS THERE SOMETHING YOU'VE BEEN WANTING TO TELL ME?"
         },
         {
           "type": "discussion",
-          "question": "WHEN WE DISAGREE, WHAT HELPS YOU FEEL LIKE WE'RE ON THE SAME TEAM?",
-          "options": {}
+          "question": "WHEN WE DISAGREE, WHAT HELPS YOU FEEL LIKE WE'RE ON THE SAME TEAM?"
         }
       ]
     },
@@ -94,18 +91,15 @@
       "questions": [
         {
           "type": "discussion",
-          "question": "HOW DO YOU MOST FEEL LOVED BY ME?",
-          "options": {}
+          "question": "HOW DO YOU MOST FEEL LOVED BY ME?"
         },
         {
           "type": "discussion",
-          "question": "WHAT SMALL GESTURE ALWAYS BRIGHTENS YOUR DAY?",
-          "options": {}
+          "question": "WHAT SMALL GESTURE ALWAYS BRIGHTENS YOUR DAY?"
         },
         {
           "type": "discussion",
-          "question": "HOW CAN WE CREATE MORE TIME FOR JUST US?",
-          "options": {}
+          "question": "HOW CAN WE CREATE MORE TIME FOR JUST US?"
         }
       ]
     },
@@ -114,18 +108,15 @@
       "questions": [
         {
           "type": "discussion",
-          "question": "WHAT'S SOMETHING NEW YOU'D LIKE US TO TRY TOGETHER?",
-          "options": {}
+          "question": "WHAT'S SOMETHING NEW YOU'D LIKE US TO TRY TOGETHER?"
         },
         {
           "type": "discussion",
-          "question": "DESCRIBE OUR PERFECT WEEKEND GETAWAY.",
-          "options": {}
+          "question": "DESCRIBE OUR PERFECT WEEKEND GETAWAY."
         },
         {
           "type": "discussion",
-          "question": "WHAT GOAL OR DREAM CAN I SUPPORT YOU WITH?",
-          "options": {}
+          "question": "WHAT GOAL OR DREAM CAN I SUPPORT YOU WITH?"
         }
       ]
     },
@@ -134,18 +125,15 @@
       "questions": [
         {
           "type": "discussion",
-          "question": "WHAT HAVE I DONE RECENTLY THAT YOU'RE GRATEFUL FOR?",
-          "options": {}
+          "question": "WHAT HAVE I DONE RECENTLY THAT YOU'RE GRATEFUL FOR?"
         },
         {
           "type": "discussion",
-          "question": "WHAT QUALITY DO YOU MOST ADMIRE ABOUT ME?",
-          "options": {}
+          "question": "WHAT QUALITY DO YOU MOST ADMIRE ABOUT ME?"
         },
         {
           "type": "discussion",
-          "question": "WHAT'S YOUR FAVORITE MEMORY OF US FROM THIS PAST MONTH?",
-          "options": {}
+          "question": "WHAT'S YOUR FAVORITE MEMORY OF US FROM THIS PAST MONTH?"
         }
       ]
     }

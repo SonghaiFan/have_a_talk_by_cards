@@ -74,18 +74,15 @@
       "questions": [
         {
           "type": "open",
-          "question": "WHAT PRINCIPLE DO YOU LIVE BY THAT MOST PEOPLE DON'T UNDERSTAND?",
-          "options": {}
+          "question": "WHAT PRINCIPLE DO YOU LIVE BY THAT MOST PEOPLE DON'T UNDERSTAND?"
         },
         {
           "type": "open",
-          "question": "WHAT WOULD YOU CHANGE ABOUT HOW SOCIETY WORKS?",
-          "options": {}
+          "question": "WHAT WOULD YOU CHANGE ABOUT HOW SOCIETY WORKS?"
         },
         {
           "type": "open",
-          "question": "WHAT DO YOU BELIEVE THAT YOU CAN'T PROVE?",
-          "options": {}
+          "question": "WHAT DO YOU BELIEVE THAT YOU CAN'T PROVE?"
         }
       ]
     },
@@ -94,18 +91,15 @@
       "questions": [
         {
           "type": "open",
-          "question": "WHAT WOULD YOU ATTEMPT IF YOU KNEW YOU COULDN'T FAIL?",
-          "options": {}
+          "question": "WHAT WOULD YOU ATTEMPT IF YOU KNEW YOU COULDN'T FAIL?"
         },
         {
           "type": "open",
-          "question": "HOW WOULD YOU SPEND YOUR DAYS IF MONEY WASN'T A FACTOR?",
-          "options": {}
+          "question": "HOW WOULD YOU SPEND YOUR DAYS IF MONEY WASN'T A FACTOR?"
         },
         {
           "type": "open",
-          "question": "WHAT DO YOU WANT TO BE REMEMBERED FOR?",
-          "options": {}
+          "question": "WHAT DO YOU WANT TO BE REMEMBERED FOR?"
         }
       ]
     },
@@ -114,18 +108,15 @@
       "questions": [
         {
           "type": "open",
-          "question": "DESCRIBE A MOMENT WHEN YOU FELT MOST ALIVE.",
-          "options": {}
+          "question": "DESCRIBE A MOMENT WHEN YOU FELT MOST ALIVE."
         },
         {
           "type": "open",
-          "question": "TELL ME ABOUT A STRANGER WHO CHANGED YOUR DAY.",
-          "options": {}
+          "question": "TELL ME ABOUT A STRANGER WHO CHANGED YOUR DAY."
         },
         {
           "type": "open",
-          "question": "WHAT'S THE BEST ADVICE YOU'VE RECEIVED AND WHO GAVE IT?",
-          "options": {}
+          "question": "WHAT'S THE BEST ADVICE YOU'VE RECEIVED AND WHO GAVE IT?"
         }
       ]
     },
@@ -134,18 +125,15 @@
       "questions": [
         {
           "type": "open",
-          "question": "WHAT'S THE MOST IMPORTANT QUALITY IN A FRIEND?",
-          "options": {}
+          "question": "WHAT'S THE MOST IMPORTANT QUALITY IN A FRIEND?"
         },
         {
           "type": "open",
-          "question": "HOW DO YOU SHOW SOMEONE YOU CARE?",
-          "options": {}
+          "question": "HOW DO YOU SHOW SOMEONE YOU CARE?"
         },
         {
           "type": "open",
-          "question": "WHAT DO YOU WISH PEOPLE UNDERSTOOD ABOUT YOU WITHOUT EXPLAINING?",
-          "options": {}
+          "question": "WHAT DO YOU WISH PEOPLE UNDERSTOOD ABOUT YOU WITHOUT EXPLAINING?"
         }
       ]
     }

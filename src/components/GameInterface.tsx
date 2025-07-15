@@ -263,11 +263,13 @@ const GameInterface: React.FC<GameInterfaceProps> = ({ game, onExit }) => {
                     <Card
                       size="large"
                       variant="question"
-                      className="absolute inset-0 text-center shadow-2xl cursor-pointer"
+                      className={`absolute inset-0 text-center shadow-2xl ${
+                        currentQuestion?.options ? 'cursor-pointer' : 'cursor-default'
+                      }`}
                       style={{
                         backfaceVisibility: "hidden",
                       }}
-                      onClick={handleCardClick}
+                      onClick={currentQuestion?.options ? handleCardClick : undefined}
                     >
                       <div className="text-center h-full flex flex-col justify-center">
                         <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 leading-tight font-sans tracking-tight">
