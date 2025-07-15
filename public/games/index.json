@@ -1,14 +1,20 @@
 {
   "games": [
+    "deep-connections-CN.json",
     "deep-connections.json",
+    "relationship-check-CN.json",
     "relationship-check.json",
+    "test-love-36-CN.json",
     "test-love-36.json",
+    "test-love-CN.json",
     "test-love.json",
-    "we-are-not-strangers.json",
-    "we-are-not-really-strangers.json"
+    "we-are-not-really-strangers-CN.json",
+    "we-are-not-really-strangers.json",
+    "we-are-not-strangers-CN.json",
+    "we-are-not-strangers.json"
   ],
-  "lastUpdated": "2025-01-15T12:00:00.000Z",
+  "lastUpdated": "2025-07-15T12:06:32.343Z",
   "version": "1.0.0",
-  "generatedAt": "2025-01-15T12:00:00.000Z",
-  "totalGames": 5
+  "generatedAt": "2025-07-15T12:06:32.345Z",
+  "totalGames": 12
 }
