@@ -1,0 +1,52 @@
+{
+  "common": {
+    "back": "返回",
+    "next": "下一个",
+    "previous": "上一个",
+    "exit": "退出",
+    "begin": "开始",
+    "restart": "重新开始",
+    "save": "保存",
+    "start": "开始"
+  },
+  "navigation": {
+    "keyboardHints": "←→ 导航 • ↑↓ 翻转卡片查看更多 • Esc 退出"
+  },
+  "gameLibrary": {
+    "footnote": "尽头",
+    "subtitle": "选择一个对话体验",
+    "loading": "加载对话中...",
+    "noGames": "暂无对话游戏可用。"
+  },
+  "gameInterface": {
+    "createYourJourney": "创建你的旅程",
+    "createJourneySubtitle": "每一次有意义的对话都始于用心",
+    "beginTheJourney": "开始旅程",
+    "wellDone": "做得很好",
+    "thankYou": "感谢你用心连接",
+    "chooseIntensity": "选择你们一起旅程的深度",
+    "clickToReveal": "点击查看更多",
+    "progressIndicator": "第 {{current}} / {{total}} 个"
+  },
+  "categorySelector": {
+    "title": "你想探索什么？",
+    "subtitle": "选择吸引你的对话主题"
+  },
+  "timePercentage": {
+    "title": "你想聊得多深？",
+    "subtitle": "选择你们一起旅程的深度",
+    "labels": {
+      "light": "轻松",
+      "gentle": "温和",
+      "meaningful": "有意义",
+      "deep": "深入",
+      "complete": "完整"
+    },
+    "estimatedTime": "大约 {{time}} 分钟的交流",
+    "estimatedQuestions": "{{count}} 个精心挑选的问题"
+  },
+  "languageSwitcher": {
+    "english": "English",
+    "chinese": "中文"
+  }
+}

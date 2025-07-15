@@ -1,7 +1,9 @@
 import { motion, AnimatePresence } from "motion/react";
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { ConversationGame } from "../types/ConversationGame";
 import Card from "./Card";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 interface GameLibraryProps {
   games: ConversationGame[];
@@ -9,6 +11,7 @@ interface GameLibraryProps {
 }
 
 const GameLibrary: React.FC<GameLibraryProps> = ({ games, onGameSelect }) => {
+  const { t } = useTranslation();
   const [hoveredGame, setHoveredGame] = useState<string | null>(null);
   const [selectedGameIndex, setSelectedGameIndex] = useState(0);
 
@@ -53,6 +56,11 @@ const GameLibrary: React.FC<GameLibraryProps> = ({ games, onGameSelect }) => {
 
   return (
     <div className="min-h-screen bg-white flex flex-col items-center justify-center px-8 py-16">
+      {/* Language Switcher */}
+      <div className="absolute top-8 right-8">
+        <LanguageSwitcher />
+      </div>
+
       {/* Header - Bold Typography */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -75,9 +83,7 @@ const GameLibrary: React.FC<GameLibraryProps> = ({ games, onGameSelect }) => {
           </h1>
         </div>
         <p className="text-xl text-secondary text-intimate font-light">
-          Thoughtfully curated conversations
-          <br />
-          for deeper human connection
+          {t("gameLibrary.subtitle")}
         </p>
       </motion.div>
 
@@ -227,7 +233,7 @@ const GameLibrary: React.FC<GameLibraryProps> = ({ games, onGameSelect }) => {
         transition={{ delay: 0.5 }}
         className="text-center text-gray-600 font-medium"
       >
-        <p className="text-sm">Select a conversation to begin</p>
+        <p className="text-sm">{t("gameLibrary.footnote")}</p>
       </motion.div>
 
       {/* Keyboard Hints - Subtle */}

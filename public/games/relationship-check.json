@@ -3,7 +3,7 @@
   "app": {
     "title": "RELATIONSHIP CHECK-IN",
     "subtitle": "Strengthen your bond through honest conversation",
-    "type": "couples",
+    "language": "english",
     "version": "1.0.0"
   },
   "ui": {
@@ -22,7 +22,6 @@
     "results": {
       "title": "Well done",
       "subtitle": "Thank you for connecting with intention",
-      "exportButton": "Save",
       "restartButton": "Restart"
     }
   },
@@ -48,24 +47,6 @@
         "color": "#0891b2",
         "description": "What we value about each other"
       }
-    },
-    "cardStyle": {
-      "backgroundColor": "#ffffff",
-      "textColor": "#1f2937",
-      "borderColor": "#f3f4f6",
-      "borderRadius": "24px",
-      "fontFamily": "Inter, sans-serif",
-      "fontSize": "18px",
-      "cardShadow": "0 8px 32px rgba(0, 0, 0, 0.12)"
-    }
-  },
-  "export": {
-    "filename": "Our Relationship Check-In",
-    "template": {
-      "header": "=== {title} ===\n\n",
-      "category": "\n【{category}】\n{separator}\n",
-      "question": "Q: {question}\nA: {answer}\n\n",
-      "separator": "="
     }
   },
   "questions": [

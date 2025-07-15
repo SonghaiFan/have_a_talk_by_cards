@@ -1,0 +1,52 @@
+{
+  "common": {
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "exit": "Exit",
+    "begin": "Begin",
+    "restart": "Restart",
+    "save": "Save",
+    "start": "Start"
+  },
+  "navigation": {
+    "keyboardHints": "←→ Navigate • ↑↓ Flip the card to see more • Esc Exit"
+  },
+  "gameLibrary": {
+    "footnote": "End",
+    "subtitle": "Select a conversation experience",
+    "loading": "Loading conversations...",
+    "noGames": "No conversation games available."
+  },
+  "gameInterface": {
+    "createYourJourney": "Create Your Journey",
+    "createJourneySubtitle": "Every meaningful conversation begins with intention",
+    "beginTheJourney": "Begin the Journey",
+    "wellDone": "Well done",
+    "thankYou": "Thank you for connecting with intention",
+    "chooseIntensity": "Choose the intensity of your journey together",
+    "clickToReveal": "Click to reveal more",
+    "progressIndicator": "{{current}} of {{total}}"
+  },
+  "categorySelector": {
+    "title": "What would you like to explore?",
+    "subtitle": "Choose the conversations that call to you"
+  },
+  "timePercentage": {
+    "title": "How deep do you want to go?",
+    "subtitle": "Choose the intensity of your journey together",
+    "labels": {
+      "light": "Light",
+      "gentle": "Gentle",
+      "meaningful": "Meaningful",
+      "deep": "Deep",
+      "complete": "Complete"
+    },
+    "estimatedTime": "About {{time}} minutes together",
+    "estimatedQuestions": "{{count}} thoughtfully chosen questions"
+  },
+  "languageSwitcher": {
+    "english": "English",
+    "chinese": "中文"
+  }
+}

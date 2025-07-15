@@ -1,7 +1,7 @@
 export interface AppInfo {
   title: string;
   subtitle: string;
-  type: string;
+  language: string;
   version: string;
 }
 
@@ -45,11 +45,6 @@ export interface ExportTemplate {
   separator: string;
 }
 
-export interface ExportConfig {
-  filename: string;
-  template: ExportTemplate;
-}
-
 export interface Question {
   type?: string;
   question: string;
@@ -66,7 +61,6 @@ export interface ConversationGame {
   app: AppInfo;
   ui: UIConfig;
   theme: ThemeConfig;
-  export: ExportConfig;
   questions: QuestionCategory[];
 }
 
