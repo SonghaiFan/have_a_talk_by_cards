@@ -1,6 +1,7 @@
 import React from "react";
-import { motion } from "motion/react";
 import { useTranslation } from "react-i18next";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLanguage } from "@fortawesome/free-solid-svg-icons";
 
 interface LanguageSwitcherProps {
   className?: string;
@@ -9,7 +10,7 @@ interface LanguageSwitcherProps {
 const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
   className = "",
 }) => {
-  const { i18n, t } = useTranslation();
+  const { i18n } = useTranslation();
 
   const toggleLanguage = () => {
     const newLanguage = i18n.language === "en" ? "zh" : "en";
@@ -17,28 +18,19 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
   };
 
   return (
-    <motion.button
-      initial={{ opacity: 0, y: -10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: 0.5 }}
+    <button
       onClick={toggleLanguage}
       className={`
-        flex items-center gap-2 px-3 py-2 rounded-lg
-        text-sm font-medium transition-all duration-200
-        hover:bg-gray-100 hover:shadow-sm
-        focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50
+        flex items-center gap-2 px-2 py-1 
+        text-gray-600 hover:text-gray-900
+        transition-all duration-200
+        hover:scale-110
         ${className}
       `}
+      title={`Switch to ${i18n.language === "en" ? "中文" : "English"}`}
     >
-      <motion.div
-        className="w-1 h-1 rounded-full bg-current opacity-60"
-        animate={{ scale: [1, 1.2, 1] }}
-        transition={{ duration: 2, repeat: Infinity }}
-      />
-      <span className="text-gray-600 hover:text-gray-800">
-        {i18n.language === "en" ? "中文" : "English"}
-      </span>
-    </motion.button>
+      <FontAwesomeIcon icon={faLanguage} size="xl" />
+    </button>
   );
 };
 

@@ -41,7 +41,13 @@ function App() {
 
       const loadedGames: ConversationGame[] = [];
 
-      for (const file of gameFiles) {
+      // Filter to only process base English files (not language-specific versions)
+      const baseGameFiles = gameFiles.filter((file) => {
+        // Only process files that don't have language suffixes
+        return !file.includes("-CN.json") && !file.includes("-TW.json");
+      });
+
+      for (const file of baseGameFiles) {
         try {
           // Determine the language-specific file name
           const languageFile = getLanguageSpecificFile(file, i18n.language);
