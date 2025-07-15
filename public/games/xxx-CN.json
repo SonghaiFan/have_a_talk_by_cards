@@ -1,0 +1,104 @@
+{
+  "testID": "xxx",
+  "app": {
+    "title": "XXX",
+    "subtitle": "关于性与欲望的亲密、坦诚提问",
+    "language": "chinese",
+    "version": "1.0.0"
+  },
+  "ui": {
+    "startScreen": {
+      "title": "XXX",
+      "description": [
+        "18+的游戏，适合坦诚交流性、欲望与脆弱。",
+        "轮流作答。认真倾听。真诚分享。"
+      ],
+      "startButton": "开始"
+    },
+    "navigation": {
+      "nextButton": "下一个",
+      "prevButton": "上一个"
+    },
+    "results": {
+      "title": "对话完成",
+      "subtitle": "感谢你的坦诚与开放。",
+      "restartButton": "重新开始"
+    }
+  },
+  "theme": {
+    "categories": {
+      "xxx": {
+        "name": "xxx",
+        "color": "#7f1d1d",
+        "description": "关于性与欲望的亲密、坦诚提问"
+      }
+    }
+  },
+  "questions": [
+    {
+      "category": "xxx",
+      "questions": [
+        {
+          "type": "open",
+          "question": "你最想了解别人性生活的什么？"
+        },
+        {
+          "type": "open",
+          "question": "上一次让你感到被点燃是什么时候？"
+        },
+        {
+          "type": "open",
+          "question": "我希望我不需要开口就能得到______"
+        },
+        {
+          "type": "open",
+          "question": "你曾因渴望什么或不渴望什么而感到愧疚吗？"
+        },
+        {
+          "type": "open",
+          "question": "想一想你希望在床上做得不同的一件事。为什么？"
+        },
+        {
+          "type": "open",
+          "question": "上一次让你性趣全无的是什么？"
+        },
+        {
+          "type": "open",
+          "question": "你尝试过什么但并不喜欢？为什么？"
+        },
+        {
+          "type": "open",
+          "question": "回想你经历过最美好的性爱，最让你印象深刻的是什么？"
+        },
+        {
+          "type": "open",
+          "question": "除了愉悦，你还会因为什么而发生性行为？"
+        },
+        {
+          "type": "open",
+          "question": "羞耻在你的性生活中扮演了什么角色？"
+        },
+        {
+          "type": "open",
+          "question": "你最近喜欢上了什么？"
+        },
+        {
+          "type": "open",
+          "question": "如果可以重温床上的某个瞬间，你会选择哪一个？"
+        },
+        {
+          "type": "open",
+          "question": "你对自己来说是怎样的性伴侣？"
+        },
+        {
+          "type": "open",
+          "question": "如果在床上没有任何后果，你会提出什么请求？"
+        },
+        {
+          "type": "open",
+          "question": "你现在最渴望的是什么？"
+        }
+      ]
+    }
+  ]
+}
