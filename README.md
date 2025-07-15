@@ -8,7 +8,7 @@
 
 [![Build Status](https://github.com/SonghaiFan/have_a_talk_by_cards/actions/workflows/build.yml/badge.svg)](https://github.com/SonghaiFan/have_a_talk_by_cards/actions/workflows/build.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Platform](https://img.shields.io/badge/Platform-Windows%20|%20macOS%20|%20Linux-blue.svg)](https://github.com/SonghaiFan/have_a_talk_by_cards/releases)
+[![Platform](https://img.shields.io/badge/Platform-Windows%20|%20macOS-blue.svg)](https://github.com/SonghaiFan/have_a_talk_by_cards/releases)
 
 **中文** | [English](public/README-EN.md)
 
@@ -26,7 +26,7 @@ CueCards 是一个跨平台的对话卡片应用，旨在通过精心策划的�
 - 🎯 **多种对话主题** - 深度连接、关系检测等多种游戏模式
 - 🌈 **主题分类** - 不同颜色主题区分不同类型的问题
 - 🌐 **双语支持** - 中英文无缝切换
-- 📱 **跨平台支持** - 支持 Windows、macOS 和 Linux
+- 📱 **跨平台支持** - 支持 Windows 和 macOS
 - 🎭 **流畅动画** - 使用 Motion 库打造丝滑的用户体验
 - 💫 **卡片交互** - 自然的卡片翻转和切换动画
 - 🔄 **进度追踪** - 实时显示对话进度
@@ -39,7 +39,6 @@ CueCards 是一个跨平台的对话卡片应用，旨在通过精心策划的�
 
 - **Windows**: `CueCards_0.1.0_x64.msi`
 - **macOS**: `CueCards_0.1.0_x64.dmg`
-- **Linux**: `CueCards_0.1.0_x64.deb` 或 `CueCards_0.1.0_x64.AppImage`
 
 ### 安装说明
 
@@ -54,17 +53,6 @@ CueCards 是一个跨平台的对话卡片应用，旨在通过精心策划的�
 1. 下载 `.dmg` 文件
 2. 双击打开，将应用拖拽到 Applications 文件夹
 3. 如遇到安全警告，在系统偏好设置 → 安全性与隐私中允许运行
-
-**Linux 用户:**
-
-```bash
-# Ubuntu/Debian
-sudo dpkg -i CueCards_0.1.0_x64.deb
-
-# AppImage
-chmod +x CueCards_0.1.0_x64.AppImage
-./CueCards_0.1.0_x64.AppImage
-```
 
 ## 🎮 使用方法
 
@@ -117,7 +105,7 @@ npm run generate-games
 - **v0.1.0** - 初始版本发布
   - 基础对话卡片功能
   - 多种游戏模式
-  - 跨平台支持
+  - 跨平台支持（Windows、macOS）
   - 双语支持（中英文）
   - 极简主义、情感亲密的界面设计
 

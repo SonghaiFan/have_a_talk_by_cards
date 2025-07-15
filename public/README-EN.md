@@ -8,7 +8,7 @@
 
 [![Build Status](https://github.com/SonghaiFan/have_a_talk_by_cards/actions/workflows/build.yml/badge.svg)](https://github.com/SonghaiFan/have_a_talk_by_cards/actions/workflows/build.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Platform](https://img.shields.io/badge/Platform-Windows%20|%20macOS%20|%20Linux-blue.svg)](https://github.com/SonghaiFan/have_a_talk_by_cards/releases)
+[![Platform](https://img.shields.io/badge/Platform-Windows%20|%20macOS-blue.svg)](https://github.com/SonghaiFan/have_a_talk_by_cards/releases)
 
 [中文](../README.md) | **English**
 
@@ -26,7 +26,7 @@ CueCards is a cross-platform conversation card application designed to foster de
 - 🎯 **Multiple Conversation Topics** - Deep connections, relationship check, and more game modes
 - 🌈 **Themed Categories** - Different color themes for different question types
 - 🌐 **Bilingual Support** - Seamless switching between English and Chinese
-- 📱 **Cross-Platform** - Supports Windows, macOS, and Linux
+- 📱 **Cross-Platform** - Supports Windows and macOS
 - 🎭 **Smooth Animations** - Built with Motion library for fluid user experience
 - 💫 **Card Interactions** - Natural card flipping and transition animations
 - 🔄 **Progress Tracking** - Real-time conversation progress display
@@ -39,7 +39,6 @@ Visit the [Releases page](https://github.com/SonghaiFan/have_a_talk_by_cards/rel
 
 - **Windows**: `CueCards_0.1.0_x64.msi`
 - **macOS**: `CueCards_0.1.0_x64.dmg`
-- **Linux**: `CueCards_0.1.0_x64.deb` or `CueCards_0.1.0_x64.AppImage`
 
 ### Installation Instructions
 
@@ -54,17 +53,6 @@ Visit the [Releases page](https://github.com/SonghaiFan/have_a_talk_by_cards/rel
 1. Download the `.dmg` file
 2. Double-click to open, drag the app to Applications folder
 3. If security warning appears, allow it in System Preferences → Security & Privacy
-
-**Linux Users:**
-
-```bash
-# Ubuntu/Debian
-sudo dpkg -i CueCards_0.1.0_x64.deb
-
-# AppImage
-chmod +x CueCards_0.1.0_x64.AppImage
-./CueCards_0.1.0_x64.AppImage
-```
 
 ## 🎮 How to Use
 
@@ -117,7 +105,7 @@ npm run generate-games
 - **v0.1.0** - Initial release
   - Basic conversation card functionality
   - Multiple game modes
-  - Cross-platform support
+  - Cross-platform support (Windows, macOS)
   - Bilingual support (English/Chinese)
   - Minimalist, emotionally intimate UI design
 
