@@ -236,9 +236,40 @@ const GameInterface: React.FC<GameInterfaceProps> = ({ game, onExit }) => {
                 }}
               >
                 {/* Question Content - Bold Typography */}
-                <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 leading-tight text-center font-sans tracking-tight">
-                  {currentQuestion?.question}
-                </h2>
+                <div className="text-center">
+                  <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 leading-tight font-sans tracking-tight mb-4">
+                    {currentQuestion?.question}
+                  </h2>
+                  {/* Options - Light gray small text */}
+                  {currentQuestion?.options && (
+                    <div className="space-y-2 text-left">
+                      {Array.isArray(currentQuestion.options)
+                        ? // Handle array format (conversation prompts)
+                          currentQuestion.options.map(
+                            (option: string, index: number) => (
+                              <p
+                                key={index}
+                                className="text-xs text-gray-500 font-light leading-relaxed"
+                              >
+                                {option}
+                              </p>
+                            )
+                          )
+                        : // Handle object format (multiple choice)
+                          Object.entries(currentQuestion.options).map(
+                            ([key, value]) => (
+                              <p
+                                key={key}
+                                className="text-xs text-gray-500 font-light leading-relaxed"
+                              >
+                                <span className="font-medium">{key}.</span>{" "}
+                                {value}
+                              </p>
+                            )
+                          )}
+                    </div>
+                  )}
+                </div>
               </Card>
             </AnimatePresence>
           </div>

@@ -19,7 +19,6 @@ export interface Navigation {
 export interface Results {
   title: string;
   subtitle: string;
-  exportButton: string;
   restartButton: string;
 }
 
@@ -35,21 +34,8 @@ export interface Category {
   description: string;
 }
 
-export interface CardStyle {
-  backgroundColor: string;
-  textColor: string;
-  borderColor?: string;
-  borderRadius?: string;
-  backgroundImage?: string;
-  backgroundGradient?: string;
-  fontFamily?: string;
-  fontSize?: string;
-  cardShadow?: string;
-}
-
 export interface ThemeConfig {
   categories: Record<string, Category>;
-  cardStyle: CardStyle;
 }
 
 export interface ExportTemplate {
@@ -64,14 +50,10 @@ export interface ExportConfig {
   template: ExportTemplate;
 }
 
-export interface QuestionOption {
-  [key: string]: string;
-}
-
 export interface Question {
   type?: string;
   question: string;
-  options: QuestionOption;
+  options?: string[] | Record<string, string>;
 }
 
 export interface QuestionCategory {
