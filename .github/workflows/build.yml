@@ -6,6 +6,11 @@ on:
       - "v*"
   workflow_dispatch:
 
+# Add permissions for the GitHub token to create releases
+permissions:
+  contents: write
+  packages: write
+
 jobs:
   build:
     strategy:
@@ -61,11 +66,17 @@ jobs:
       - name: Download all artifacts
         uses: actions/download-artifact@v4
 
+      - name: List downloaded files (for debugging)
+        run: find . -type f -name "*" | head -20
+
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
           files: |
-            CueCards-*/*
+            **/*.dmg
+            **/*.app
+            **/*.msi
+            **/*.exe
           draft: false
           prerelease: false
         env:
