@@ -77,11 +77,12 @@ const GameInterface: React.FC<GameInterfaceProps> = ({ game, onExit }) => {
       });
 
     // Calculate total questions to take
-    const totalAvailableQuestions = regularCategoryQuestions.reduce(
-      (sum, catData) => sum + catData.questions.length,
-      0
-    ) + wildcardQuestions.length;
-    
+    const totalAvailableQuestions =
+      regularCategoryQuestions.reduce(
+        (sum, catData) => sum + catData.questions.length,
+        0
+      ) + wildcardQuestions.length;
+
     const totalQuestions = Math.round(
       (totalAvailableQuestions * questionPercentage) / 100
     );
@@ -91,7 +92,7 @@ const GameInterface: React.FC<GameInterfaceProps> = ({ game, onExit }) => {
       wildcardQuestions.length,
       Math.round(totalQuestions * 0.2) // Max 20% wildcards
     );
-    
+
     // Remaining questions for regular categories
     const regularQuestionsNeeded = totalQuestions - wildcardCount;
 
@@ -102,7 +103,9 @@ const GameInterface: React.FC<GameInterfaceProps> = ({ game, onExit }) => {
         0
       );
       const proportion = catData.questions.length / totalRegularQuestions;
-      const questionsForCategory = Math.round(proportion * regularQuestionsNeeded);
+      const questionsForCategory = Math.round(
+        proportion * regularQuestionsNeeded
+      );
       return {
         ...catData,
         targetCount: Math.max(1, questionsForCategory), // Ensure at least 1 question per category
@@ -140,7 +143,9 @@ const GameInterface: React.FC<GameInterfaceProps> = ({ game, onExit }) => {
     // Insert wildcards randomly into the regular questions sequence
     const finalQuestions = [...regularQuestions];
     selectedWildcards.forEach((wildcard) => {
-      const randomIndex = Math.floor(Math.random() * (finalQuestions.length + 1));
+      const randomIndex = Math.floor(
+        Math.random() * (finalQuestions.length + 1)
+      );
       finalQuestions.splice(randomIndex, 0, wildcard);
     });
 
