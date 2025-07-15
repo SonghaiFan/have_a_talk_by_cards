@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "motion/react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ConversationGame } from "../types/ConversationGame";
 import Card from "./Card";
 
@@ -52,6 +52,53 @@ const GameInterface: React.FC<GameInterfaceProps> = ({ game, onExit }) => {
       setIsCardFlipped(!isCardFlipped);
     }
   };
+
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (showStartScreen || gameComplete) return;
+
+      switch (event.key) {
+        case "ArrowLeft":
+          event.preventDefault();
+          if (currentQuestionIndex > 0) {
+            handlePrevious();
+          }
+          break;
+        case "ArrowRight":
+        case " ": // Spacebar
+          event.preventDefault();
+          handleNext();
+          break;
+        case "ArrowUp":
+        case "ArrowDown":
+        case "Enter":
+          event.preventDefault();
+          if (currentQuestion?.options) {
+            handleCardClick();
+          }
+          break;
+        case "Escape":
+          event.preventDefault();
+          if (isCardFlipped) {
+            setIsCardFlipped(false);
+          } else {
+            onExit();
+          }
+          break;
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [
+    currentQuestionIndex,
+    showStartScreen,
+    gameComplete,
+    isCardFlipped,
+    currentQuestion,
+    onExit,
+  ]);
 
   // Card dealing animation variants
   const cardVariants = {
@@ -264,12 +311,16 @@ const GameInterface: React.FC<GameInterfaceProps> = ({ game, onExit }) => {
                       size="large"
                       variant="question"
                       className={`absolute inset-0 text-center shadow-2xl ${
-                        currentQuestion?.options ? 'cursor-pointer' : 'cursor-default'
+                        currentQuestion?.options
+                          ? "cursor-pointer"
+                          : "cursor-default"
                       }`}
                       style={{
                         backfaceVisibility: "hidden",
                       }}
-                      onClick={currentQuestion?.options ? handleCardClick : undefined}
+                      onClick={
+                        currentQuestion?.options ? handleCardClick : undefined
+                      }
                     >
                       <div className="text-center h-full flex flex-col justify-center">
                         <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 leading-tight font-sans tracking-tight">
@@ -277,7 +328,7 @@ const GameInterface: React.FC<GameInterfaceProps> = ({ game, onExit }) => {
                         </h2>
                         {currentQuestion?.options && (
                           <p className="mt-6 text-sm text-gray-400 font-light">
-                            Click to view options
+                            Click or press ↑↓ to view options
                           </p>
                         )}
                       </div>
@@ -329,7 +380,7 @@ const GameInterface: React.FC<GameInterfaceProps> = ({ game, onExit }) => {
                           </div>
                         )}
                         <p className="mt-6 text-sm text-gray-400 font-light">
-                          Click to return to the question
+                          Click or press ↑↓ to return to question
                         </p>
                       </div>
                     </Card>
@@ -363,9 +414,9 @@ const GameInterface: React.FC<GameInterfaceProps> = ({ game, onExit }) => {
         className="flex justify-between items-center p-8"
       >
         <motion.button
-          whileHover={{ x: -2, transition: { duration: 0.2 } }}
+          whileHover={{ scale: 1.08, x: -2, transition: { duration: 0.2 } }}
           whileTap={{ scale: 0.95 }}
-          className="flex items-center gap-2 text-white hover:text-gray-200 transition-colors duration-200 disabled:opacity-40 disabled:cursor-not-allowed"
+          className="flex items-center gap-2 text-white transition-colors duration-200 disabled:opacity-40 disabled:cursor-not-allowed"
           onClick={handlePrevious}
           disabled={currentQuestionIndex === 0}
         >
@@ -390,14 +441,24 @@ const GameInterface: React.FC<GameInterfaceProps> = ({ game, onExit }) => {
         </div>
 
         <motion.button
-          whileHover={{ x: 2, transition: { duration: 0.2 } }}
+          whileHover={{ scale: 1.08, x: 2, transition: { duration: 0.2 } }}
           whileTap={{ scale: 0.95 }}
-          className="flex items-center gap-2 text-white hover:text-gray-200 transition-colors duration-200"
+          className="flex items-center gap-2 text-white transition-colors duration-200"
           onClick={handleNext}
         >
           <span>Next</span>
           <span className="text-xl">→</span>
         </motion.button>
+      </motion.div>
+
+      {/* Keyboard Hints - Subtle */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.3 }}
+        transition={{ delay: 1 }}
+        className="fixed bottom-4 left-1/2 -translate-x-1/2 text-xs text-white text-opacity-60 font-light text-center"
+      >
+        <p>←→ Navigate • ↑↓ Flip • Esc Exit</p>
       </motion.div>
     </div>
   );

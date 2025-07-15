@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "motion/react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ConversationGame } from "../types/ConversationGame";
 import Card from "./Card";
 
@@ -10,6 +10,46 @@ interface GameLibraryProps {
 
 const GameLibrary: React.FC<GameLibraryProps> = ({ games, onGameSelect }) => {
   const [hoveredGame, setHoveredGame] = useState<string | null>(null);
+  const [selectedGameIndex, setSelectedGameIndex] = useState(0);
+
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      switch (event.key) {
+        case "ArrowLeft":
+        case "ArrowUp":
+          event.preventDefault();
+          setSelectedGameIndex((prev) =>
+            prev > 0 ? prev - 1 : games.length - 1
+          );
+          break;
+        case "ArrowRight":
+        case "ArrowDown":
+          event.preventDefault();
+          setSelectedGameIndex((prev) =>
+            prev < games.length - 1 ? prev + 1 : 0
+          );
+          break;
+        case "Enter":
+        case " ": // Spacebar
+          event.preventDefault();
+          if (games[selectedGameIndex]) {
+            onGameSelect(games[selectedGameIndex]);
+          }
+          break;
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [games, selectedGameIndex, onGameSelect]);
+
+  // Update hover when keyboard selection changes
+  useEffect(() => {
+    if (games[selectedGameIndex]) {
+      setHoveredGame(games[selectedGameIndex].testType);
+    }
+  }, [selectedGameIndex, games]);
 
   return (
     <div className="min-h-screen bg-white flex flex-col items-center justify-center px-8 py-16">
@@ -116,7 +156,11 @@ const GameLibrary: React.FC<GameLibraryProps> = ({ games, onGameSelect }) => {
               <Card
                 size="medium"
                 variant="game"
-                className="relative z-10 cursor-pointer"
+                className={`relative z-10 cursor-pointer ${
+                  selectedGameIndex === index
+                    ? "ring-3 ring-black ring-opacity-50"
+                    : ""
+                }`}
                 style={{
                   aspectRatio: "400/250",
                   backgroundColor: "#ffffff",
@@ -131,7 +175,10 @@ const GameLibrary: React.FC<GameLibraryProps> = ({ games, onGameSelect }) => {
                   ease: "easeOut",
                 }}
                 onClick={() => onGameSelect(game)}
-                onMouseEnter={() => setHoveredGame(game.testType)}
+                onMouseEnter={() => {
+                  setHoveredGame(game.testType);
+                  setSelectedGameIndex(index);
+                }}
                 onMouseLeave={() => setHoveredGame(null)}
               >
                 {/* Game Title */}
@@ -183,14 +230,14 @@ const GameLibrary: React.FC<GameLibraryProps> = ({ games, onGameSelect }) => {
         <p className="text-sm">Select a conversation to begin</p>
       </motion.div>
 
-      {/* Floating Action Text - Subtle */}
+      {/* Keyboard Hints - Subtle */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.4 }}
         transition={{ delay: 1 }}
-        className="fixed bottom-8 right-8 text-xs text-gray-500 font-medium"
+        className="fixed bottom-8 right-8 text-xs text-gray-500 font-medium text-right"
       >
-        <p>Tap to start</p>
+        <p>↑↓ Navigate • Enter Select</p>
       </motion.div>
     </div>
   );
