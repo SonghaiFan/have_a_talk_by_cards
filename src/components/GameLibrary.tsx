@@ -20,23 +20,20 @@ const GameLibrary: React.FC<GameLibraryProps> = ({ games, onGameSelect }) => {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="text-center max-w-2xl mb-16"
       >
-        {/* App Icon */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          className="flex justify-center mb-8"
-        >
-          <img
+        {/* App Title with Inline Icon */}
+        <div className="flex items-center justify-center gap-4 mb-6">
+          <motion.img
             src="/card-icon.svg"
             alt="CueCards Icon"
-            className="w-40 h-40 md:w-44 md:h-44 object-contain"
+            className="w-20 h-20 md:w-24 md:h-24 object-contain"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
           />
-        </motion.div>
-
-        <h1 className="text-6xl md:text-7xl font-black text-primary mb-6 tracking-tight leading-none">
-          CueCards
-        </h1>
+          <h1 className="text-6xl md:text-7xl font-black text-primary tracking-tight leading-none">
+            CueCards
+          </h1>
+        </div>
         <p className="text-xl text-secondary text-intimate font-light">
           Thoughtfully curated conversations
           <br />
@@ -63,87 +60,67 @@ const GameLibrary: React.FC<GameLibraryProps> = ({ games, onGameSelect }) => {
           >
             {/* Card Pack Container */}
             <div className="relative">
-              {/* Background Cards - Always visible, animated on hover */}
+              {/* Background Cards - Dynamic based on categories */}
               <AnimatePresence>
                 {hoveredGame === game.testType && (
                   <>
-                    {/* Card 2 - Back card */}
-                    <Card
-                      size="medium"
-                      variant="game"
-                      className="absolute top-0 left-0"
-                      style={{ aspectRatio: "400/250" }}
-                      initial={{
-                        x: 0,
-                        y: 0,
-                        rotate: 0,
-                        scale: 1,
-                        opacity: 0,
-                      }}
-                      animate={{
-                        x: -24,
-                        y: -16,
-                        rotate: -5,
-                        scale: 0.92,
-                        opacity: 1,
-                      }}
-                      exit={{
-                        x: 0,
-                        y: 0,
-                        rotate: 0,
-                        scale: 1,
-                        opacity: 0,
-                      }}
-                      transition={{
-                        duration: 0.3,
-                        ease: "easeOut",
-                        delay: 0.1,
-                      }}
-                    />
+                    {Object.entries(game.theme.categories).map(
+                      (categoryEntry, cardIndex) => {
+                        const [categoryKey, category] = categoryEntry;
 
-                    {/* Card 1 - Middle card */}
-                    <Card
-                      size="medium"
-                      variant="game"
-                      className="absolute top-0 left-0"
-                      style={{ aspectRatio: "400/250" }}
-                      initial={{
-                        x: 0,
-                        y: 0,
-                        rotate: 0,
-                        scale: 1,
-                        opacity: 0,
-                      }}
-                      animate={{
-                        x: -12,
-                        y: -8,
-                        rotate: -2.5,
-                        scale: 0.96,
-                        opacity: 1,
-                      }}
-                      exit={{
-                        x: 0,
-                        y: 0,
-                        rotate: 0,
-                        scale: 1,
-                        opacity: 0,
-                      }}
-                      transition={{
-                        duration: 0.3,
-                        ease: "easeOut",
-                        delay: 0.05,
-                      }}
-                    />
+                        return (
+                          <Card
+                            key={categoryKey}
+                            size="medium"
+                            variant="game"
+                            className="absolute top-0 left-0"
+                            style={{
+                              aspectRatio: "400/250",
+                              backgroundColor: category.color,
+                            }}
+                            initial={{
+                              x: 0,
+                              y: 0,
+                              rotate: 0,
+                              scale: 1,
+                              opacity: 0,
+                            }}
+                            animate={{
+                              x: -12 * (cardIndex + 1),
+                              y: -16 * (cardIndex + 1),
+                              rotate: -2.5 * (cardIndex + 1),
+                              scale: 1 - 0.04 * (cardIndex + 1),
+                              opacity: 1,
+                            }}
+                            exit={{
+                              x: 0,
+                              y: 0,
+                              rotate: 0,
+                              scale: 1,
+                              opacity: 0,
+                            }}
+                            transition={{
+                              duration: 0.3,
+                              ease: "easeOut",
+                              delay: 0.05 + cardIndex * 0.02,
+                            }}
+                          />
+                        );
+                      }
+                    )}
                   </>
                 )}
               </AnimatePresence>
 
-              {/* Main Card - Always visible */}
+              {/* Main Card - Always visible (White Cover) */}
               <Card
                 size="medium"
                 variant="game"
                 className="relative z-10 cursor-pointer"
-                style={{ aspectRatio: "400/250" }}
+                style={{
+                  aspectRatio: "400/250",
+                  backgroundColor: "#ffffff",
+                }}
                 whileHover={{
                   scale: 1.02,
                   y: -4,
@@ -167,6 +144,20 @@ const GameLibrary: React.FC<GameLibraryProps> = ({ games, onGameSelect }) => {
                   {game.ui.startScreen.description[0]}
                 </p>
 
+                {/* Category Dots */}
+                <div className="flex justify-center gap-2 mt-4">
+                  {Object.values(game.theme.categories).map(
+                    (category, index) => (
+                      <div
+                        key={index}
+                        className="w-3 h-3 rounded-full"
+                        style={{ backgroundColor: category.color }}
+                        title={category.name}
+                      />
+                    )
+                  )}
+                </div>
+
                 {/* Card Count Indicator */}
                 <div className="mt-4 text-xs text-gray-600 font-semibold uppercase tracking-wider text-center">
                   {game.questions.reduce(
@@ -174,7 +165,7 @@ const GameLibrary: React.FC<GameLibraryProps> = ({ games, onGameSelect }) => {
                       total + category.questions.length,
                     0
                   )}{" "}
-                  Cards
+                  Cards • {Object.keys(game.theme.categories).length} Categories
                 </div>
               </Card>
             </div>
