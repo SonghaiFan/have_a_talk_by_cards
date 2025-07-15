@@ -1,0 +1,215 @@
+{
+  "testType": "love-36",
+  "app": {
+    "title": "Arthur Aron's 36 Questions",
+    "subtitle": "An Intimate Relationship Experiment Based on Arthur Aron’s Psychological Research",
+    "language": "english",
+    "version": "1.0.0"
+  },
+  "ui": {
+    "startScreen": {
+      "title": "Arthur Aron's 36 Questions",
+      "description": [
+        "This is a famous experiment based on the research of psychologist Arthur Aron.",
+        "Through 36 progressively deeper personalized questions, it promotes intimacy between two people.",
+        "Core idea: Shared vulnerability can foster closeness.",
+        "It is recommended to do this with a partner or friend, taking turns answering each question."
+      ],
+      "startButton": "Start Experiment"
+    },
+    "navigation": {
+      "nextButton": "Next Question",
+      "prevButton": "Previous Question"
+    },
+    "results": {
+      "title": "Experiment Completed",
+      "subtitle": "Congratulations on completing the 36-question intimate relationship experiment",
+      "restartButton": "Restart"
+    }
+  },
+  "theme": {
+    "categories": {
+      "Group One": {
+        "name": "Group One",
+        "color": "#FDC7C7",
+        "description": "Beginner Intimacy: Basic Personal Sharing"
+      },
+      "Second Group": {
+        "name": "Second Group",
+        "color": "#FF8687",
+        "description": "Intermediate Intimacy: Deeper Self-Disclosure"
+      },
+      "Group 3": {
+        "name": "Group 3",
+        "color": "#C92026",
+        "description": "Advanced Intimacy: The Deepest Level of Vulnerable Sharing"
+      }
+    }
+  },
+  "questions": [
+    {
+      "category": "Group One",
+      "questions": [
+        {
+          "type": "open",
+          "question": "If you could choose anyone in the world, who would you invite to dinner?",
+          "options": [
+            "Think about historical figures, celebrities, or people you admire",
+            "Share the reason why you chose this person",
+            "Describe the topics you want to discuss with them"
+          ]
+        },
+        {
+          "type": "open",
+          "question": "Do you want to become famous? In what way do you want to become famous?"
+        },
+        {
+          "type": "open",
+          "question": "Do you rehearse what you are going to say before making a phone call? Why?"
+        },
+        {
+          "type": "open",
+          "question": "What does a \"perfect\" day look like to you?"
+        },
+        {
+          "type": "open",
+          "question": "When was the last time you sang by yourself, and did you sing for others?"
+        },
+        {
+          "type": "open",
+          "question": "If you could live to 90 years old and maintain either the mind or the body of a 30-year-old, which would you choose to keep, the mind or the body?"
+        },
+        {
+          "type": "open",
+          "question": "Have you ever secretly had a premonition about how you would die?"
+        },
+        {
+          "type": "open",
+          "question": "Name three features that you and your partner look alike in."
+        },
+        {
+          "type": "open",
+          "question": "What in life are you most grateful for?"
+        },
+        {
+          "type": "open",
+          "question": "If you could change one thing about the way you were raised, what would it be?"
+        },
+        {
+          "type": "open",
+          "question": "Spend four minutes telling your partner your life story in as much detail as possible."
+        },
+        {
+          "type": "open",
+          "question": "If you could wake up tomorrow with a certain talent or ability, what would you want that ability to be?"
+        }
+      ]
+    },
+    {
+      "category": "Second Group",
+      "questions": [
+        {
+          "type": "open",
+          "question": "If there were a crystal ball that could tell you the truth about yourself, life, the future, or anything else, would you want to know?"
+        },
+        {
+          "type": "open",
+          "question": "Is there something you have always dreamed of doing but haven't done? Why haven't you done it?"
+        },
+        {
+          "type": "open",
+          "question": "What is your greatest achievement in life?"
+        },
+        {
+          "type": "open",
+          "question": "What do you value most in a friendship?"
+        },
+        {
+          "type": "open",
+          "question": "What is your most precious memory?"
+        },
+        {
+          "type": "open",
+          "question": "What is your worst memory?"
+        },
+        {
+          "type": "open",
+          "question": "If you knew you would suddenly die within a year, would you change your current lifestyle? Why?"
+        },
+        {
+          "type": "open",
+          "question": "What does friendship mean to you?"
+        },
+        {
+          "type": "open",
+          "question": "What role do love and emotions play in your life?"
+        },
+        {
+          "type": "open",
+          "question": "Take turns with your partner to say one good quality you see in the other person, five each."
+        },
+        {
+          "type": "open",
+          "question": "Are the relationships among your family members close and warm, and do you feel your childhood was happier than others'?"
+        },
+        {
+          "type": "open",
+          "question": "What is your relationship with your mother like?"
+        }
+      ]
+    },
+    {
+      "category": "Group Three",
+      "questions": [
+        {
+          "type": "open",
+          "question": "Each person uses 'we' to make three sentences, including real situations, for example, 'The two of us are in the room, feeling...'"
+        },
+        {
+          "type": "open",
+          "question": "Complete this sentence: \"I want to be with someone, to share...\""
+        },
+        {
+          "type": "open",
+          "question": "If you want to become close friends with the other person, please tell them if there is anything important they need to know."
+        },
+        {
+          "type": "open",
+          "question": "Tell the other person what you like about him or her. Be very honest and say things you wouldn't say to a casual acquaintance."
+        },
+        {
+          "type": "open",
+          "question": "Share those awkward moments in life with the other person."
+        },
+        {
+          "type": "open",
+          "question": "When was the last time you cried in front of others? And when did you last cry by yourself?"
+        },
+        {
+          "type": "open",
+          "question": "Tell the other person which quality of his or hers you have come to like."
+        },
+        {
+          "type": "open",
+          "question": "What do you think is something so serious that it cannot be joked about, if there is any."
+        },
+        {
+          "type": "open",
+          "question": "If you were to die tonight and had no chance to contact anyone, would you regret not having said certain things to others before? Why haven't you said those things to them until now?"
+        },
+        {
+          "type": "open",
+          "question": "Suppose everything you own is in your house. Now the house is on fire. After rescuing your family and pets, you have one last chance to safely rush in and take out one final item. What would you take and why?"
+        },
+        {
+          "type": "open",
+          "question": "Which member of your family’s passing would make you the saddest, and why?"
+        },
+        {
+          "type": "open",
+          "question": "Describe a personal problem of yours and ask the other person how they would solve it if they encountered the same issue. Also, ask the other person to honestly tell you how they think you feel about this problem."
+        }
+      ]
+    }
+  ]
+}

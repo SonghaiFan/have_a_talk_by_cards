@@ -1,0 +1,518 @@
+{
+  "testType": "strangers",
+  "app": {
+    "title": "We Are Not Really Strangers",
+    "subtitle": "A card game about connection and vulnerability",
+    "type": "connection-game",
+    "version": "1.0.0"
+  },
+  "ui": {
+    "startScreen": {
+      "title": "We Are Not Really Strangers",
+      "description": [
+        "A transformative card game that creates authentic connections through meaningful conversations.",
+        "From lighthearted moments to deep vulnerability - prepare to see each other in new ways.",
+        "Best played with someone you want to know better or reconnect with."
+      ],
+      "startButton": "Begin Connection"
+    },
+    "navigation": {
+      "nextButton": "Next Card",
+      "prevButton": "Previous Card"
+    },
+    "results": {
+      "title": "Connection Complete",
+      "subtitle": "You are no longer strangers",
+      "restartButton": "Connect Again"
+    }
+  },
+  "theme": {
+    "categories": {
+      "Getting to Know You": {
+        "name": "Getting to Know You",
+        "color": "#FFCDD2",
+        "description": "First impressions and surface discoveries"
+      },
+      "Deeper Connections": {
+        "name": "Deeper Connections",
+        "color": "#EF9A9A",
+        "description": "Personal stories and meaningful insights"
+      },
+      "Vulnerable Moments": {
+        "name": "Vulnerable Moments",
+        "color": "#E57373",
+        "description": "Raw honesty and emotional intimacy"
+      },
+      "Wildcards": {
+        "name": "Wildcards",
+        "color": "#C62828",
+        "description": "Interactive experiences and special moments"
+      }
+    }
+  },
+  "questions": [
+    {
+      "category": "Getting to Know You",
+      "questions": [
+        {
+          "type": "open",
+          "question": "How are you really?"
+        },
+        {
+          "type": "open",
+          "question": "What's your father's name? And tell me one thing about him."
+        },
+        {
+          "type": "open",
+          "question": "What's your mother's name? And the most beautiful thing about her?"
+        },
+        {
+          "type": "open",
+          "question": "What was your first impression of me?"
+        },
+        {
+          "type": "open",
+          "question": "Do you think I was popular in school? Explain."
+        },
+        {
+          "type": "open",
+          "question": "What do you think my defining characteristic is?"
+        },
+        {
+          "type": "open",
+          "question": "How would you describe me to a stranger?"
+        },
+        {
+          "type": "open",
+          "question": "What's your favorite compliment to receive?"
+        },
+        {
+          "type": "open",
+          "question": "What does my Instagram tell you about me?"
+        },
+        {
+          "type": "open",
+          "question": "Based on what you've learned about me, does my social media portray me accurately?"
+        },
+        {
+          "type": "open",
+          "question": "What title would you give this chapter in your life?"
+        },
+        {
+          "type": "open",
+          "question": "What's something you enjoy that you never get tired of?"
+        }
+      ]
+    },
+    {
+      "category": "Deeper Connections",
+      "questions": [
+        {
+          "type": "open",
+          "question": "What lesson took you the longest to unlearn?"
+        },
+        {
+          "type": "open",
+          "question": "If you could have it your way: who would you be with? Where would you be? And what would you be doing?"
+        },
+        {
+          "type": "open",
+          "question": "Why do you think we met?"
+        },
+        {
+          "type": "open",
+          "question": "Are you missing anyone right now? Do you think they are missing you too?"
+        },
+        {
+          "type": "open",
+          "question": "How would you describe the feeling of being in love in one word?"
+        },
+        {
+          "type": "open",
+          "question": "What have the past few weeks taught you?"
+        },
+        {
+          "type": "open",
+          "question": "Have you changed your mind about anything recently?"
+        },
+        {
+          "type": "open",
+          "question": "What about me is hardest for you to understand?"
+        },
+        {
+          "type": "open",
+          "question": "What do you admire most about me?"
+        },
+        {
+          "type": "open",
+          "question": "What are you feeling a lot of lately?"
+        },
+        {
+          "type": "open",
+          "question": "What's the most unexplainable thing that's ever happened to you?"
+        },
+        {
+          "type": "open",
+          "question": "What was the biggest turning point in your dating life?"
+        },
+        {
+          "type": "open",
+          "question": "What would your younger self not believe about your life today?"
+        },
+        {
+          "type": "open",
+          "question": "What's your favorite adjective with which to be described and why?"
+        },
+        {
+          "type": "open",
+          "question": "When was the last time you cried?"
+        },
+        {
+          "type": "open",
+          "question": "What's the hardest part about dating you?"
+        },
+        {
+          "type": "open",
+          "question": "Think of someone you admire. What made you think about them specifically?"
+        },
+        {
+          "type": "open",
+          "question": "What do you think our most important similarities are?"
+        },
+        {
+          "type": "open",
+          "question": "What parts of yourself do you see in me?"
+        },
+        {
+          "type": "open",
+          "question": "How does one earn your vulnerability?"
+        },
+        {
+          "type": "open",
+          "question": "What memory instantly makes you smile?"
+        },
+        {
+          "type": "open",
+          "question": "What do you think about most often?"
+        },
+        {
+          "type": "open",
+          "question": "When do you feel most alive?"
+        },
+        {
+          "type": "open",
+          "question": "What kinds of people do you enjoy most being around?"
+        },
+        {
+          "type": "open",
+          "question": "If you came with a warning label, what would the label say?"
+        },
+        {
+          "type": "open",
+          "question": "Has a stranger ever changed your life?"
+        },
+        {
+          "type": "open",
+          "question": "How would you describe your relationship with yourself in one word?"
+        },
+        {
+          "type": "open",
+          "question": "What has been your earliest recollection of happiness?"
+        }
+      ]
+    },
+    {
+      "category": "Vulnerable Moments",
+      "questions": [
+        {
+          "type": "open",
+          "question": "What insecurity of yours holds you back the most?"
+        },
+        {
+          "type": "open",
+          "question": "What's the most pain you've ever been in that wasn't physical?"
+        },
+        {
+          "type": "open",
+          "question": "Are any of your insecurities hurting someone else by accident?"
+        },
+        {
+          "type": "open",
+          "question": "Dear people who raised me, thank you for ________"
+        },
+        {
+          "type": "open",
+          "question": "What's been keeping you sane lately?"
+        },
+        {
+          "type": "open",
+          "question": "How can I be there for you during this chapter?"
+        },
+        {
+          "type": "open",
+          "question": "What have I tolerated from people in the past that I no longer have space for?"
+        },
+        {
+          "type": "open",
+          "question": "What do you need right now but aren't communicating?"
+        },
+        {
+          "type": "open",
+          "question": "What's the hardest truth you had to face this past year?"
+        },
+        {
+          "type": "open",
+          "question": "What's a feeling you're uncomfortable sharing with me?"
+        },
+        {
+          "type": "open",
+          "question": "What are you currently working through that others can't see?"
+        },
+        {
+          "type": "open",
+          "question": "What is your heart telling you?"
+        },
+        {
+          "type": "open",
+          "question": "What is your most toxic trait you can admit to?"
+        },
+        {
+          "type": "open",
+          "question": "What are you overthinking right now?"
+        },
+        {
+          "type": "open",
+          "question": "What did your last relationship teach you about yourself?"
+        },
+        {
+          "type": "open",
+          "question": "What belief about yourself no longer serves you?"
+        },
+        {
+          "type": "open",
+          "question": "What is the last thing you lied to your mom about?"
+        },
+        {
+          "type": "open",
+          "question": "What are you still trying to prove to yourself?"
+        },
+        {
+          "type": "open",
+          "question": "What's the biggest mistake you've made?"
+        },
+        {
+          "type": "open",
+          "question": "What's a phrase that you say that you wish you would stop saying?"
+        },
+        {
+          "type": "open",
+          "question": "What do you think is one thing I could do that would drastically improve my life?"
+        },
+        {
+          "type": "open",
+          "question": "What do I need to hear right now?"
+        },
+        {
+          "type": "open",
+          "question": "What do you think I fear the most?"
+        },
+        {
+          "type": "open",
+          "question": "What question were you most afraid to answer?"
+        },
+        {
+          "type": "open",
+          "question": "What has this conversation taught you about yourself?"
+        },
+        {
+          "type": "open",
+          "question": "What do you think I should know about myself that perhaps I'm unaware of?"
+        },
+        {
+          "type": "open",
+          "question": "What would make you feel closer to me?"
+        },
+        {
+          "type": "open",
+          "question": "In one word, describe how you feel right now."
+        },
+        {
+          "type": "open",
+          "question": "What's the most attractive quality about me that isn't physical?"
+        },
+        {
+          "type": "open",
+          "question": "What about you feels hardest to love?"
+        },
+        {
+          "type": "open",
+          "question": "Is there anything you're ashamed of from your past?"
+        },
+        {
+          "type": "open",
+          "question": "What's something you believe to be true that no one else around you believes is true?"
+        },
+        {
+          "type": "open",
+          "question": "What are you proudest of yourself for saying 'no' to recently?"
+        },
+        {
+          "type": "open",
+          "question": "What's one thing that should be taught, but isn't?"
+        },
+        {
+          "type": "open",
+          "question": "If you died today, what regrets would you have about your life?"
+        },
+        {
+          "type": "open",
+          "question": "How has your type in crushes changed over time?"
+        },
+        {
+          "type": "open",
+          "question": "What is something that you hate being called? (a name, a nickname, an insult, etc)"
+        }
+      ]
+    },
+    {
+      "category": "Wildcards",
+      "questions": [
+        {
+          "type": "wildcard",
+          "question": "WILDCARD: Admit something.",
+          "options": [
+            "This is a moment for raw honesty",
+            "Share something you haven't told anyone",
+            "Be brave and vulnerable"
+          ]
+        },
+        {
+          "type": "wildcard",
+          "question": "WILDCARD: Who's been on your mind lately? Send them a text letting them know you're thinking of them. Both players.",
+          "options": [
+            "Take out your phones right now",
+            "Send the message together",
+            "Share what you wrote"
+          ]
+        },
+        {
+          "type": "wildcard",
+          "question": "WILDCARD: Call someone you admire. Let them know why you appreciate them.",
+          "options": [
+            "Make the call right now",
+            "Be specific about what you admire",
+            "Share the conversation afterward"
+          ]
+        },
+        {
+          "type": "wildcard",
+          "question": "WILDCARD: Sing your favorite song lyrics you can think of off the top of your head. Both players.",
+          "options": [
+            "Don't think too hard about it",
+            "Just start singing",
+            "Enjoy the moment of silliness"
+          ]
+        },
+        {
+          "type": "wildcard",
+          "question": "WILDCARD: Look into each other's eyes for 30 seconds. What did you notice?",
+          "options": [
+            "Set a timer for 30 seconds",
+            "No talking during the staring",
+            "Share what you observed afterward"
+          ]
+        },
+        {
+          "type": "wildcard",
+          "question": "WILDCARD: Write a message to each other and give it to each other. Open it once you have left.",
+          "options": [
+            "Write something meaningful",
+            "Fold the papers and exchange",
+            "Promise to read later"
+          ]
+        },
+        {
+          "type": "wildcard",
+          "question": "WILDCARD: Take a selfie together.",
+          "options": [
+            "Capture this moment",
+            "Be natural and genuine",
+            "Keep it as a memory"
+          ]
+        },
+        {
+          "type": "wildcard",
+          "question": "WILDCARD: Staring contest. First person to blink must reveal a personal problem and ask the other for advice.",
+          "options": [
+            "Start the staring contest now",
+            "Winner gives advice to the loser",
+            "Be supportive and helpful"
+          ]
+        },
+        {
+          "type": "wildcard",
+          "question": "WILDCARD: Press shuffle on your music library. Explain the first song that comes up!",
+          "options": [
+            "Hit shuffle right now",
+            "Explain why this song matters",
+            "Share the story behind it"
+          ]
+        },
+        {
+          "type": "wildcard",
+          "question": "WILDCARD: Tell the other person to close their eyes and to keep them closed. (wait 15 seconds and hug them)",
+          "options": [
+            "One person closes their eyes",
+            "Wait exactly 15 seconds",
+            "Give a meaningful hug"
+          ]
+        },
+        {
+          "type": "wildcard",
+          "question": "WILDCARD: Both players share something you're most grateful for in this current moment.",
+          "options": [
+            "Think about right now",
+            "What fills you with gratitude?",
+            "Share at the same time"
+          ]
+        },
+        {
+          "type": "wildcard",
+          "question": "WILDCARD: Draw your current feelings then compare.",
+          "options": [
+            "Use any materials available",
+            "Don't overthink the art",
+            "Explain your drawings to each other"
+          ]
+        },
+        {
+          "type": "wildcard",
+          "question": "WILDCARD: Show the first photo in your camera roll. Explain.",
+          "options": [
+            "No skipping or choosing",
+            "Show the very first photo",
+            "Tell the story behind it"
+          ]
+        },
+        {
+          "type": "wildcard",
+          "question": "WILDCARD: Think of something you dislike that most people don't. On the count of 3 say it out loud.",
+          "options": [
+            "Count together: 1, 2, 3",
+            "Say it simultaneously",
+            "Discuss your unpopular opinions"
+          ]
+        },
+        {
+          "type": "wildcard",
+          "question": "WILDCARD: How can I add 1% more happiness in your life?",
+          "options": [
+            "Think of small, specific actions",
+            "Be practical and realistic",
+            "Commit to trying it"
+          ]
+        }
+      ]
+    }
+  ]
+}

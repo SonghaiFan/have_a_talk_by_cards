@@ -1,0 +1,114 @@
+{
+  "testType": "we-are-not-strangers",
+  "app": {
+    "title": "WE ARE NOT STRANGERS",
+    "subtitle": "Questions that help us really know each other",
+    "language": "english",
+    "version": "1.0.0"
+  },
+  "ui": {
+    "startScreen": {
+      "title": "We Are Not Strangers",
+      "description": [
+        "Thoughtful questions to bridge the gap between strangers and friends.",
+        "Share openly. Listen deeply. Connect authentically."
+      ],
+      "startButton": "Begin"
+    },
+    "navigation": {
+      "nextButton": "Next",
+      "prevButton": "Back"
+    },
+    "results": {
+      "title": "Well done",
+      "subtitle": "Thank you for opening up and connecting",
+      "restartButton": "Restart"
+    }
+  },
+  "theme": {
+    "categories": {
+      "personal": {
+        "name": "Personal Story",
+        "color": "#f59e0b",
+        "description": "The experiences that shaped who you are"
+      },
+      "relationships": {
+        "name": "Connections",
+        "color": "#ec4899",
+        "description": "How you relate to the people in your life"
+      },
+      "lifestyle": {
+        "name": "Daily Life",
+        "color": "#10b981",
+        "description": "The small moments that make up your days"
+      },
+      "values": {
+        "name": "Beliefs",
+        "color": "#6366f1",
+        "description": "What you hold dear and believe in"
+      }
+    }
+  },
+  "questions": [
+    {
+      "category": "personal",
+      "questions": [
+        {
+          "type": "open",
+          "question": "WHAT'S YOUR FAVORITE AGE YOU'VE BEEN SO FAR?"
+        },
+        {
+          "type": "open",
+          "question": "WHICH CHILDHOOD TRADITIONS STILL MATTER TO YOU TODAY?"
+        },
+        {
+          "type": "open",
+          "question": "WHAT MEAL MAKES YOU FEEL LIKE YOU'RE 'HOME'?"
+        }
+      ]
+    },
+    {
+      "category": "relationships",
+      "questions": [
+        {
+          "type": "open",
+          "question": "WHAT DO YOUR EXES HAVE IN COMMON?"
+        },
+        {
+          "type": "open",
+          "question": "WHAT DO ALL YOUR GOOD FRIENDS SHARE?"
+        },
+        {
+          "type": "open",
+          "question": "WHAT DO FRIENDS USUALLY COME TO YOU FOR ADVICE ABOUT?"
+        }
+      ]
+    },
+    {
+      "category": "lifestyle",
+      "questions": [
+        {
+          "type": "open",
+          "question": "WHAT DO YOU USUALLY DO WHEN YOU GO TO THE BEACH?"
+        },
+        {
+          "type": "open",
+          "question": "WHAT DO YOU WATCH WHEN YOU CAN'T SLEEP?"
+        }
+      ]
+    },
+    {
+      "category": "values",
+      "questions": [
+        {
+          "type": "open",
+          "question": "WHAT THREE QUALITIES DO YOU ADMIRE MOST IN A PERSON?"
+        },
+        {
+          "type": "open",
+          "question": "WHAT'S SOMETHING YOU'VE ALWAYS BELIEVED WITHOUT QUESTION?"
+        }
+      ]
+    }
+  ]
+}

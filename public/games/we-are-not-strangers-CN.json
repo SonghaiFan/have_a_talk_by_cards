@@ -1,0 +1,114 @@
+{
+  "testType": "we-are-not-strangers",
+  "app": {
+    "title": "我们不是陌生人",
+    "subtitle": "帮助我们真正了解彼此的问题",
+    "language": "chinese",
+    "version": "1.0.0"
+  },
+  "ui": {
+    "startScreen": {
+      "title": "我们不是陌生人",
+      "description": [
+        "深思熟虑的问题，架起陌生人与朋友之间的桥梁。",
+        "坦诚分享。用心倾听。真诚连接。"
+      ],
+      "startButton": "开始"
+    },
+    "navigation": {
+      "nextButton": "下一步",
+      "prevButton": "返回"
+    },
+    "results": {
+      "title": "做得好",
+      "subtitle": "感谢你的敞开心扉和连接",
+      "restartButton": "重新开始"
+    }
+  },
+  "theme": {
+    "categories": {
+      "personal": {
+        "name": "个人故事",
+        "color": "#f59e0b",
+        "description": "塑造你成为现在的经历"
+      },
+      "relationships": {
+        "name": "连接",
+        "color": "#ec4899",
+        "description": "你与生活中人们的关系"
+      },
+      "lifestyle": {
+        "name": "日常生活",
+        "color": "#10b981",
+        "description": "构成你日子的点滴瞬间"
+      },
+      "values": {
+        "name": "信念",
+        "color": "#6366f1",
+        "description": "你所珍视和信仰的"
+      }
+    }
+  },
+  "questions": [
+    {
+      "category": "personal",
+      "questions": [
+        {
+          "type": "open",
+          "question": "到目前为止，你最喜欢的年龄是多少？"
+        },
+        {
+          "type": "open",
+          "question": "哪些童年传统对你今天仍然重要？"
+        },
+        {
+          "type": "open",
+          "question": "哪顿饭让你感觉像在‘家’一样？"
+        }
+      ]
+    },
+    {
+      "category": "relationships",
+      "questions": [
+        {
+          "type": "open",
+          "question": "你的前任们有什么共同点？"
+        },
+        {
+          "type": "open",
+          "question": "你所有的好朋友有什么共同点？"
+        },
+        {
+          "type": "open",
+          "question": "朋友们通常会来找你咨询什么问题？"
+        }
+      ]
+    },
+    {
+      "category": "lifestyle",
+      "questions": [
+        {
+          "type": "open",
+          "question": "你通常去海滩时会做什么？"
+        },
+        {
+          "type": "open",
+          "question": "你失眠时会看什么？"
+        }
+      ]
+    },
+    {
+      "category": "values",
+      "questions": [
+        {
+          "type": "open",
+          "question": "你最欣赏一个人哪三个品质？"
+        },
+        {
+          "type": "open",
+          "question": "你一直坚信不疑的事情是什么？"
+        }
+      ]
+    }
+  ]
+}

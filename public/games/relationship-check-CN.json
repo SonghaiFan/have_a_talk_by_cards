@@ -1,0 +1,122 @@
+{
+  "testType": "relationship-check",
+  "app": {
+    "title": "关系签到",
+    "subtitle": "通过诚实的对话加强你们的纽带",
+    "language": "chinese",
+    "version": "1.0.0"
+  },
+  "ui": {
+    "startScreen": {
+      "title": "关系检查",
+      "description": [
+        "旨在加深伴侣之间理解的问题。",
+        "轮流回答或一起讨论——随心所欲。"
+      ],
+      "startButton": "开始"
+    },
+    "navigation": {
+      "nextButton": "下一步",
+      "prevButton": "返回"
+    },
+    "results": {
+      "title": "做得好",
+      "subtitle": "感谢你们用心连接",
+      "restartButton": "重新开始"
+    }
+  },
+  "theme": {
+    "categories": {
+      "communication": {
+        "name": "沟通",
+        "color": "#1e40af",
+        "description": "我们如何交流和倾听彼此"
+      },
+      "intimacy": {
+        "name": "亲密",
+        "color": "#be123c",
+        "description": "加深我们情感和身体的联系"
+      },
+      "future": {
+        "name": "未来",
+        "color": "#6b21a8",
+        "description": "我们共同分享的梦想和计划"
+      },
+      "appreciation": {
+        "name": "感激",
+        "color": "#0891b2",
+        "description": "我们彼此珍视的东西"
+      }
+    }
+  },
+  "questions": [
+    {
+      "category": "communication",
+      "questions": [
+        {
+          "type": "讨论",
+          "question": "我做的哪一件事让你感到真正被倾听？"
+        },
+        {
+          "type": "讨论",
+          "question": "你有没有什么一直想告诉我的事情？"
+        },
+        {
+          "type": "discussion",
+          "question": "当我们意见不合时，什么能让你感觉我们是一队的？"
+        }
+      ]
+    },
+    {
+      "category": "intimacy",
+      "questions": [
+        {
+          "type": "讨论",
+          "question": "你觉得我怎样做最能让你感受到爱？"
+        },
+        {
+          "type": "讨论",
+          "question": "什么小举动总能让你的一天变得更美好？"
+        },
+        {
+          "type": "讨论",
+          "question": "我们如何才能为我们自己创造更多时间？"
+        }
+      ]
+    },
+    {
+      "category": "future",
+      "questions": [
+        {
+          "type": "讨论",
+          "question": "你希望我们一起尝试什么新鲜事物？"
+        },
+        {
+          "type": "discussion",
+          "question": "描述我们完美的周末度假。"
+        },
+        {
+          "type": "discussion",
+          "question": "我可以支持你实现什么目标或梦想？"
+        }
+      ]
+    },
+    {
+      "category": "appreciation",
+      "questions": [
+        {
+          "type": "讨论",
+          "question": "我最近做了什么让你感激的事？"
+        },
+        {
+          "type": "讨论",
+          "question": "你最欣赏我什么品质？"
+        },
+        {
+          "type": "讨论",
+          "question": "过去一个月里，你最喜欢我们之间的什么回忆？"
+        }
+      ]
+    }
+  ]
+}
