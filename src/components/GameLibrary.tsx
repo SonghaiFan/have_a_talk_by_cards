@@ -5,6 +5,9 @@ import { ConversationGame } from "../types/ConversationGame";
 import Card from "./Card";
 import LanguageSwitcher from "./LanguageSwitcher";
 
+type PlayerGroup = "solo" | "couple" | "friends" | "strangers" | "family";
+type GameType = "normal" | "edition" | "premium";
+
 interface GameLibraryProps {
   games: ConversationGame[];
   onGameSelect: (game: ConversationGame) => void;
@@ -14,6 +17,31 @@ const GameLibrary: React.FC<GameLibraryProps> = ({ games, onGameSelect }) => {
   const { t } = useTranslation();
   const [hoveredGame, setHoveredGame] = useState<string | null>(null);
   const [selectedGameIndex, setSelectedGameIndex] = useState(0);
+  const [selectedType, setSelectedType] = useState<GameType | null>(null);
+  const [selectedGroup, setSelectedGroup] = useState<PlayerGroup | null>(null);
+
+  // Get unique game types and player groups
+  const gameTypes: GameType[] = ["normal", "edition", "premium"];
+  const playerGroups: PlayerGroup[] = [
+    "solo",
+    "couple",
+    "friends",
+    "strangers",
+    "family",
+  ];
+
+  // Filter games based on selected type and group
+  const filteredGames = games.filter((game) => {
+    const typeMatch = !selectedType || game.app.type === selectedType;
+    const groupMatch =
+      !selectedGroup || game.app.playerGroup.includes(selectedGroup);
+    return typeMatch && groupMatch;
+  });
+
+  // Reset selected index when filters change
+  useEffect(() => {
+    setSelectedGameIndex(0);
+  }, [selectedType, selectedGroup]);
 
   // Keyboard navigation
   useEffect(() => {
@@ -23,21 +51,21 @@ const GameLibrary: React.FC<GameLibraryProps> = ({ games, onGameSelect }) => {
         case "ArrowUp":
           event.preventDefault();
           setSelectedGameIndex((prev) =>
-            prev > 0 ? prev - 1 : games.length - 1
+            prev > 0 ? prev - 1 : filteredGames.length - 1
           );
           break;
         case "ArrowRight":
         case "ArrowDown":
           event.preventDefault();
           setSelectedGameIndex((prev) =>
-            prev < games.length - 1 ? prev + 1 : 0
+            prev < filteredGames.length - 1 ? prev + 1 : 0
           );
           break;
         case "Enter":
         case " ": // Spacebar
           event.preventDefault();
-          if (games[selectedGameIndex]) {
-            onGameSelect(games[selectedGameIndex]);
+          if (filteredGames[selectedGameIndex]) {
+            onGameSelect(filteredGames[selectedGameIndex]);
           }
           break;
       }
@@ -45,14 +73,14 @@ const GameLibrary: React.FC<GameLibraryProps> = ({ games, onGameSelect }) => {
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [games, selectedGameIndex, onGameSelect]);
+  }, [filteredGames, selectedGameIndex, onGameSelect]);
 
   // Update hover when keyboard selection changes
   useEffect(() => {
-    if (games[selectedGameIndex]) {
-      setHoveredGame(games[selectedGameIndex].testID);
+    if (filteredGames[selectedGameIndex]) {
+      setHoveredGame(filteredGames[selectedGameIndex].testID);
     }
-  }, [selectedGameIndex, games]);
+  }, [selectedGameIndex, filteredGames]);
 
   return (
     <div className="min-h-screen bg-white flex flex-col items-center px-4 sm:px-8 py-8 sm:py-16">
@@ -87,9 +115,95 @@ const GameLibrary: React.FC<GameLibraryProps> = ({ games, onGameSelect }) => {
         </p>
       </motion.div>
 
-      {/* Games Grid - Animated Card Packs */}
-      <div className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-12 mb-8 sm:mb-16 justify-items-center">
-        {games.map((game, index) => (
+      {/* Filters Section */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        className="w-full max-w-4xl"
+      >
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center bg-gray-50 rounded-2xl p-6  mb-24 sm:mb-20">
+          {/* Game Type Filter */}
+          <div className="flex flex-col items-center gap-3 w-full sm:w-auto">
+            <span className="text-xs uppercase tracking-wider text-gray-500 font-medium">
+              {t("gameLibrary.filterByType")}
+            </span>
+            <div className="flex flex-wrap gap-2 justify-center">
+              <button
+                onClick={() => setSelectedType(null)}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors
+                  ${
+                    !selectedType
+                      ? "bg-black text-white"
+                      : "bg-white text-gray-600 hover:bg-gray-100"
+                  }`}
+              >
+                {t("gameLibrary.allTypes")}
+              </button>
+              {gameTypes.map((type) => (
+                <button
+                  key={type}
+                  onClick={() => setSelectedType(type)}
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-colors
+                    ${
+                      selectedType === type
+                        ? "bg-black text-white"
+                        : "bg-white text-gray-600 hover:bg-gray-100"
+                    }`}
+                >
+                  {t(`gameLibrary.type.${type}`)}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Vertical Separator for Desktop */}
+          <div className="hidden sm:block w-px h-12 bg-gray-200 mx-4" />
+
+          {/* Player Group Filter */}
+          <div className="flex flex-col items-center gap-3 w-full sm:w-auto">
+            <span className="text-xs uppercase tracking-wider text-gray-500 font-medium">
+              {t("gameLibrary.filterByGroup")}
+            </span>
+            <div className="flex flex-wrap gap-2 justify-center">
+              <button
+                onClick={() => setSelectedGroup(null)}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors
+                  ${
+                    !selectedGroup
+                      ? "bg-black text-white"
+                      : "bg-white text-gray-600 hover:bg-gray-100"
+                  }`}
+              >
+                {t("gameLibrary.allGroups")}
+              </button>
+              {playerGroups.map((group) => (
+                <button
+                  key={group}
+                  onClick={() => setSelectedGroup(group)}
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-colors
+                    ${
+                      selectedGroup === group
+                        ? "bg-black text-white"
+                        : "bg-white text-gray-600 hover:bg-gray-100"
+                    }`}
+                >
+                  {t(`gameLibrary.group.${group}`)}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      </motion.div>
+
+      {/* Games Grid with Enhanced Animation */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6, delay: 0.4 }}
+        className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-12 mb-8 sm:mb-16 justify-items-center"
+      >
+        {filteredGames.map((game, index) => (
           <motion.div
             key={game.testID}
             initial={{ opacity: 0, y: 50 }}
@@ -224,7 +338,18 @@ const GameLibrary: React.FC<GameLibraryProps> = ({ games, onGameSelect }) => {
             </div>
           </motion.div>
         ))}
-      </div>
+      </motion.div>
+
+      {/* No Results Message */}
+      {filteredGames.length === 0 && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="text-center text-gray-500 py-12"
+        >
+          <p>{t("gameLibrary.noResults")}</p>
+        </motion.div>
+      )}
 
       {/* Footer - Minimal */}
       <motion.div

@@ -4,7 +4,8 @@
     "title": "XXX",
     "subtitle": "关于性与欲望的亲密、坦诚提问",
     "language": "chinese",
-    "type": "connection-game"
+    "type": "normal",
+    "playerGroup": ["couple", "friends", "strangers"]
   },
   "ui": {
     "startScreen": {

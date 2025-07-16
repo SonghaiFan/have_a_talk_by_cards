@@ -4,7 +4,8 @@
     "title": "真心话",
     "subtitle": "15个直击灵魂的派对提问｜没有大冒险，只有真心话",
     "language": "chinese",
-    "type": "connection-game"
+    "type": "normal",
+    "playerGroup": ["friends", "couple", "strangers"]
   },
   "ui": {
     "startScreen": {

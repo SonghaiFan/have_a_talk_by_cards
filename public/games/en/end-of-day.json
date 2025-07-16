@@ -1,14 +1,15 @@
 {
   "testID": "end-of-day",
   "app": {
-    "title": "End of the World Edition",
+    "title": "End of the World",
     "subtitle": "Imagine the world is ending in 90 days. What would you do?",
     "language": "english",
-    "type": "connection-game"
+    "type": "edition",
+    "playerGroup": ["solo", "couple", "friends", "strangers", "family"]
   },
   "ui": {
     "startScreen": {
-      "title": "End of the World Edition",
+      "title": "End of the World",
       "description": [
         "The world as you know it ends in 90 days. What if anything was possible?",
         "Let your answers surprise you. Think beyond the obvious."

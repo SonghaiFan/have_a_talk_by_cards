@@ -1,14 +1,15 @@
 {
   "testID": "sneaky-link",
   "app": {
-    "title": "Sneaky Link-特别版💦💦💦",
+    "title": "Sneaky Link 💦💦💦",
     "subtitle": "18岁以下禁止",
     "language": "chinese",
-    "type": "connection-game"
+    "type": "edition",
+    "playerGroup": ["couple", "friends"]
   },
   "ui": {
     "startScreen": {
-      "title": "Sneaky Link -特别版💦💦💦",
+      "title": "Sneaky Link 💦💦💦",
       "description": [
         "什么是Sneaky Link？",
         "When you and another person are fucking up but don't want anyone to know about it.",

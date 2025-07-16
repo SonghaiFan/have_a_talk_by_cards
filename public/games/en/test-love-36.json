@@ -4,7 +4,8 @@
     "title": "Arthur Aron's 36 Questions",
     "subtitle": "An Intimate Relationship Experiment Based on Arthur Aron’s Psychological Research",
     "language": "english",
-    "type": "connection-game"
+    "type": "normal",
+    "playerGroup": ["couple", "friends", "strangers"]
   },
   "ui": {
     "startScreen": {

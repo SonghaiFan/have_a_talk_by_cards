@@ -4,7 +4,8 @@
     "title": "我们并非真的陌生人",
     "subtitle": "一场关于联结与脆弱的卡牌游戏",
     "language": "chinese",
-    "type": "connection-game"
+    "type": "normal",
+    "playerGroup": ["strangers"]
   },
   "ui": {
     "startScreen": {

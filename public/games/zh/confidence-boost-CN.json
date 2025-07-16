@@ -4,7 +4,8 @@
     "title": "自信提升",
     "subtitle": "10个问题，提醒你自己的力量",
     "language": "chinese",
-    "type": "connection-game"
+    "type": "normal",
+    "playerGroup": ["solo"]
   },
   "ui": {
     "startScreen": {

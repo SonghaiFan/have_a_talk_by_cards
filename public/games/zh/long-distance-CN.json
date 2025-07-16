@@ -4,7 +4,8 @@
     "title": "异地恋-特别版",
     "subtitle": "15个让爱零距离的深度提问",
     "language": "chinese",
-    "type": "connection-game"
+    "type": "edition",
+    "playerGroup": ["couple"]
   },
   "ui": {
     "startScreen": {

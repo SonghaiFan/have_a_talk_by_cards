@@ -16,7 +16,25 @@
     "footnote": "End",
     "subtitle": "Select a conversation experience",
     "loading": "Loading conversations...",
-    "noGames": "No conversation games available."
+    "noGames": "No conversation games available.",
+    "noResults": "No games match your selected filters",
+    "allTypes": "All Types",
+    "allGroups": "All Groups",
+    "filterByType": "Filter by Type",
+    "filterByGroup": "Filter by Group",
+    "type": {
+      "normal": "Regular",
+      "edition": "Edition",
+      "special": "Special",
+      "premium": "Premium"
+    },
+    "group": {
+      "solo": "Solo",
+      "couple": "Couples",
+      "friends": "Friends",
+      "strangers": "Strangers",
+      "family": "Family"
+    }
   },
   "gameInterface": {
     "createYourJourney": "Create Your Conversation",

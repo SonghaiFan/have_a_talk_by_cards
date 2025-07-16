@@ -1,10 +1,11 @@
 {
   "testID": "deep-connections",
   "app": {
-    "title": "DEEP CONNECTIONS",
+    "title": "Deep Connections",
     "subtitle": "Thoughtful questions for meaningful conversations",
     "language": "english",
-    "type": "connection-game"
+    "type": "normal",
+    "playerGroup": ["friends", "couple"]
   },
   "ui": {
     "startScreen": {
@@ -55,15 +56,15 @@
       "questions": [
         {
           "type": "open",
-          "question": "WHAT PRINCIPLE DO YOU LIVE BY THAT MOST PEOPLE DON'T UNDERSTAND?"
+          "question": "What principle do you live by that most people don't understand?"
         },
         {
           "type": "open",
-          "question": "WHAT WOULD YOU CHANGE ABOUT HOW SOCIETY WORKS?"
+          "question": "What would you change about how society works?"
         },
         {
           "type": "open",
-          "question": "WHAT DO YOU BELIEVE THAT YOU CAN'T PROVE?"
+          "question": "What do you believe that you can't prove?"
         }
       ]
     },
@@ -72,15 +73,15 @@
       "questions": [
         {
           "type": "open",
-          "question": "WHAT WOULD YOU ATTEMPT IF YOU KNEW YOU COULDN'T FAIL?"
+          "question": "What would you attempt if you knew you couldn't fail?"
         },
         {
           "type": "open",
-          "question": "HOW WOULD YOU SPEND YOUR DAYS IF MONEY WASN'T A FACTOR?"
+          "question": "How would you spend your days if money wasn't a factor?"
         },
         {
           "type": "open",
-          "question": "WHAT DO YOU WANT TO BE REMEMBERED FOR?"
+          "question": "What do you want to be remembered for?"
         }
       ]
     },
@@ -89,15 +90,15 @@
       "questions": [
         {
           "type": "open",
-          "question": "DESCRIBE A MOMENT WHEN YOU FELT MOST ALIVE."
+          "question": "Describe a moment when you felt most alive."
         },
         {
           "type": "open",
-          "question": "TELL ME ABOUT A STRANGER WHO CHANGED YOUR DAY."
+          "question": "Tell me about a stranger who changed your day."
         },
         {
           "type": "open",
-          "question": "WHAT'S THE BEST ADVICE YOU'VE RECEIVED AND WHO GAVE IT?"
+          "question": "What's the best advice you've received and who gave it?"
         }
       ]
     },
@@ -106,15 +107,15 @@
       "questions": [
         {
           "type": "open",
-          "question": "WHAT'S THE MOST IMPORTANT QUALITY IN A FRIEND?"
+          "question": "What's the most important quality in a friend?"
         },
         {
           "type": "open",
-          "question": "HOW DO YOU SHOW SOMEONE YOU CARE?"
+          "question": "How do you show someone you care?"
         },
         {
           "type": "open",
-          "question": "WHAT DO YOU WISH PEOPLE UNDERSTOOD ABOUT YOU WITHOUT EXPLAINING?"
+          "question": "What do you wish people understood about you without explaining?"
         }
       ]
     }

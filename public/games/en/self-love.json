@@ -4,7 +4,8 @@
     "title": "Self Love",
     "subtitle": "15 questions to build your self-love practice. Play as often as needed.",
     "language": "english",
-    "type": "connection-game"
+    "type": "normal",
+    "playerGroup": ["solo"]
   },
   "ui": {
     "startScreen": {

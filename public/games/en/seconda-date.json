@@ -1,10 +1,11 @@
 {
   "testID": "second-date",
   "app": {
-    "title": "Second Date Edition",
+    "title": "Second Date",
     "subtitle": "15 questions to deepen your connection beyond first impressions",
     "language": "english",
-    "type": "connection-game"
+    "type": "edition",
+    "playerGroup": ["couple", "friends"]
   },
   "ui": {
     "startScreen": {

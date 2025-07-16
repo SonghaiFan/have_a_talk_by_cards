@@ -1,10 +1,11 @@
 {
   "testID": "relationship-check",
   "app": {
-    "title": "RELATIONSHIP CHECK-IN",
+    "title": "Relationship Check-In",
     "subtitle": "Strengthen your bond through honest conversation",
     "language": "english",
-    "type": "connection-game"
+    "type": "normal",
+    "playerGroup": ["couple"]
   },
   "ui": {
     "startScreen": {

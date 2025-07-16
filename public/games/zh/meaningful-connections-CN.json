@@ -4,7 +4,8 @@
     "title": "有意义的连接",
     "subtitle": "帮助我们真正了解彼此的问题",
     "language": "chinese",
-    "type": "connection-game"
+    "type": "normal",
+    "playerGroup": ["strangers", "friends"]
   },
   "ui": {
     "startScreen": {

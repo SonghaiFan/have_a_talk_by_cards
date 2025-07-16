@@ -16,7 +16,25 @@
     "footnote": "尽头",
     "subtitle": "选择一个对话体验",
     "loading": "加载对话中...",
-    "noGames": "暂无对话游戏可用。"
+    "noGames": "暂无对话游戏可用。",
+    "noResults": "没有符合筛选条件的游戏",
+    "allTypes": "全部类型",
+    "allGroups": "全部群组",
+    "filterByType": "按类型筛选",
+    "filterByGroup": "按群组筛选",
+    "type": {
+      "normal": "常规",
+      "edition": "特辑",
+      "special": "特别",
+      "premium": "高级"
+    },
+    "group": {
+      "solo": "独处",
+      "couple": "情侣",
+      "friends": "朋友",
+      "strangers": "陌生人",
+      "family": "家人"
+    }
   },
   "gameInterface": {
     "createYourJourney": "创建你的对话",

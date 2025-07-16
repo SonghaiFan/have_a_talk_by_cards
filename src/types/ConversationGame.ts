@@ -2,7 +2,9 @@ export interface AppInfo {
   title: string;
   subtitle: string;
   language: string;
-  type: string;
+  type: "normal" | "edition" | "special" | "premium";
+  playerGroup: ("solo" | "couple" | "friends" | "strangers" | "family")[];
+  version?: string;
 }
 
 export interface StartScreen {

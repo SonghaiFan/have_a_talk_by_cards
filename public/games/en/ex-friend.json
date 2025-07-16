@@ -1,14 +1,15 @@
 {
   "testID": "ex-friend",
   "app": {
-    "title": "Ex-Friend Edition",
+    "title": "Ex-Friend",
     "subtitle": "A guided conversation to process friendship breakups with care and intention.",
     "language": "english",
-    "type": "connection-game"
+    "type": "edition",
+    "playerGroup": ["friends", "couple"]
   },
   "ui": {
     "startScreen": {
-      "title": "Ex-Friend Edition",
+      "title": "Ex-Friend",
       "description": [
         "Friendship make-ups are soooo awkward and intimidating. It feels impossible to break the ice and have a meaningful conversation that leaves both sides feeling heard. Till now.",
         "Take turns asking and answering each question. For this specific pack, we recommend that both players answer each card. Optional: have tissues and wine ready.",

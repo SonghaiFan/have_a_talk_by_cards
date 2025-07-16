@@ -4,7 +4,8 @@
     "title": "We Are Not Really Strangers",
     "subtitle": "A card game about connection and vulnerability",
     "language": "english",
-    "type": "connection-game"
+    "type": "normal",
+    "playerGroup": ["strangers"]
   },
   "ui": {
     "startScreen": {

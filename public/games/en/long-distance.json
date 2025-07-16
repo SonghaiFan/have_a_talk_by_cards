@@ -1,14 +1,15 @@
 {
   "testID": "long-distance",
   "app": {
-    "title": "Long Distance Edition",
+    "title": "Long Distance",
     "subtitle": "15 questions to keep you close, even when you're apart.",
     "language": "english",
-    "type": "connection-game"
+    "type": "normal",
+    "playerGroup": ["couple"]
   },
   "ui": {
     "startScreen": {
-      "title": "Long Distance Edition",
+      "title": "Long Distance",
       "description": [
         "15 questions to keep you close, even when you're apart.",
         "A minimalist, emotionally intimate set of prompts for your next call."

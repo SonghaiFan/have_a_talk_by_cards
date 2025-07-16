@@ -1,14 +1,15 @@
 {
   "testID": "sneaky-link",
   "app": {
-    "title": "Sneaky Link Edition💦💦💦",
+    "title": "Sneaky Link 💦💦💦",
     "subtitle": "A questions game for you and your sneaky link.",
     "language": "english",
-    "type": "connection-game"
+    "type": "normal",
+    "playerGroup": ["couple", "friends"]
   },
   "ui": {
     "startScreen": {
-      "title": "Sneaky Link Edition💦💦💦",
+      "title": "Sneaky Link 💦💦💦",
       "description": [
         "What is a sneaky link?",
         "When you and another person are fucking up but don't want anyone to know about it.",

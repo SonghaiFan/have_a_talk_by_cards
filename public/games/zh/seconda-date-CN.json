@@ -1,10 +1,11 @@
 {
   "testID": "second-date",
   "app": {
-    "title": "第二次约会-特别版",
+    "title": "第二次约会",
     "subtitle": "15个超越初印象的深度对话",
     "language": "chinese",
-    "type": "connection-game"
+    "type": "edition",
+    "playerGroup": ["couple", "friends"]
   },
   "ui": {
     "startScreen": {
