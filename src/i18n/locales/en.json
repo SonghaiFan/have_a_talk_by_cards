@@ -22,6 +22,7 @@
     "allGroups": "All Groups",
     "filterByType": "Filter by Type",
     "filterByGroup": "Filter by Group",
+    "premiumUnlocked": "✨ Premium content unlocked!",
     "type": {
       "normal": "Regular",
       "edition": "Edition",

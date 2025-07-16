@@ -2,6 +2,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { ConversationGame } from "../types/ConversationGame";
+import { useEasterEgg } from "../hooks/useEasterEgg";
 import Card from "./Card";
 import LanguageSwitcher from "./LanguageSwitcher";
 
@@ -19,6 +20,17 @@ const GameLibrary: React.FC<GameLibraryProps> = ({ games, onGameSelect }) => {
   const [selectedGameIndex, setSelectedGameIndex] = useState(0);
   const [selectedType, setSelectedType] = useState<GameType | null>(null);
   const [selectedGroup, setSelectedGroup] = useState<PlayerGroup | null>(null);
+  const [showUnlockMessage, setShowUnlockMessage] = useState(false);
+
+  // Easter egg hook for premium unlock
+  const { handleClick, isUnlocked, clickProgress } = useEasterEgg({
+    clickCount: 4,
+    timeWindow: 2000,
+    onUnlock: () => {
+      setShowUnlockMessage(true);
+      setTimeout(() => setShowUnlockMessage(false), 3000);
+    },
+  });
 
   // Get unique game types and player groups
   const gameTypes: GameType[] = ["normal", "edition", "premium"];
@@ -30,12 +42,13 @@ const GameLibrary: React.FC<GameLibraryProps> = ({ games, onGameSelect }) => {
     "family",
   ];
 
-  // Filter games based on selected type and group
+  // Filter games based on selected type and group, considering unlock status
   const filteredGames = games.filter((game) => {
     const typeMatch = !selectedType || game.app.type === selectedType;
     const groupMatch =
       !selectedGroup || game.app.playerGroup.includes(selectedGroup);
-    return typeMatch && groupMatch;
+    const premiumAllowed = game.app.type !== "premium" || isUnlocked;
+    return typeMatch && groupMatch && premiumAllowed;
   });
 
   // Reset selected index when filters change
@@ -89,23 +102,45 @@ const GameLibrary: React.FC<GameLibraryProps> = ({ games, onGameSelect }) => {
         <LanguageSwitcher />
       </div>
 
-      {/* Header - Bold Typography */}
+      {/* Header with Easter Egg */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="text-center max-w-2xl mb-8 sm:mb-16 mt-8 sm:mt-0"
       >
-        {/* App Title with Inline Icon */}
+        {/* App Title with Interactive Icon */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 mb-4 sm:mb-6">
-          <motion.img
-            src="/card-icon.svg"
-            alt="CueCards Icon"
-            className="w-20 h-20 md:w-24 md:h-24 object-contain"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-          />
+          <motion.div
+            className="relative cursor-pointer"
+            onClick={handleClick}
+            whileTap={{ scale: 0.95 }}
+          >
+            <motion.img
+              src="/card-icon.svg"
+              alt="CueCards Icon"
+              className="w-20 h-20 md:w-24 md:h-24 object-contain"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+            />
+            {/* Subtle progress indicator */}
+            {clickProgress > 0 && clickProgress < 1 && (
+              <motion.div
+                className="absolute inset-0 rounded-full border-2 border-black"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{
+                  opacity: [0, 0.2, 0],
+                  scale: [0.8, 1.1, 1.2],
+                }}
+                transition={{
+                  duration: 0.5,
+                  times: [0, 0.5, 1],
+                  repeat: 0,
+                }}
+              />
+            )}
+          </motion.div>
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-black text-primary tracking-tight leading-none text-center">
             CueCards
           </h1>
@@ -113,6 +148,20 @@ const GameLibrary: React.FC<GameLibraryProps> = ({ games, onGameSelect }) => {
         <p className="text-lg sm:text-xl text-secondary text-intimate font-light px-4 mb-24 sm:mb-6">
           {t("gameLibrary.subtitle")}
         </p>
+
+        {/* Unlock Message */}
+        <AnimatePresence>
+          {showUnlockMessage && (
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 20 }}
+              className="fixed top-4 left-1/2 transform -translate-x-1/2 bg-black text-white px-6 py-3 rounded-full text-sm font-medium shadow-lg"
+            >
+              {t("gameLibrary.premiumUnlocked")}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </motion.div>
 
       {/* Filters Section */}
