@@ -33,19 +33,19 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
-  // Spring animations with optimized settings
+  // Spring animations with reliable settings
   const rotateX = useSpring(useTransform(mouseY, [-0.5, 0.5], [10, -10]), {
-    stiffness: 400,
-    damping: 25,
-    restDelta: 0.001,
+    stiffness: 300,
+    damping: 30,
+    restDelta: 0.01,
   });
   const rotateY = useSpring(useTransform(mouseX, [-0.5, 0.5], [-10, 10]), {
-    stiffness: 400,
-    damping: 25,
-    restDelta: 0.001,
+    stiffness: 300,
+    damping: 30,
+    restDelta: 0.01,
   });
 
-  // Optimized mouse move handler with debounced calculations
+  // Optimized mouse move handler with reliable calculations
   const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
     if (!cardRef.current) return;
 
@@ -56,17 +56,21 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
     const mouseXNorm = (event.clientX - rect.left - halfWidth) / halfWidth;
     const mouseYNorm = (event.clientY - rect.top - halfHeight) / halfHeight;
 
-    // Use requestAnimationFrame for smooth updates
-    requestAnimationFrame(() => {
-      mouseX.set(mouseXNorm);
-      mouseY.set(mouseYNorm);
-    });
+    // Clamp values to prevent extreme rotations
+    const clampedX = Math.max(-1, Math.min(1, mouseXNorm));
+    const clampedY = Math.max(-1, Math.min(1, mouseYNorm));
+
+    // Direct update for better reliability
+    mouseX.set(clampedX);
+    mouseY.set(clampedY);
   };
 
   const handleMouseLeave = () => {
-    // Smooth reset with spring animation
-    mouseX.set(0);
-    mouseY.set(0);
+    // Ensure reliable reset with immediate value setting
+    requestAnimationFrame(() => {
+      mouseX.set(0);
+      mouseY.set(0);
+    });
   };
 
   // Optimized card variants with improved transitions
