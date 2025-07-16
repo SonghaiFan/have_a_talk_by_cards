@@ -21,22 +21,64 @@ const GamePlay: React.FC<GamePlayProps> = ({
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [isCardFlipped, setIsCardFlipped] = useState(false);
   const [direction, setDirection] = useState(0);
+  const [isDarkTheme, setIsDarkTheme] = useState(
+    window.matchMedia("(prefers-color-scheme: dark)").matches
+  );
+
+  // Listen for theme changes
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    const handleThemeChange = (e: MediaQueryListEvent) => {
+      setIsDarkTheme(e.matches);
+    };
+
+    mediaQuery.addEventListener("change", handleThemeChange);
+    return () => mediaQuery.removeEventListener("change", handleThemeChange);
+  }, []);
 
   const currentQuestion = questions[currentQuestionIndex] || null;
   const currentCategory = currentQuestion
     ? game.theme.categories[currentQuestion.category]
     : null;
 
-  // Determine colors based on question type
-  const isWildcard = currentQuestion?.type === "wildcard";
-  const backgroundColor = isWildcard
-    ? "#ffffff"
-    : currentCategory?.color || "#ffffff";
-  const cardColor = isWildcard
-    ? currentCategory?.color || "#ffffff"
-    : "#ffffff";
-  const textColor = isWildcard ? "#ffffff" : "#1f2937";
-  const headerTextColor = isWildcard ? "#1f2937" : "#ffffff";
+  // Color logic based on Theme × Mode
+  const isWildMode = currentQuestion?.type === "wildcard";
+  const categoryColor = currentCategory?.color || "#ffffff";
+
+  let backgroundColor: string;
+  let cardColor: string;
+  let textColor: string;
+  let headerTextColor: string;
+
+  if (isDarkTheme) {
+    if (isWildMode) {
+      // Dark + Wild: Category color card, white text, black background
+      backgroundColor = "#000000";
+      cardColor = categoryColor;
+      textColor = "#ffffff";
+      headerTextColor = "#ffffff";
+    } else {
+      // Dark + Normal: Black card, white text, category color background (darkened)
+      backgroundColor = categoryColor;
+      cardColor = "#000000";
+      textColor = "#ffffff";
+      headerTextColor = "#ffffff";
+    }
+  } else {
+    if (isWildMode) {
+      // Light + Wild: Category color card, white text, white background
+      backgroundColor = "#ffffff";
+      cardColor = categoryColor;
+      textColor = "#ffffff";
+      headerTextColor = "#000000";
+    } else {
+      // Light + Normal: White card, black text, category color background
+      backgroundColor = categoryColor;
+      cardColor = "#ffffff";
+      textColor = "#000000";
+      headerTextColor = "#000000";
+    }
+  }
 
   const handleNext = () => {
     setDirection(1);
@@ -102,11 +144,19 @@ const GamePlay: React.FC<GamePlayProps> = ({
 
   return (
     <div
-      className="min-h-screen flex flex-col transition-colors duration-500"
+      className="min-h-screen flex flex-col transition-colors duration-500 relative"
       style={{ backgroundColor: backgroundColor }}
     >
+      {/* Dark mode darkening overlay */}
+      {isDarkTheme && !isWildMode && (
+        <div
+          className="absolute inset-0 bg-black opacity-40 pointer-events-none"
+          style={{ zIndex: 0 }}
+        />
+      )}
+
       {/* Header - Minimal Navigation */}
-      <header className="flex justify-between items-center p-4 sm:p-8">
+      <header className="flex justify-between items-center p-4 sm:p-8 relative z-10">
         <button
           className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center text-xl sm:text-2xl hover:text-gray-200 transition-colors duration-200"
           style={{ color: headerTextColor }}
@@ -127,7 +177,7 @@ const GamePlay: React.FC<GamePlayProps> = ({
       </header>
 
       {/* Main Card - Centered & Focused */}
-      <div className="flex-1 flex items-center justify-center px-4 sm:px-8 py-8 sm:py-16">
+      <div className="flex-1 flex items-center justify-center px-4 sm:px-8 py-8 sm:py-16 relative z-10">
         <div className="w-full max-w-4xl">
           {/* Category Indicator - Minimal */}
           {currentCategory && (
@@ -161,7 +211,7 @@ const GamePlay: React.FC<GamePlayProps> = ({
             direction={direction}
             isCardFlipped={isCardFlipped}
             currentQuestion={currentQuestion}
-            isWildcard={isWildcard}
+            isWildcard={isWildMode}
             cardColor={cardColor}
             textColor={textColor}
             onCardClick={handleCardClick}
@@ -191,7 +241,7 @@ const GamePlay: React.FC<GamePlayProps> = ({
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.6 }}
-        className="flex justify-between items-center p-4 sm:p-8"
+        className="flex justify-between items-center p-4 sm:p-8 relative z-10"
       >
         <motion.button
           whileHover={{ scale: 1.08, x: -2, transition: { duration: 0.2 } }}
@@ -209,7 +259,7 @@ const GamePlay: React.FC<GamePlayProps> = ({
         <div
           className="flex-1 mx-4 sm:mx-8 h-1 rounded-full overflow-hidden"
           style={{
-            backgroundColor: isWildcard
+            backgroundColor: isWildMode
               ? "#e5e7eb"
               : "rgba(255, 255, 255, 0.2)",
           }}
@@ -246,7 +296,7 @@ const GamePlay: React.FC<GamePlayProps> = ({
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.3 }}
         transition={{ delay: 1 }}
-        className="fixed bottom-4 left-1/2 -translate-x-1/2 text-xs font-light text-center hidden sm:block"
+        className="fixed bottom-4 left-1/2 -translate-x-1/2 text-xs font-light text-center hidden sm:block relative z-10"
         style={{ color: headerTextColor }}
       >
         <p>{t("navigation.keyboardHints")}</p>

@@ -14,12 +14,7 @@ const GameEnding: React.FC<GameEndingProps> = ({ game, onRestart, onExit }) => {
   const endScreen = game.ui.endScreen;
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.6 }}
-      className="min-h-screen bg-white dark:bg-black flex flex-col items-center justify-center px-4 sm:px-8 py-8 sm:py-16"
-    >
+    <div className="min-h-screen bg-white dark:bg-black flex flex-col items-center justify-center px-4 sm:px-8 py-8 sm:py-16">
       <div className="text-center max-w-2xl">
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
@@ -64,7 +59,7 @@ const GameEnding: React.FC<GameEndingProps> = ({ game, onRestart, onExit }) => {
           </motion.button>
         </motion.div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

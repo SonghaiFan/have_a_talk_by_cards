@@ -29,7 +29,7 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
   cardColor,
   textColor,
   onCardClick,
-  isDarkMode = false,
+  isDarkMode,
 }) => {
   // Mouse movement tracking with optimized values
   const cardRef = useRef<HTMLDivElement>(null);
