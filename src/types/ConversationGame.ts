@@ -7,7 +7,7 @@ export interface AppInfo {
 
 export interface StartScreen {
   title: string;
-  description: string[];
+  description: string[]; // The first item is shown in the game library, the rest are shown in the start screen
   startButton: string;
 }
 
