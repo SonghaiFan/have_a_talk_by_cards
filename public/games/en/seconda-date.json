@@ -4,7 +4,7 @@
     "title": "Second Date Edition",
     "subtitle": "15 questions to deepen your connection beyond first impressions",
     "language": "english",
-    "version": "1.0.0"
+    "type": "connection-game"
   },
   "ui": {
     "startScreen": {

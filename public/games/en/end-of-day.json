@@ -4,7 +4,7 @@
     "title": "End of the World Edition",
     "subtitle": "Imagine the world is ending in 90 days. What would you do?",
     "language": "english",
-    "version": "1.0.0"
+    "type": "connection-game"
   },
   "ui": {
     "startScreen": {

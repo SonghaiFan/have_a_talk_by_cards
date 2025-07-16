@@ -4,7 +4,7 @@
     "title": "有意义的连接",
     "subtitle": "帮助我们真正了解彼此的问题",
     "language": "chinese",
-    "version": "1.0.0"
+    "type": "connection-game"
   },
   "ui": {
     "startScreen": {

@@ -4,7 +4,7 @@
     "title": "阿瑟·亚伦的36个问题",
     "subtitle": "基于阿瑟·亚伦心理学研究的亲密关系实验",
     "language": "chinese",
-    "version": "1.0.0"
+    "type": "connection-game"
   },
   "ui": {
     "startScreen": {

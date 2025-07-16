@@ -4,7 +4,7 @@
     "title": "Ex-Friend Edition",
     "subtitle": "A guided conversation to process friendship breakups with care and intention.",
     "language": "english",
-    "version": "1.0.0"
+    "type": "connection-game"
   },
   "ui": {
     "startScreen": {

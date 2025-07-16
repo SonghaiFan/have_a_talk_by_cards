@@ -4,7 +4,7 @@
     "title": "Meaningful Connections",
     "subtitle": "Questions that help us really know each other",
     "language": "english",
-    "version": "1.0.0"
+    "type": "connection-game"
   },
   "ui": {
     "startScreen": {

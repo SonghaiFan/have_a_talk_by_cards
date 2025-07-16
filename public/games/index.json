@@ -1,6 +1,5 @@
 {
   "games": [
-    "before-marriage.json",
     "confidence-boost.json",
     "deep-connections.json",
     "end-of-day.json",
@@ -18,7 +17,6 @@
   ],
   "gamesByLanguage": {
     "en": [
-      "before-marriage.json",
       "confidence-boost.json",
       "deep-connections.json",
       "end-of-day.json",
@@ -35,7 +33,6 @@
       "xxx.json"
     ],
     "zh": [
-      "before-marriage-CN.json",
       "confidence-boost-CN.json",
       "deep-connections-CN.json",
       "end-of-day-CN.json",
@@ -52,10 +49,10 @@
       "xxx-CN.json"
     ]
   },
-  "lastUpdated": "2025-07-16T10:31:03.292Z",
+  "lastUpdated": "2025-07-16T10:44:00.426Z",
   "version": "1.0.0",
-  "generatedAt": "2025-07-16T10:31:03.294Z",
-  "totalGames": 15,
+  "generatedAt": "2025-07-16T10:44:00.428Z",
+  "totalGames": 14,
   "languages": [
     "en",
     "zh"

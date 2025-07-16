@@ -4,7 +4,7 @@
     "title": "第二次约会-特别版",
     "subtitle": "15个超越初印象的深度对话",
     "language": "chinese",
-    "version": "1.0.0"
+    "type": "connection-game"
   },
   "ui": {
     "startScreen": {

@@ -3,8 +3,8 @@
   "app": {
     "title": "We Are Not Really Strangers",
     "subtitle": "A card game about connection and vulnerability",
-    "type": "connection-game",
-    "version": "1.0.0"
+    "language": "english",
+    "type": "connection-game"
   },
   "ui": {
     "startScreen": {

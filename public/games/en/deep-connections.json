@@ -4,7 +4,7 @@
     "title": "DEEP CONNECTIONS",
     "subtitle": "Thoughtful questions for meaningful conversations",
     "language": "english",
-    "version": "1.0.0"
+    "type": "connection-game"
   },
   "ui": {
     "startScreen": {

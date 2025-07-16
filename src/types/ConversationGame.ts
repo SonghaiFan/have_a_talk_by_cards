@@ -2,7 +2,7 @@ export interface AppInfo {
   title: string;
   subtitle: string;
   language: string;
-  version: string;
+  type: string;
 }
 
 export interface StartScreen {

@@ -4,7 +4,7 @@
     "title": "Truth or Truth?",
     "subtitle": "15 juicy questions for everyone at the party. No dares, just the truth.",
     "language": "english",
-    "version": "1.0.0"
+    "type": "connection-game"
   },
   "ui": {
     "startScreen": {

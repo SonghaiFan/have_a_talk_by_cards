@@ -4,7 +4,7 @@
     "title": "关系签到",
     "subtitle": "通过诚实的对话加强你们的纽带",
     "language": "chinese",
-    "version": "1.0.0"
+    "type": "connection-game"
   },
   "ui": {
     "startScreen": {

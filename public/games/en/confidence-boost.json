@@ -4,7 +4,7 @@
     "title": "Confidence Boost",
     "subtitle": "10 Questions to Remind You of Your Strengths",
     "language": "english",
-    "version": "1.0.0"
+    "type": "connection-game"
   },
   "ui": {
     "startScreen": {

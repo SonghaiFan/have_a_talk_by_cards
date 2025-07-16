@@ -4,7 +4,7 @@
     "title": "前好友-特别版",
     "subtitle": "用关怀与诚意梳理友谊的结束",
     "language": "chinese",
-    "version": "1.0.0"
+    "type": "connection-game"
   },
   "ui": {
     "startScreen": {

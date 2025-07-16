@@ -4,7 +4,7 @@
     "title": "Long Distance Edition",
     "subtitle": "15 questions to keep you close, even when you're apart.",
     "language": "english",
-    "version": "1.0.0"
+    "type": "connection-game"
   },
   "ui": {
     "startScreen": {

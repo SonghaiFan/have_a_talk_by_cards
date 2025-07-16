@@ -4,7 +4,7 @@
     "title": "自我关爱指南",
     "subtitle": "15个建立自我关爱习惯的练习 建议每日使用",
     "language": "chinese",
-    "version": "1.0.0"
+    "type": "connection-game"
   },
   "ui": {
     "startScreen": {

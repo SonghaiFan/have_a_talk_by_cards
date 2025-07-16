@@ -4,7 +4,7 @@
     "title": "RELATIONSHIP CHECK-IN",
     "subtitle": "Strengthen your bond through honest conversation",
     "language": "english",
-    "version": "1.0.0"
+    "type": "connection-game"
   },
   "ui": {
     "startScreen": {

@@ -4,7 +4,7 @@
     "title": "末日之约-特别版",
     "subtitle": "如果世界只剩90天，你会如何度过？",
     "language": "chinese",
-    "version": "1.0.0"
+    "type": "connection-game"
   },
   "ui": {
     "startScreen": {

@@ -4,7 +4,7 @@
     "title": "XXX",
     "subtitle": "Intimate, honest questions about sex and desire",
     "language": "english",
-    "version": "1.0.0"
+    "type": "connection-game"
   },
   "ui": {
     "startScreen": {
