@@ -111,7 +111,7 @@ const GameLibrary: React.FC<GameLibraryProps> = ({ games, onGameSelect }) => {
         className="text-center max-w-2xl mb-8 sm:mb-16 mt-8 sm:mt-0"
       >
         {/* App Title with Interactive Icon */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 mb-4 sm:mb-6">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 mb-10 sm:mb-6">
           <motion.div
             className="relative cursor-pointer"
             onClick={handleClick}
@@ -146,7 +146,7 @@ const GameLibrary: React.FC<GameLibraryProps> = ({ games, onGameSelect }) => {
             CueCards
           </h1>
         </div>
-        <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 text-intimate font-light px-4 mb-24 sm:mb-6">
+        <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 text-intimate font-light px-4 mb-2 sm:mb-6">
           {t("gameLibrary.subtitle")}
         </p>
 
