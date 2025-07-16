@@ -1,14 +1,14 @@
 {
   "testID": "end-of-day",
   "app": {
-    "title": "末日之约特别版",
+    "title": "末日之约-特别版",
     "subtitle": "如果世界只剩90天，你会如何度过？",
     "language": "chinese",
     "version": "1.0.0"
   },
   "ui": {
     "startScreen": {
-      "title": "末日之约特别版",
+      "title": "末日之约-特别版",
       "description": [
         "已知的文明将在90天后湮灭",
         "让答案自然浮现 突破思维定式"
