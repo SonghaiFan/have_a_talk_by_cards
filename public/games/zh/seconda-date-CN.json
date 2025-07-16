@@ -1,0 +1,104 @@
+{
+  "testID": "second-date",
+  "app": {
+    "title": "第二次约会特辑",
+    "subtitle": "15个超越初印象的深度对话",
+    "language": "chinese",
+    "version": "1.0.0"
+  },
+  "ui": {
+    "startScreen": {
+      "title": "第二次约会",
+      "description": [
+        "已经聊过初次见面的寒暄",
+        "这15个问题带你走进彼此内心深处"
+      ],
+      "startButton": "开启对话"
+    },
+    "navigation": {
+      "nextButton": "下一个问题",
+      "prevButton": "上一个问题"
+    },
+    "endScreen": {
+      "title": "下次见面预告",
+      "subtitle": "让心与心的距离再近一些",
+      "restartButton": "重新开始"
+    }
+  },
+  "theme": {
+    "categories": {
+      "deepening": {
+        "name": "深度联结",
+        "color": "#C10216",
+        "description": "超越浅层交流的走心问答"
+      }
+    }
+  },
+  "questions": [
+    {
+      "category": "deepening",
+      "questions": [
+        {
+          "type": "open",
+          "question": "你维系最久的一段友谊是多久？"
+        },
+        {
+          "type": "open",
+          "question": "最想在哪里生活半年？为什么？"
+        },
+        {
+          "type": "open",
+          "question": "为这次约会做了哪些准备？"
+        },
+        {
+          "type": "open",
+          "question": "最近哪部电影让你看哭了？"
+        },
+        {
+          "type": "open",
+          "question": "心情不好时怎么自我调节？"
+        },
+        {
+          "type": "open",
+          "question": "对你来说很重要的小事是什么？"
+        },
+        {
+          "type": "open",
+          "question": "你对现在的生活状态满意吗？"
+        },
+        {
+          "type": "open",
+          "question": "特别环节：请交换彼此的高中照片"
+        },
+        {
+          "type": "open",
+          "question": "你属于哪种类型的消息回复者？"
+        },
+        {
+          "type": "open",
+          "question": "周日最喜欢怎么过？"
+        },
+        {
+          "type": "open",
+          "question": "上次心碎时怎么走出来的？"
+        },
+        {
+          "type": "open",
+          "question": "你更倾向深思熟虑还是随性而为？"
+        },
+        {
+          "type": "open",
+          "question": "最近改变过什么固有认知？"
+        },
+        {
+          "type": "open",
+          "question": "父母不知道的你的一面是？"
+        },
+        {
+          "type": "end",
+          "question": "请同时回答是否期待第三次约会"
+        }
+      ]
+    }
+  ]
+}

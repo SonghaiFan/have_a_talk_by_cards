@@ -1,39 +1,60 @@
 {
   "games": [
+    "before-marriage.json",
     "confidence-boost.json",
     "deep-connections.json",
+    "end-of-day.json",
+    "long-distance.json",
     "relationship-check.json",
-    "before-marriage.json",
+    "seconda-date.json",
+    "self-love.json",
+    "sneaky-link.json",
     "test-love-36.json",
+    "truth_truth.json",
     "we-are-not-really-strangers.json",
     "we-are-not-strangers.json",
     "xxx.json"
   ],
   "gamesByLanguage": {
     "en": [
+      "before-marriage.json",
       "confidence-boost.json",
       "deep-connections.json",
+      "end-of-day.json",
+      "long-distance.json",
       "relationship-check.json",
-      "before-marriage.json",
+      "seconda-date.json",
+      "self-love.json",
+      "sneaky-link.json",
       "test-love-36.json",
+      "truth_truth.json",
       "we-are-not-really-strangers.json",
       "we-are-not-strangers.json",
       "xxx.json"
     ],
     "zh": [
+      "before-marriage-CN.json",
       "confidence-boost-CN.json",
       "deep-connections-CN.json",
+      "end-of-day-CN.json",
+      "long-distance-CN.json",
       "relationship-check-CN.json",
-      "before-marriage-CN.json",
+      "seconda-date-CN.json",
+      "self-love-CN.json",
+      "sneaky-link-CN.json",
       "test-love-36-CN.json",
+      "truth_truth-CN.json",
       "we-are-not-really-strangers-CN.json",
       "we-are-not-strangers-CN.json",
       "xxx-CN.json"
     ]
   },
-  "lastUpdated": "2025-07-16T06:09:35.724Z",
+  "lastUpdated": "2025-07-16T09:29:14.862Z",
   "version": "1.0.0",
-  "generatedAt": "2025-07-16T06:09:35.726Z",
-  "totalGames": 8,
-  "languages": ["en", "zh"]
+  "generatedAt": "2025-07-16T09:29:14.863Z",
+  "totalGames": 14,
+  "languages": [
+    "en",
+    "zh"
+  ]
 }

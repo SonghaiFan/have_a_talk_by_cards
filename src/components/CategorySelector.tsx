@@ -61,7 +61,7 @@ const CategorySelector: React.FC<CategorySelectorProps> = ({
                   whileTap={{ scale: 0.9 }}
                   onClick={() => handleCategoryToggle(categoryKey)}
                   className={`
-                  relative w-11 h-11 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full transition-all duration-300 cursor-pointer touch-manipulation
+                  relative w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 rounded-full transition-all duration-300 cursor-pointer touch-manipulation
                   ${
                     isSelected
                       ? "shadow-lg scale-110"

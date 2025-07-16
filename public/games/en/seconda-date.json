@@ -1,0 +1,104 @@
+{
+  "testID": "second-date",
+  "app": {
+    "title": "Second Date Edition",
+    "subtitle": "15 questions to deepen your connection beyond first impressions",
+    "language": "english",
+    "version": "1.0.0"
+  },
+  "ui": {
+    "startScreen": {
+      "title": "Second Date",
+      "description": [
+        "You've made it past all the first date small talk.",
+        "Dig a little deeper with these 15 questions"
+      ],
+      "startButton": "Start Connecting"
+    },
+    "navigation": {
+      "nextButton": "Next Question",
+      "prevButton": "Previous Question"
+    },
+    "endScreen": {
+      "title": "For the next time you see each other",
+      "subtitle": "Keep connecting",
+      "restartButton": "Keep Connecting"
+    }
+  },
+  "theme": {
+    "categories": {
+      "deepening": {
+        "name": "Deepening",
+        "color": "#C10216",
+        "description": "Questions to move beyond surface-level connection"
+      }
+    }
+  },
+  "questions": [
+    {
+      "category": "deepening",
+      "questions": [
+        {
+          "type": "open",
+          "question": "Who's your longest friendship?"
+        },
+        {
+          "type": "open",
+          "question": "Name a place where you'd want to live for 6 months. Why?"
+        },
+        {
+          "type": "open",
+          "question": "How did you get ready for our date?"
+        },
+        {
+          "type": "open",
+          "question": "What's the last movie that made you cry?"
+        },
+        {
+          "type": "open",
+          "question": "How do you deal with a bad day?"
+        },
+        {
+          "type": "open",
+          "question": "What's something small that's a big deal to you?"
+        },
+        {
+          "type": "open",
+          "question": "Do you feel satisfied with where you're at in life? Explain."
+        },
+        {
+          "type": "open",
+          "question": "Wildcard: Both players, show a photo of yourself in high school."
+        },
+        {
+          "type": "open",
+          "question": "What kind of texter are you?"
+        },
+        {
+          "type": "open",
+          "question": "How do you like to spend your Sundays?"
+        },
+        {
+          "type": "open",
+          "question": "What got you through your last heartbreak?"
+        },
+        {
+          "type": "open",
+          "question": "Are you more often intentional or impulsive? Explain."
+        },
+        {
+          "type": "open",
+          "question": "When's the last time you changed your mind about something?"
+        },
+        {
+          "type": "open",
+          "question": "What's something your parents don't know about you?"
+        },
+        {
+          "type": "end",
+          "question": "Both players answer, will there be a third date?"
+        }
+      ]
+    }
+  ]
+}

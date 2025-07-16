@@ -1,0 +1,104 @@
+{
+  "testID": "self-love",
+  "app": {
+    "title": "自我关爱指南",
+    "subtitle": "15个建立自我关爱习惯的练习 建议每日使用",
+    "language": "chinese",
+    "version": "1.0.0"
+  },
+  "ui": {
+    "startScreen": {
+      "title": "自我关爱入门指南",
+      "description": [
+        "15个温柔叩问内心的日常练习",
+        "在自我对话中寻找成长的力量"
+      ],
+      "startButton": "开始练习"
+    },
+    "navigation": {
+      "nextButton": "下一个问题",
+      "prevButton": "上一个问题"
+    },
+    "endScreen": {
+      "title": "你是最棒的",
+      "subtitle": "自我关爱需要持续练习",
+      "restartButton": "继续练习"
+    }
+  },
+  "theme": {
+    "categories": {
+      "self-love": {
+        "name": "自我关爱",
+        "color": "#E07A5F",
+        "description": "与自己温柔对话的诚实之问"
+      }
+    }
+  },
+  "questions": [
+    {
+      "category": "self-love",
+      "questions": [
+        {
+          "type": "open",
+          "question": "最近哪件小事让你感到成就感？"
+        },
+        {
+          "type": "open",
+          "question": "哪些执念是时候放下了？"
+        },
+        {
+          "type": "open",
+          "question": "你最近治愈了哪个心结？如何做到的？"
+        },
+        {
+          "type": "open",
+          "question": "最难原谅自己的是什么？"
+        },
+        {
+          "type": "open",
+          "question": "你越来越欣赏自己的哪个特质？"
+        },
+        {
+          "type": "open",
+          "question": "你在哪些方面独具慧眼？"
+        },
+        {
+          "type": "open",
+          "question": "你在哪些方面过度付出？"
+        },
+        {
+          "type": "open",
+          "question": "你如何定义自己的成功标准？"
+        },
+        {
+          "type": "open",
+          "question": "你比想象中更需要什么？"
+        },
+        {
+          "type": "open",
+          "question": "你如何守护个人边界？"
+        },
+        {
+          "type": "open",
+          "question": "关于爱，你正在打破哪些固有认知？"
+        },
+        {
+          "type": "open",
+          "question": "此刻最需要却羞于启齿的帮助是什么？"
+        },
+        {
+          "type": "open",
+          "question": "你想打破却不知从何入手的模式是？"
+        },
+        {
+          "type": "open",
+          "question": "哪些等待其实可以终止了？"
+        },
+        {
+          "type": "end",
+          "question": "你正在成为怎样的自己？"
+        }
+      ]
+    }
+  ]
+}

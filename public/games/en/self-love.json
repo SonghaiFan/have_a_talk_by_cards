@@ -1,0 +1,104 @@
+{
+  "testID": "self-love",
+  "app": {
+    "title": "Self Love",
+    "subtitle": "15 questions to build your self-love practice. Play as often as needed.",
+    "language": "english",
+    "version": "1.0.0"
+  },
+  "ui": {
+    "startScreen": {
+      "title": "Self Love Starter Pack",
+      "description": [
+        "15 questions to build your self-love practice.",
+        "Play as often as needed."
+      ],
+      "startButton": "Begin"
+    },
+    "navigation": {
+      "nextButton": "Next Question",
+      "prevButton": "Previous Question"
+    },
+    "endScreen": {
+      "title": "You are the best",
+      "subtitle": "Reminder: Self love takes practice.",
+      "restartButton": "Keep Going"
+    }
+  },
+  "theme": {
+    "categories": {
+      "self-love": {
+        "name": "Self Love",
+        "color": "#E07A5F",
+        "description": "Gentle, honest questions for your relationship with yourself"
+      }
+    }
+  },
+  "questions": [
+    {
+      "category": "self-love",
+      "questions": [
+        {
+          "type": "open",
+          "question": "What gave you a sense of achievement recently?"
+        },
+        {
+          "type": "open",
+          "question": "What do you no longer need?"
+        },
+        {
+          "type": "open",
+          "question": "What's one thing you healed from, and how?"
+        },
+        {
+          "type": "open",
+          "question": "What is difficult to forgive yourself for?"
+        },
+        {
+          "type": "open",
+          "question": "What have you grown to love about yourself?"
+        },
+        {
+          "type": "open",
+          "question": "What do you have great taste in?"
+        },
+        {
+          "type": "open",
+          "question": "Where are you giving too much?"
+        },
+        {
+          "type": "open",
+          "question": "How do you measure your own success?"
+        },
+        {
+          "type": "open",
+          "question": "What do you need more than you'd like to admit?"
+        },
+        {
+          "type": "open",
+          "question": "How do you set boundaries?"
+        },
+        {
+          "type": "open",
+          "question": "What are you trying to unlearn about love?"
+        },
+        {
+          "type": "open",
+          "question": "What help could you ask for, even if it's difficult?"
+        },
+        {
+          "type": "open",
+          "question": "What pattern do you want to break, even if you don't know how yet?"
+        },
+        {
+          "type": "open",
+          "question": "What do you no longer want to wait for?"
+        },
+        {
+          "type": "end",
+          "question": "Who are you in the process of becoming?"
+        }
+      ]
+    }
+  ]
+}

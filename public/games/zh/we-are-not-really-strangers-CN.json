@@ -40,12 +40,12 @@
       },
       "Vulnerable Moments": {
         "name": "脆弱时刻",
-        "color": "#E57373",
+        "color": "#C62828",
         "description": "真诚坦率与情感亲密"
       },
       "Wildcards": {
         "name": "百变卡",
-        "color": "#C62828",
+        "color": "#000000",
         "description": "互动体验与特别时刻"
       }
     }

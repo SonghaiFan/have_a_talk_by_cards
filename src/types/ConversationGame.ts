@@ -46,7 +46,7 @@ export interface ExportTemplate {
 }
 
 export interface Question {
-  type?: string;
+  type?: "open" | "end" | "wildcard";
   question: string;
   more?: string[] | Record<string, string>;
 }

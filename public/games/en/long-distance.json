@@ -1,0 +1,104 @@
+{
+  "testID": "long-distance",
+  "app": {
+    "title": "Long Distance Edition",
+    "subtitle": "15 questions to keep you close, even when you're apart.",
+    "language": "english",
+    "version": "1.0.0"
+  },
+  "ui": {
+    "startScreen": {
+      "title": "Long Distance Edition",
+      "description": [
+        "15 questions to keep you close, even when you're apart.",
+        "A minimalist, emotionally intimate set of prompts for your next call."
+      ],
+      "startButton": "Start"
+    },
+    "navigation": {
+      "nextButton": "Next Question",
+      "prevButton": "Previous Question"
+    },
+    "endScreen": {
+      "title": "For Your Next Call",
+      "subtitle": "Reminder: Distance doesn't mean being disconnected.",
+      "restartButton": "Restart"
+    }
+  },
+  "theme": {
+    "categories": {
+      "connection": {
+        "name": "Connection",
+        "color": "#F88FA8",
+        "description": "Questions to nurture closeness from afar"
+      }
+    }
+  },
+  "questions": [
+    {
+      "category": "connection",
+      "questions": [
+        {
+          "type": "open",
+          "question": "What are you newly obsessed with?"
+        },
+        {
+          "type": "open",
+          "question": "Describe your favorite spots in your neighborhood."
+        },
+        {
+          "type": "open",
+          "question": "What pissed you off this week?"
+        },
+        {
+          "type": "open",
+          "question": "Who have you grown closer to lately?"
+        },
+        {
+          "type": "open",
+          "question": "How do you spend your mornings?"
+        },
+        {
+          "type": "open",
+          "question": "What made you laugh last? Why?"
+        },
+        {
+          "type": "open",
+          "question": "Share some good news (big or small)."
+        },
+        {
+          "type": "open",
+          "question": "What have you been daydreaming about?"
+        },
+        {
+          "type": "open",
+          "question": "How have you been challenging yourself lately?"
+        },
+        {
+          "type": "open",
+          "question": "What do you eat when you're too tired to actually make anything?"
+        },
+        {
+          "type": "open",
+          "question": "Send a screenshot of the most unhinged part of your camera roll."
+        },
+        {
+          "type": "open",
+          "question": "What have you changed your mind about? Why?"
+        },
+        {
+          "type": "open",
+          "question": "Pick a movie you can both watch this week. Set a date to talk about it."
+        },
+        {
+          "type": "open",
+          "question": "What little thing reminds you of me?"
+        },
+        {
+          "type": "open",
+          "question": "What do you wish we could do together? What can we do instead?"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "testID": "truth-truth",
+  "app": {
+    "title": "真心话",
+    "subtitle": "15个直击灵魂的派对提问｜没有大冒险，只有真心话",
+    "language": "chinese",
+    "version": "1.0.0"
+  },
+  "ui": {
+    "startScreen": {
+      "title": "真心话",
+      "description": [
+        "15个直击灵魂的派对提问",
+        "没有大冒险，只有真心话。轮流作答。认真倾听。坦诚分享。"
+      ],
+      "startButton": "开始"
+    },
+    "navigation": {
+      "nextButton": "下一个问题",
+      "prevButton": "上一个问题"
+    },
+    "endScreen": {
+      "title": "所有问题已回答",
+      "subtitle": "感谢参与，是否发现了新的一面？",
+      "restartButton": "再来一次"
+    }
+  },
+  "theme": {
+    "categories": {
+      "truth": {
+        "name": "真心话",
+        "color": "#2E0854",
+        "description": "直指人心的真实问题"
+      }
+    }
+  },
+  "questions": [
+    {
+      "category": "truth",
+      "questions": [
+        {
+          "type": "open",
+          "question": "如果没有任何后果，你现在最想发什么信息？"
+        },
+        {
+          "type": "open",
+          "question": "约会时什么情况会让你立刻走人？"
+        },
+        {
+          "type": "open",
+          "question": "在场谁最能守住秘密？谁最不可信？"
+        },
+        {
+          "type": "open",
+          "question": "宁愿出轨还是被出轨？为什么？"
+        },
+        {
+          "type": "open",
+          "question": "你为吸引注意做过最尴尬的事是什么？"
+        },
+        {
+          "type": "open",
+          "question": "你对现代约会文化有什么犀利看法？"
+        },
+        {
+          "type": "open",
+          "question": "你有哪些俗气却戒不掉的小爱好？"
+        },
+        {
+          "type": "open",
+          "question": "在场谁会最早离场？谁会玩到天亮？"
+        },
+        {
+          "type": "open",
+          "question": "你觉得自己有哪些危险特质？"
+        },
+        {
+          "type": "open",
+          "question": "最想和在场谁交换人生？"
+        },
+        {
+          "type": "open",
+          "question": "你觉得自己哪方面比在场所有人都强？"
+        },
+        {
+          "type": "open",
+          "question": "想知道伴侣全部情史还是一无所知？为什么？"
+        },
+        {
+          "type": "open",
+          "question": "在场谁最爱故意挑事？"
+        },
+        {
+          "type": "open",
+          "question": "你庆幸自己改掉了什么习惯？"
+        },
+        {
+          "type": "open",
+          "question": "在场谁最可能一起离开？"
+        }
+      ]
+    }
+  ]
+}

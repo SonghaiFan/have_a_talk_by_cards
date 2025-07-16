@@ -149,7 +149,10 @@ const GameInterface: React.FC<GameInterfaceProps> = ({ game, onExit }) => {
       finalQuestions.splice(randomIndex, 0, wildcard);
     });
 
-    return finalQuestions;
+    // After all other logic, move 'end' type questions to the end
+    const endQuestions = finalQuestions.filter((q: any) => q.type === "end");
+    const nonEndQuestions = finalQuestions.filter((q: any) => q.type !== "end");
+    return [...nonEndQuestions, ...endQuestions];
   };
 
   // Stage navigation handlers

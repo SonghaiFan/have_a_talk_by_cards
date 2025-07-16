@@ -1,0 +1,104 @@
+{
+  "testID": "end-of-day",
+  "app": {
+    "title": "末日之约特别版",
+    "subtitle": "如果世界只剩90天，你会如何度过？",
+    "language": "chinese",
+    "version": "1.0.0"
+  },
+  "ui": {
+    "startScreen": {
+      "title": "末日之约特别版",
+      "description": [
+        "已知的文明将在90天后湮灭",
+        "让答案自然浮现 突破思维定式"
+      ],
+      "startButton": "启程"
+    },
+    "navigation": {
+      "nextButton": "下一题",
+      "prevButton": "上一题"
+    },
+    "endScreen": {
+      "title": "末日新生",
+      "subtitle": "不必等到世界终结 才开启全新章节",
+      "restartButton": "再次挑战"
+    }
+  },
+  "theme": {
+    "categories": {
+      "endOfDay": {
+        "name": "末日之问",
+        "color": "#000000",
+        "description": "直面终局的灵魂拷问"
+      }
+    }
+  },
+  "questions": [
+    {
+      "category": "endOfDay",
+      "questions": [
+        {
+          "type": "open",
+          "question": "此刻起你会开始做什么？"
+        },
+        {
+          "type": "open",
+          "question": "你会戒掉什么习惯？"
+        },
+        {
+          "type": "open",
+          "question": "第一个想去的地方是哪里？\n为什么？"
+        },
+        {
+          "type": "open",
+          "question": "末日降临，\n谁是你的同舟共济者？"
+        },
+        {
+          "type": "open",
+          "question": "你会推举谁担任生存领袖？\n为什么？"
+        },
+        {
+          "type": "open",
+          "question": "若有一个求生背包，\n你会装入什么？"
+        },
+        {
+          "type": "open",
+          "question": "末日会改变你的亲密关系吗？\n请具体说明。"
+        },
+        {
+          "type": "open",
+          "question": "你会如何挥霍最后的积蓄？"
+        },
+        {
+          "type": "open",
+          "question": "哪些焦虑你决定不再理会？"
+        },
+        {
+          "type": "open",
+          "question": "如果允许无限量拥有某物，\n你会选择什么？"
+        },
+        {
+          "type": "open",
+          "question": "你会给地球新主人留下怎样的时光胶囊？"
+        },
+        {
+          "type": "open",
+          "question": "一直羞于尝试的事，\n现在会去体验吗？"
+        },
+        {
+          "type": "open",
+          "question": "描绘你理想的末日狂欢盛宴"
+        },
+        {
+          "type": "open",
+          "question": "若有机会向全人类广播，\n你会传递什么讯息？"
+        },
+        {
+          "type": "open",
+          "question": "如果外星人只救你和另一个人，\n你会带谁？为什么？"
+        }
+      ]
+    }
+  ]
+}

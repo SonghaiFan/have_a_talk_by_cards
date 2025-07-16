@@ -40,12 +40,12 @@
       },
       "Vulnerable Moments": {
         "name": "Vulnerable Moments",
-        "color": "#E57373",
+        "color": "#C62828",
         "description": "Raw honesty and emotional intimacy"
       },
       "Wildcards": {
         "name": "Wildcards",
-        "color": "#C62828",
+        "color": "#000000",
         "description": "Interactive experiences and special moments"
       }
     }

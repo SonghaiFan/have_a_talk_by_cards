@@ -1,0 +1,104 @@
+{
+  "testID": "end-of-day",
+  "app": {
+    "title": "End of the World Edition",
+    "subtitle": "Imagine the world is ending in 90 days. What would you do?",
+    "language": "english",
+    "version": "1.0.0"
+  },
+  "ui": {
+    "startScreen": {
+      "title": "End of the World Edition",
+      "description": [
+        "The world as you know it ends in 90 days. What if anything was possible?",
+        "Let your answers surprise you. Think beyond the obvious."
+      ],
+      "startButton": "Start"
+    },
+    "navigation": {
+      "nextButton": "Next",
+      "prevButton": "Back"
+    },
+    "endScreen": {
+      "title": "A New Beginning",
+      "subtitle": "Don't wait until the end to start a brand new beginning.",
+      "restartButton": "Play Again"
+    }
+  },
+  "theme": {
+    "categories": {
+      "endOfDay": {
+        "name": "End of the World",
+        "color": "#000000",
+        "description": "Questions for the last days"
+      }
+    }
+  },
+  "questions": [
+    {
+      "category": "endOfDay",
+      "questions": [
+        {
+          "type": "open",
+          "question": "What would you start doing?"
+        },
+        {
+          "type": "open",
+          "question": "What would you stop doing?"
+        },
+        {
+          "type": "open",
+          "question": "Where would you go first? Why?"
+        },
+        {
+          "type": "open",
+          "question": "Who is in your tribe?"
+        },
+        {
+          "type": "open",
+          "question": "Who would you nominate to lead your tribe? Why them?"
+        },
+        {
+          "type": "open",
+          "question": "You have a survival backpack. What are you filling it with?"
+        },
+        {
+          "type": "open",
+          "question": "Would your sex life change? Explain."
+        },
+        {
+          "type": "open",
+          "question": "What's the craziest thing you'd spend your savings on?"
+        },
+        {
+          "type": "open",
+          "question": "What would you stop worrying about?"
+        },
+        {
+          "type": "open",
+          "question": "If you could have an infinite supply of one thing, what would it be?"
+        },
+        {
+          "type": "open",
+          "question": "What would you leave in a time capsule for the next inhabitants of Earth?"
+        },
+        {
+          "type": "open",
+          "question": "What's one thing you'd finally try that you've always been too embarrassed to do?"
+        },
+        {
+          "type": "open",
+          "question": "Describe your ideal 'end of the world' party in detail."
+        },
+        {
+          "type": "open",
+          "question": "If you could broadcast one message to the entire world, what would it be?"
+        },
+        {
+          "type": "open",
+          "question": "If aliens offered to save you and one person, who would you bring and why?"
+        }
+      ]
+    }
+  ]
+}

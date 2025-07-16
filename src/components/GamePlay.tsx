@@ -212,7 +212,19 @@ const GamePlay: React.FC<GamePlayProps> = ({
                     >
                       <div className="text-center h-full flex flex-col justify-center">
                         <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 leading-tight font-sans tracking-tight px-2">
-                          {currentQuestion?.question}
+                          {currentQuestion?.question
+                            ? currentQuestion.question
+                                .split("\n")
+                                .map((line: string, idx: number) => (
+                                  <span key={idx}>
+                                    {line}
+                                    {idx !==
+                                      currentQuestion.question.split("\n")
+                                        .length -
+                                        1 && <br />}
+                                  </span>
+                                ))
+                            : null}
                         </h2>
                       </div>
                     </Card>

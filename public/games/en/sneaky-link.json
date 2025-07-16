@@ -1,0 +1,132 @@
+{
+  "testID": "sneaky-link",
+  "app": {
+    "title": "Sneaky Link Edition💦💦💦",
+    "subtitle": "A questions game for you and your sneaky link.",
+    "language": "english",
+    "version": "1.0.0"
+  },
+  "ui": {
+    "startScreen": {
+      "title": "Sneaky Link Edition💦💦💦",
+      "description": [
+        "What is a sneaky link?",
+        "When you and another person are fucking up but don't want anyone to know about it.",
+        "You tryna be my sneaky link or sum?",
+        "",
+        "Instructions:",
+        "This is a questions game to play with your sneaky link. There are only 2 rules:",
+        "1. Be honest.",
+        "2. The person who sent the last 'u up?' text goes first.",
+        "",
+        "Warning: This may be the most you've ever talked to them."
+      ],
+      "startButton": "Start"
+    },
+    "navigation": {
+      "nextButton": "Next",
+      "prevButton": "Back"
+    },
+    "endScreen": {
+      "title": "Are you awake right now?",
+      "subtitle": "Read 1:43 AM",
+      "restartButton": "Send 'u up?'"
+    }
+  },
+  "theme": {
+    "categories": {
+      "Level 1": {
+        "name": "Level 1",
+        "color": "#F5B7B1",
+        "description": "First time"
+      },
+      "Level 2": {
+        "name": "Level 2",
+        "color": "#D98880",
+        "description": "Second time"
+      },
+      "Level 3": {
+        "name": "Level 3",
+        "color": "#922B21",
+        "description": "Third time"
+      }
+    }
+  },
+  "questions": [
+    {
+      "category": "Level 1",
+      "questions": [
+        {
+          "type": "open",
+          "question": "What did you think I would be like in bed? What am I actually like?"
+        },
+        {
+          "type": "open",
+          "question": "What would you assume about me based off of my social media?"
+        }
+      ]
+    },
+    {
+      "category": "Level 2",
+      "questions": [
+        {
+          "type": "open",
+          "question": "What's my name in your contacts?"
+        },
+        {
+          "type": "open",
+          "question": "If we had to try something new tonight, what would it be? Bonus: Do it."
+        },
+        {
+          "type": "open",
+          "question": "What's the best text you could receive from me?"
+        },
+        {
+          "type": "open",
+          "question": "What is the latest time you would respond to a 'u up?' text from me?"
+        },
+        {
+          "type": "open",
+          "question": "My place or your place?"
+        },
+        {
+          "type": "open",
+          "question": "What's your favorite part of my body? Prove it."
+        },
+        {
+          "type": "open",
+          "question": "When do you think about me most?"
+        },
+        {
+          "type": "open",
+          "question": "What's something about you that might surprise me?"
+        },
+        {
+          "type": "open",
+          "question": "What am I good at? (Describe in detail)"
+        },
+        {
+          "type": "open",
+          "question": "What is your current go-to late night snack?"
+        },
+        {
+          "type": "open",
+          "question": "When I show up, what outfit do you like to see me in?"
+        }
+      ]
+    },
+    {
+      "category": "Level 3",
+      "questions": [
+        {
+          "type": "open",
+          "question": "Come up with a secret code word/phrase to text each other."
+        },
+        {
+          "type": "open",
+          "question": "Why do you keep coming back?"
+        }
+      ]
+    }
+  ]
+}
