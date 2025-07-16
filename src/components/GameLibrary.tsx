@@ -120,9 +120,9 @@ const GameLibrary: React.FC<GameLibraryProps> = ({ games, onGameSelect }) => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
-        className="w-full max-w-4xl"
+        className="w-full max-w-5xl"
       >
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center bg-gray-50 rounded-2xl p-6  mb-24 sm:mb-20">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-centerrounded-2xl p-6 mb-24 sm:mb-20">
           {/* Game Type Filter */}
           <div className="flex flex-col items-center gap-3 w-full sm:w-auto">
             <span className="text-xs uppercase tracking-wider text-gray-500 font-medium">
