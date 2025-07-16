@@ -5,6 +5,7 @@ import { ConversationGame } from "../types/ConversationGame";
 import { useEasterEgg } from "../hooks/useEasterEgg";
 import Card from "./Card";
 import LanguageSwitcher from "./LanguageSwitcher";
+import FilterGroup from "./FilterGroup";
 
 type PlayerGroup = "solo" | "couple" | "friends" | "strangers" | "family";
 type GameType = "normal" | "edition" | "premium";
@@ -171,77 +172,29 @@ const GameLibrary: React.FC<GameLibraryProps> = ({ games, onGameSelect }) => {
         transition={{ duration: 0.6, delay: 0.2 }}
         className="w-full max-w-5xl"
       >
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-centerrounded-2xl p-6 mb-24 sm:mb-20">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center rounded-2xl p-6 mb-24 sm:mb-20">
           {/* Game Type Filter */}
-          <div className="flex flex-col items-center gap-3 w-full sm:w-auto">
-            <span className="text-xs uppercase tracking-wider text-gray-500 font-medium">
-              {t("gameLibrary.filterByType")}
-            </span>
-            <div className="flex flex-wrap gap-2 justify-center">
-              <button
-                onClick={() => setSelectedType(null)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors
-                  ${
-                    !selectedType
-                      ? "bg-black text-white"
-                      : "bg-white text-gray-600 hover:bg-gray-100"
-                  }`}
-              >
-                {t("gameLibrary.allTypes")}
-              </button>
-              {gameTypes.map((type) => (
-                <button
-                  key={type}
-                  onClick={() => setSelectedType(type)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-colors
-                    ${
-                      selectedType === type
-                        ? "bg-black text-white"
-                        : "bg-white text-gray-600 hover:bg-gray-100"
-                    }`}
-                >
-                  {t(`gameLibrary.type.${type}`)}
-                </button>
-              ))}
-            </div>
-          </div>
+          <FilterGroup
+            title={t("gameLibrary.filterByType")}
+            allLabel={t("gameLibrary.allTypes")}
+            options={gameTypes}
+            selectedValue={selectedType}
+            onSelectionChange={setSelectedType}
+            translationKey="gameLibrary.type"
+          />
 
           {/* Vertical Separator for Desktop */}
-          <div className="hidden sm:block w-px h-12 bg-gray-200 mx-4" />
+          <div className="hidden sm:block w-px h-15 bg-gray-200 dark:bg-gray-700 mx-4" />
 
           {/* Player Group Filter */}
-          <div className="flex flex-col items-center gap-3 w-full sm:w-auto">
-            <span className="text-xs uppercase tracking-wider text-gray-500 font-medium">
-              {t("gameLibrary.filterByGroup")}
-            </span>
-            <div className="flex flex-wrap gap-2 justify-center">
-              <button
-                onClick={() => setSelectedGroup(null)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors
-                  ${
-                    !selectedGroup
-                      ? "bg-black text-white"
-                      : "bg-white text-gray-600 hover:bg-gray-100"
-                  }`}
-              >
-                {t("gameLibrary.allGroups")}
-              </button>
-              {playerGroups.map((group) => (
-                <button
-                  key={group}
-                  onClick={() => setSelectedGroup(group)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-colors
-                    ${
-                      selectedGroup === group
-                        ? "bg-black text-white"
-                        : "bg-white text-gray-600 hover:bg-gray-100"
-                    }`}
-                >
-                  {t(`gameLibrary.group.${group}`)}
-                </button>
-              ))}
-            </div>
-          </div>
+          <FilterGroup
+            title={t("gameLibrary.filterByGroup")}
+            allLabel={t("gameLibrary.allGroups")}
+            options={playerGroups}
+            selectedValue={selectedGroup}
+            onSelectionChange={setSelectedGroup}
+            translationKey="gameLibrary.group"
+          />
         </div>
       </motion.div>
 
@@ -250,7 +203,7 @@ const GameLibrary: React.FC<GameLibraryProps> = ({ games, onGameSelect }) => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.4 }}
-        className="w-full max-w-4xl grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-12 mb-8 sm:mb-16 justify-items-center"
+        className="w-full max-w-4xl grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-12 mb-8 sm:mb-16 justify-items-center"
       >
         {filteredGames.map((game, index) => (
           <motion.div
