@@ -96,7 +96,7 @@ const GameLibrary: React.FC<GameLibraryProps> = ({ games, onGameSelect }) => {
   }, [selectedGameIndex, filteredGames]);
 
   return (
-    <div className="min-h-screen bg-white flex flex-col items-center px-4 sm:px-8 py-8 sm:py-16">
+    <div className="min-h-screen bg-white dark:bg-gray-900 flex flex-col items-center px-4 sm:px-8 py-8 sm:py-16">
       {/* Language Switcher */}
       <div className="absolute top-4 right-4 sm:top-8 sm:right-8">
         <LanguageSwitcher />
@@ -141,11 +141,11 @@ const GameLibrary: React.FC<GameLibraryProps> = ({ games, onGameSelect }) => {
               />
             )}
           </motion.div>
-          <h1 className="text-5xl sm:text-6xl md:text-7xl font-black text-primary tracking-tight leading-none text-center">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-black text-gray-900 dark:text-white tracking-tight leading-none text-center">
             CueCards
           </h1>
         </div>
-        <p className="text-lg sm:text-xl text-secondary text-intimate font-light px-4 mb-24 sm:mb-6">
+        <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 text-intimate font-light px-4 mb-24 sm:mb-6">
           {t("gameLibrary.subtitle")}
         </p>
 

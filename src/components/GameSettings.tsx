@@ -27,18 +27,13 @@ const GameSettings: React.FC<GameSettingsProps> = ({
   const { t } = useTranslation();
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.6 }}
-      className="min-h-screen bg-white flex flex-col items-center justify-center px-8 py-16"
-    >
+    <div className="min-h-screen bg-white dark:bg-gray-900 flex flex-col items-center justify-center px-8 py-16">
       {/* Back Button */}
       <motion.button
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.3 }}
-        className="absolute top-8 left-8 w-12 h-12 flex items-center justify-center text-2xl text-secondary hover:text-primary transition-colors duration-200"
+        className="absolute top-8 left-8 w-12 h-12 flex items-center justify-center text-2xl text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-200"
         onClick={onBack}
       >
         ←
@@ -53,10 +48,10 @@ const GameSettings: React.FC<GameSettingsProps> = ({
           transition={{ delay: 0.2, duration: 0.8 }}
           className="space-y-4"
         >
-          <h1 className="text-4xl md:text-5xl font-bold text-primary tracking-tight leading-tight">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white tracking-tight leading-tight">
             {t("gameInterface.createYourJourney")}
           </h1>
-          <p className="text-lg text-secondary text-intimate font-light max-w-md mx-auto">
+          <p className="text-lg text-gray-600 dark:text-gray-300 text-intimate font-light max-w-md mx-auto">
             {t("gameInterface.createJourneySubtitle")}
           </p>
         </motion.div>
@@ -80,7 +75,7 @@ const GameSettings: React.FC<GameSettingsProps> = ({
           initial={{ opacity: 0, scaleX: 0 }}
           animate={{ opacity: 1, scaleX: 1 }}
           transition={{ delay: 0.7, duration: 0.8 }}
-          className="w-16 h-px bg-gray-200 mx-auto"
+          className="w-16 h-px bg-gray-200 dark:bg-gray-600 mx-auto"
         />
 
         {/* Time Selection Section */}
@@ -108,7 +103,7 @@ const GameSettings: React.FC<GameSettingsProps> = ({
           <motion.button
             whileHover={{ y: -2, transition: { duration: 0.2 } }}
             whileTap={{ scale: 0.98 }}
-            className="bg-primary text-white px-12 py-4 rounded-xl text-lg font-light tracking-wide transition-all duration-200 hover:bg-secondary disabled:opacity-50 disabled:cursor-not-allowed shadow-lg hover:shadow-xl"
+            className="bg-gray-900 dark:bg-white text-white dark:text-gray-900 px-12 py-4 rounded-xl text-lg font-light tracking-wide transition-all duration-200 hover:bg-gray-700 dark:hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg hover:shadow-xl"
             onClick={onStartGame}
             disabled={selectedCategories.length === 0}
           >
@@ -116,7 +111,7 @@ const GameSettings: React.FC<GameSettingsProps> = ({
           </motion.button>
         </motion.div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 

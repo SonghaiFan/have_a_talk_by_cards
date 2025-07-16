@@ -214,10 +214,11 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
                             (option: string, index: number) => (
                               <p
                                 key={index}
-                                className="text-xs sm:text-sm font-light leading-relaxed"
-                                style={{
-                                  color: isWildcard ? "#ffffff" : "#6b7280",
-                                }}
+                                className={`text-xs sm:text-sm font-light leading-relaxed ${
+                                  isWildcard
+                                    ? "text-white"
+                                    : "text-gray-500 dark:text-gray-400"
+                                }`}
                               >
                                 • {option}
                               </p>
@@ -227,16 +228,18 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
                             ([key, value]) => (
                               <p
                                 key={key}
-                                className="text-xs sm:text-sm font-light leading-relaxed"
-                                style={{
-                                  color: isWildcard ? "#ffffff" : "#6b7280",
-                                }}
+                                className={`text-xs sm:text-sm font-light leading-relaxed ${
+                                  isWildcard
+                                    ? "text-white"
+                                    : "text-gray-500 dark:text-gray-400"
+                                }`}
                               >
                                 <span
-                                  className="font-medium"
-                                  style={{
-                                    color: isWildcard ? "#ffffff" : "#1f2937",
-                                  }}
+                                  className={`font-medium ${
+                                    isWildcard
+                                      ? "text-white"
+                                      : "text-gray-800 dark:text-gray-200"
+                                  }`}
                                 >
                                   {key}.
                                 </span>{" "}

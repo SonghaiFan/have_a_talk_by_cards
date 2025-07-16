@@ -35,8 +35,8 @@ const GamePlay: React.FC<GamePlayProps> = ({
   const cardColor = isWildcard
     ? currentCategory?.color || "#ffffff"
     : "#ffffff";
-  const textColor = isWildcard ? "#ffffff" : "#1f2937"; // white for wildcard, dark for regular
-  const headerTextColor = isWildcard ? "#1f2937" : "#ffffff"; // dark for wildcard, white for regular
+  const textColor = isWildcard ? "#ffffff" : "#1f2937";
+  const headerTextColor = isWildcard ? "#1f2937" : "#ffffff";
 
   const handleNext = () => {
     setDirection(1);

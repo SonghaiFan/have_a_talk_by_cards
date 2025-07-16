@@ -28,10 +28,10 @@ const CategorySelector: React.FC<CategorySelectorProps> = ({
     <div className="space-y-6 sm:space-y-8 px-4 sm:px-6">
       {/* Section Header */}
       <div className="space-y-2">
-        <h2 className="text-xl sm:text-2xl font-light text-primary">
+        <h2 className="text-xl sm:text-2xl font-light text-gray-900 dark:text-white">
           {t("categorySelector.title")}
         </h2>
-        <p className="text-sm sm:text-base text-secondary text-intimate font-light">
+        <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 text-intimate font-light">
           {t("categorySelector.subtitle")}
         </p>
       </div>
@@ -94,10 +94,10 @@ const CategorySelector: React.FC<CategorySelectorProps> = ({
                 </motion.button>
 
                 <div className="text-center space-y-0.5 sm:space-y-1 max-w-[80px] sm:max-w-none">
-                  <div className="text-xs sm:text-sm font-medium text-primary leading-tight">
+                  <div className="text-xs sm:text-sm font-medium text-gray-900 dark:text-white leading-tight">
                     {category.name}
                   </div>
-                  <div className="text-xs text-secondary/70 font-light">
+                  <div className="text-xs text-gray-600 dark:text-gray-400 font-light">
                     {questionCount} moments
                   </div>
                 </div>
@@ -112,7 +112,7 @@ const CategorySelector: React.FC<CategorySelectorProps> = ({
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center text-secondary/70 font-light text-xs sm:text-sm px-4"
+          className="text-center text-gray-600 dark:text-gray-400 font-light text-xs sm:text-sm px-4"
         >
           Select at least one area to begin your journey
         </motion.p>

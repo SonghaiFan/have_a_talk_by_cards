@@ -40,17 +40,17 @@ const TimePercentageSlider: React.FC<TimePercentageSliderProps> = ({
     <div className="space-y-6 sm:space-y-8 px-4 sm:px-6">
       {/* Section Header */}
       <div className="space-y-2">
-        <h2 className="text-xl sm:text-2xl font-light text-primary">
+        <h2 className="text-xl sm:text-2xl font-light text-gray-900 dark:text-white">
           {t("timePercentage.title")}
         </h2>
-        <p className="text-sm sm:text-base text-secondary text-intimate font-light">
+        <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 text-intimate font-light">
           {t("timePercentage.subtitle")}
         </p>
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
-          className="text-xs sm:text-sm text-secondary/70 font-light"
+          className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 font-light"
         >
           {estimatedQuestions} questions • ~{estimatedTime} minutes together
         </motion.div>
@@ -84,7 +84,7 @@ const TimePercentageSlider: React.FC<TimePercentageSliderProps> = ({
               />
             </div>
 
-            <div className="flex justify-between text-xs text-secondary/60 font-light">
+            <div className="flex justify-between text-xs text-gray-500 dark:text-gray-400 font-light">
               <span>{t("timePercentage.labels.light")}</span>
               <span>{t("timePercentage.labels.meaningful")}</span>
               <span>{t("timePercentage.labels.deep")}</span>

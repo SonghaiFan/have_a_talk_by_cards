@@ -15,6 +15,35 @@
   --animate-slide-up: slide-up 0.4s ease-out;
 }
 
+/* Dark mode CSS variables */
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f9fafb;
+  --bg-card: #ffffff;
+  --text-primary: #1a1a1a;
+  --text-secondary: #4a4a4a;
+  --text-muted: #6b7280;
+  --border-color: #e5e7eb;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --slider-track: #f3f4f6;
+  --slider-thumb: #1a1a1a;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --bg-card: #334155;
+    --text-primary: #f1f5f9;
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+    --border-color: #475569;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --slider-track: #374151;
+    --slider-thumb: #f1f5f9;
+  }
+}
+
 @keyframes fade-in {
   0% {
     opacity: 0;

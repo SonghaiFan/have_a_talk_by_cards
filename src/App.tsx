@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import "./App.css";
 import { ConversationGame } from "./types/ConversationGame";
 import GameLibrary from "./components/GameLibrary";
-import GameInterface from "./components/GameInterface";
+import GameController from "./components/GameController";
 
 function App() {
   const { i18n } = useTranslation();
@@ -112,9 +112,9 @@ function App() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex flex-col justify-center items-center bg-white">
-        <div className="w-8 h-8 border-2 border-subtle border-t-primary rounded-full animate-spin mb-6"></div>
-        <p className="text-lg text-secondary font-light">
+      <div className="min-h-screen flex flex-col justify-center items-center bg-white dark:bg-gray-900">
+        <div className="w-8 h-8 border-2 border-gray-300 dark:border-gray-600 border-t-primary rounded-full animate-spin mb-6"></div>
+        <p className="text-lg text-gray-600 dark:text-gray-300 font-light">
           Loading conversations...
         </p>
       </div>
@@ -123,7 +123,7 @@ function App() {
 
   if (currentGame) {
     return (
-      <GameInterface
+      <GameController
         key={currentGame.testID}
         game={currentGame}
         onExit={handleGameExit}

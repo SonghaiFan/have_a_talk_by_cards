@@ -13,12 +13,12 @@ enum GameStage {
   ENDING = "ending",
 }
 
-interface GameInterfaceProps {
+interface GameControllerProps {
   game: ConversationGame;
   onExit: () => void;
 }
 
-const GameInterface: React.FC<GameInterfaceProps> = ({ game, onExit }) => {
+const GameController: React.FC<GameControllerProps> = ({ game, onExit }) => {
   const [currentStage, setCurrentStage] = useState<GameStage>(
     GameStage.LANDING
   );
@@ -180,4 +180,4 @@ const GameInterface: React.FC<GameInterfaceProps> = ({ game, onExit }) => {
   }
 };
 
-export default GameInterface;
+export default GameController;
