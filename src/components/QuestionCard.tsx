@@ -94,12 +94,6 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
     }),
   };
 
-  // Optimized gloss effect with improved performance
-  const glossVariants = {
-    initial: { opacity: 0 },
-    hover: { opacity: 0.1, scale: 2 },
-  };
-
   return (
     <div className="flex justify-center items-center">
       <div
@@ -179,20 +173,6 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
                       : null}
                   </h2>
                 </div>
-
-                {/* Optimized Gloss Effect */}
-                <motion.div
-                  className="absolute inset-0 rounded-[inherit] pointer-events-none"
-                  variants={glossVariants}
-                  initial="initial"
-                  whileHover="hover"
-                  style={{
-                    background:
-                      "radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 50%)",
-                    x: useTransform(mouseX, [-0.5, 0.5], ["50%", "-50%"]),
-                    y: useTransform(mouseY, [-0.5, 0.5], ["50%", "-50%"]),
-                  }}
-                />
               </Card>
 
               {/* Back Side - more */}
@@ -217,15 +197,7 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
                               <p
                                 key={index}
                                 className="text-xs sm:text-sm font-light leading-relaxed"
-                                style={{
-                                  color: isDarkMode
-                                    ? isWildcard
-                                      ? "#f3f4f6"
-                                      : "#ffffff"
-                                    : isWildcard
-                                    ? "#ffffff"
-                                    : "#6b7280",
-                                }}
+                                style={{ color: textColor }}
                               >
                                 • {option}
                               </p>
@@ -236,27 +208,11 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
                               <p
                                 key={key}
                                 className="text-xs sm:text-sm font-light leading-relaxed"
-                                style={{
-                                  color: isDarkMode
-                                    ? isWildcard
-                                      ? "#f3f4f6"
-                                      : "#ffffff"
-                                    : isWildcard
-                                    ? "#ffffff"
-                                    : "#6b7280",
-                                }}
+                                style={{ color: textColor }}
                               >
                                 <span
                                   className="font-medium"
-                                  style={{
-                                    color: isDarkMode
-                                      ? isWildcard
-                                        ? "#f3f4f6"
-                                        : "#ffffff"
-                                      : isWildcard
-                                      ? "#ffffff"
-                                      : "#1f2937",
-                                  }}
+                                  style={{ color: textColor }}
                                 >
                                   {key}.
                                 </span>{" "}
@@ -267,20 +223,6 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
                     </div>
                   )}
                 </div>
-
-                {/* Optimized Gloss Effect for back side */}
-                <motion.div
-                  className="absolute inset-0 rounded-[inherit] pointer-events-none"
-                  variants={glossVariants}
-                  initial="initial"
-                  whileHover="hover"
-                  style={{
-                    background:
-                      "radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 50%)",
-                    x: useTransform(mouseX, [-0.5, 0.5], ["50%", "-50%"]),
-                    y: useTransform(mouseY, [-0.5, 0.5], ["50%", "-50%"]),
-                  }}
-                />
               </Card>
             </motion.div>
           </motion.div>

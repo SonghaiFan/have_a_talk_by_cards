@@ -23,7 +23,7 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
       className={`
         flex items-center gap-2 px-2 py-1 
         text-gray-600 hover:text-gray-900
-        dark:text-gray-400 dark:hover:text-gray-200
+        dark:text-gray-300 dark:hover:text-gray-100
         transition-all duration-200
         hover:scale-110
         ${className}

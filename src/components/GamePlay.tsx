@@ -4,6 +4,23 @@ import { useTranslation } from "react-i18next";
 import { ConversationGame } from "../types/ConversationGame";
 import QuestionCard from "./QuestionCard";
 
+// Utility function to calculate luminance and determine contrast color
+const getContrastColor = (hexColor: string): string => {
+  // Remove # if present
+  const hex = hexColor.replace("#", "");
+
+  // Convert hex to RGB
+  const r = parseInt(hex.slice(0, 2), 16);
+  const g = parseInt(hex.slice(2, 4), 16);
+  const b = parseInt(hex.slice(4, 6), 16);
+
+  // Calculate relative luminance using WCAG formula
+  const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+
+  // Return white for dark backgrounds, black for light backgrounds
+  return luminance > 0.9 ? "#000000" : "#ffffff";
+};
+
 interface GamePlayProps {
   game: ConversationGame;
   questions: any[];
@@ -45,40 +62,24 @@ const GamePlay: React.FC<GamePlayProps> = ({
   const isWildMode = currentQuestion?.type === "wildcard";
   const categoryColor = currentCategory?.color || "#ffffff";
 
-  let backgroundColor: string;
-  let cardColor: string;
-  let textColor: string;
-  let headerTextColor: string;
+  const themes = {
+    dark: {
+      wild: { background: "#000000", card: categoryColor }, // Midnight contrast
+      normal: { background: categoryColor, card: "#000000" }, // Dark canvas
+    },
+    light: {
+      wild: { background: "#ffffff", card: categoryColor }, // Pure focus
+      normal: { background: categoryColor, card: "#ffffff" }, // Light clarity
+    },
+  };
 
-  if (isDarkTheme) {
-    if (isWildMode) {
-      // Dark + Wild: Category color card, white text, black background
-      backgroundColor = "#000000";
-      cardColor = categoryColor;
-      textColor = "#ffffff";
-      headerTextColor = "#ffffff";
-    } else {
-      // Dark + Normal: Black card, white text, category color background (darkened)
-      backgroundColor = categoryColor;
-      cardColor = "#000000";
-      textColor = "#ffffff";
-      headerTextColor = "#ffffff";
-    }
-  } else {
-    if (isWildMode) {
-      // Light + Wild: Category color card, white text, white background
-      backgroundColor = "#ffffff";
-      cardColor = categoryColor;
-      textColor = "#ffffff";
-      headerTextColor = "#000000";
-    } else {
-      // Light + Normal: White card, black text, category color background
-      backgroundColor = categoryColor;
-      cardColor = "#ffffff";
-      textColor = "#000000";
-      headerTextColor = "#000000";
-    }
-  }
+  const mode = isWildMode ? "wild" : "normal";
+  const { background: backgroundColor, card: cardColor } =
+    themes[isDarkTheme ? "dark" : "light"][mode];
+
+  // Dynamically determine UI color based on background color contrast
+  const textColor = getContrastColor(cardColor);
+  const uiColor = getContrastColor(backgroundColor);
 
   const handleNext = () => {
     setDirection(1);
@@ -159,7 +160,7 @@ const GamePlay: React.FC<GamePlayProps> = ({
       <header className="flex justify-between items-center p-4 sm:p-8 relative z-10">
         <button
           className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center text-xl sm:text-2xl hover:text-gray-200 transition-colors duration-200"
-          style={{ color: headerTextColor }}
+          style={{ color: uiColor }}
           onClick={onExit}
         >
           ←
@@ -167,7 +168,7 @@ const GamePlay: React.FC<GamePlayProps> = ({
 
         <div
           className="text-xs sm:text-sm font-medium opacity-90"
-          style={{ color: headerTextColor }}
+          style={{ color: uiColor }}
         >
           {t("gameInterface.progressIndicator", {
             current: currentQuestionIndex + 1,
@@ -193,11 +194,11 @@ const GamePlay: React.FC<GamePlayProps> = ({
                   animate={{ scale: 1 }}
                   transition={{ delay: 0.4, type: "spring", stiffness: 200 }}
                   className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full opacity-90"
-                  style={{ backgroundColor: headerTextColor }}
+                  style={{ backgroundColor: cardColor }}
                 />
                 <span
                   className="text-xs sm:text-sm font-medium opacity-90 uppercase tracking-wider"
-                  style={{ color: headerTextColor }}
+                  style={{ color: uiColor }}
                 >
                   {currentCategory.name}
                 </span>
@@ -227,7 +228,7 @@ const GamePlay: React.FC<GamePlayProps> = ({
             >
               <p
                 className="text-xs sm:text-sm opacity-70 font-light px-4"
-                style={{ color: headerTextColor }}
+                style={{ color: uiColor }}
               >
                 {currentCategory.description}
               </p>
@@ -247,7 +248,7 @@ const GamePlay: React.FC<GamePlayProps> = ({
           whileHover={{ scale: 1.08, x: -2, transition: { duration: 0.2 } }}
           whileTap={{ scale: 0.95 }}
           className="flex items-center gap-1 sm:gap-2 transition-colors duration-200 disabled:opacity-40 disabled:cursor-not-allowed"
-          style={{ color: headerTextColor }}
+          style={{ color: uiColor }}
           onClick={handlePrevious}
           disabled={currentQuestionIndex === 0}
         >
@@ -260,13 +261,13 @@ const GamePlay: React.FC<GamePlayProps> = ({
           className="flex-1 mx-4 sm:mx-8 h-1 rounded-full overflow-hidden"
           style={{
             backgroundColor: isWildMode
-              ? "#e5e7eb"
+              ? "rgba(174, 174, 174, 0.2)"
               : "rgba(255, 255, 255, 0.2)",
           }}
         >
           <motion.div
             className="h-full rounded-full"
-            style={{ backgroundColor: headerTextColor }}
+            style={{ backgroundColor: uiColor }}
             animate={{
               width: `${
                 ((currentQuestionIndex + 1) / questions.length) * 100
@@ -283,7 +284,7 @@ const GamePlay: React.FC<GamePlayProps> = ({
           whileHover={{ scale: 1.08, x: 2, transition: { duration: 0.2 } }}
           whileTap={{ scale: 0.95 }}
           className="flex items-center gap-1 sm:gap-2 transition-colors duration-200"
-          style={{ color: headerTextColor }}
+          style={{ color: uiColor }}
           onClick={handleNext}
         >
           <span className="text-sm sm:text-base">{t("common.next")}</span>
@@ -294,10 +295,10 @@ const GamePlay: React.FC<GamePlayProps> = ({
       {/* Keyboard Hints - Subtle */}
       <motion.div
         initial={{ opacity: 0 }}
-        animate={{ opacity: 0.3 }}
+        animate={{ opacity: 0.5 }}
         transition={{ delay: 1 }}
-        className="fixed bottom-4 left-1/2 -translate-x-1/2 text-xs font-light text-center hidden sm:block relative z-10"
-        style={{ color: headerTextColor }}
+        className="fixed bottom-4 left-1/2 -translate-x-1/2 text-xs font-light text-center hidden sm:block"
+        style={{ color: uiColor }}
       >
         <p>{t("navigation.keyboardHints")}</p>
       </motion.div>
