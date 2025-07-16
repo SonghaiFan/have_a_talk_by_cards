@@ -4,16 +4,16 @@
     "title": "Sneaky Link 💦💦💦",
     "subtitle": "A questions game for you and your sneaky link.",
     "language": "english",
-    "type": "normal",
+    "type": "edition",
     "playerGroup": ["couple", "friends"]
   },
   "ui": {
     "startScreen": {
       "title": "Sneaky Link 💦💦💦",
       "description": [
-        "What is a sneaky link?",
+        "What is a Sneaky Link?",
         "When you and another person are fucking up but don't want anyone to know about it.",
-        "You tryna be my sneaky link or sum?",
+        "You wanna be my Sneaky Link or sum?",
         "",
         "Instructions:",
         "This is a questions game to play with your sneaky link. There are only 2 rules:",
@@ -38,18 +38,18 @@
     "categories": {
       "Level 1": {
         "name": "Level 1",
-        "color": "#A90D6F",
-        "description": "First time"
+        "color": "#4E3366",
+        "description": "Foreplay"
       },
       "Level 2": {
         "name": "Level 2",
-        "color": "#43092F",
-        "description": "Second time"
+        "color": "#372349",
+        "description": "Orgasm"
       },
       "Level 3": {
         "name": "Level 3",
-        "color": "#000000",
-        "description": "Third time"
+        "color": "#21142C",
+        "description": "Afterglow"
       }
     }
   },

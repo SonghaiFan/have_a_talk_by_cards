@@ -1,7 +1,7 @@
 {
   "testID": "ex-friend",
   "app": {
-    "title": "前好友-特别版",
+    "title": "前好友",
     "subtitle": "用关怀与诚意梳理友谊的结束",
     "language": "chinese",
     "type": "edition",
@@ -9,7 +9,7 @@
   },
   "ui": {
     "startScreen": {
-      "title": "前好友-特别版",
+      "title": "前好友",
       "description": [
         "朋友间的破冰总是尴尬又艰难。直到现在，我们都难以开启真正让彼此被听见的对话。",
         "请轮流问答每个问题。建议双方都回答每张卡片。可选准备：纸巾与酒饮。",

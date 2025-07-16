@@ -1,7 +1,7 @@
 {
   "testID": "long-distance",
   "app": {
-    "title": "异地恋-特别版",
+    "title": "异地恋",
     "subtitle": "15个让爱零距离的深度提问",
     "language": "chinese",
     "type": "edition",
@@ -9,7 +9,7 @@
   },
   "ui": {
     "startScreen": {
-      "title": "异地恋-特别版",
+      "title": "异地恋",
       "description": [
         "15个让物理距离不再成为心距离的对话指南",
         "为你们的下一次通话量身定制"
