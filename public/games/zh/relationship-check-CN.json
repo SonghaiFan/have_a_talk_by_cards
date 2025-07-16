@@ -54,15 +54,15 @@
       "category": "communication",
       "questions": [
         {
-          "type": "讨论",
+          "type": "open",
           "question": "我做的哪一件事让你感到真正被倾听？"
         },
         {
-          "type": "讨论",
+          "type": "open",
           "question": "你有没有什么一直想告诉我的事情？"
         },
         {
-          "type": "discussion",
+          "type": "open",
           "question": "当我们意见不合时，什么能让你感觉我们是一队的？"
         }
       ]
@@ -71,15 +71,15 @@
       "category": "intimacy",
       "questions": [
         {
-          "type": "讨论",
+          "type": "open",
           "question": "你觉得我怎样做最能让你感受到爱？"
         },
         {
-          "type": "讨论",
+          "type": "open",
           "question": "什么小举动总能让你的一天变得更美好？"
         },
         {
-          "type": "讨论",
+          "type": "open",
           "question": "我们如何才能为我们自己创造更多时间？"
         }
       ]
@@ -88,15 +88,15 @@
       "category": "future",
       "questions": [
         {
-          "type": "讨论",
+          "type": "open",
           "question": "你希望我们一起尝试什么新鲜事物？"
         },
         {
-          "type": "discussion",
+          "type": "open",
           "question": "描述我们完美的周末度假。"
         },
         {
-          "type": "discussion",
+          "type": "open",
           "question": "我可以支持你实现什么目标或梦想？"
         }
       ]
@@ -105,15 +105,15 @@
       "category": "appreciation",
       "questions": [
         {
-          "type": "讨论",
+          "type": "open",
           "question": "我最近做了什么让你感激的事？"
         },
         {
-          "type": "讨论",
+          "type": "open",
           "question": "你最欣赏我什么品质？"
         },
         {
-          "type": "讨论",
+          "type": "open",
           "question": "过去一个月里，你最喜欢我们之间的什么回忆？"
         }
       ]
