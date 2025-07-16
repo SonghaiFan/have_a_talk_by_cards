@@ -17,7 +17,6 @@ interface QuestionCardProps {
   cardColor: string;
   textColor: string;
   onCardClick: () => void;
-  isDarkMode?: boolean;
 }
 
 const QuestionCard: React.FC<QuestionCardProps> = ({
@@ -25,11 +24,9 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
   direction,
   isCardFlipped,
   currentQuestion,
-  isWildcard,
   cardColor,
   textColor,
   onCardClick,
-  isDarkMode,
 }) => {
   // Mouse movement tracking with optimized values
   const cardRef = useRef<HTMLDivElement>(null);
