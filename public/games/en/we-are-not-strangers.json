@@ -19,7 +19,7 @@
       "nextButton": "Next",
       "prevButton": "Back"
     },
-    "results": {
+    "endScreen": {
       "title": "Well done",
       "subtitle": "Thank you for opening up and connecting",
       "restartButton": "Restart"

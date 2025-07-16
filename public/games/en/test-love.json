@@ -19,7 +19,7 @@
       "nextButton": "Next Question",
       "prevButton": "Previous Question"
     },
-    "results": {
+    "endScreen": {
       "title": "You've reached the end",
       "subtitle": "But love is just beginning from here",
       "restartButton": "Start Again"

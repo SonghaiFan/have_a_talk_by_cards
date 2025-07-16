@@ -1,22 +1,42 @@
 {
   "games": [
-    "deep-connections-CN.json",
-    "deep-connections.json",
-    "relationship-check-CN.json",
-    "relationship-check.json",
-    "test-love-36-CN.json",
-    "test-love-36.json",
-    "test-love-CN.json",
-    "test-love.json",
-    "we-are-not-really-strangers-CN.json",
-    "we-are-not-really-strangers.json",
-    "we-are-not-strangers-CN.json",
-    "we-are-not-strangers.json",
     "confidence-boost.json",
+    "deep-connections.json",
+    "relationship-check.json",
+    "test-love-36.json",
+    "test-love.json",
+    "we-are-not-really-strangers.json",
+    "we-are-not-strangers.json",
     "xxx.json"
   ],
-  "lastUpdated": "2025-07-15T13:08:45.764Z",
+  "gamesByLanguage": {
+    "en": [
+      "confidence-boost.json",
+      "deep-connections.json",
+      "relationship-check.json",
+      "test-love-36.json",
+      "test-love.json",
+      "we-are-not-really-strangers.json",
+      "we-are-not-strangers.json",
+      "xxx.json"
+    ],
+    "zh": [
+      "confidence-boost-CN.json",
+      "deep-connections-CN.json",
+      "relationship-check-CN.json",
+      "test-love-36-CN.json",
+      "test-love-CN.json",
+      "we-are-not-really-strangers-CN.json",
+      "we-are-not-strangers-CN.json",
+      "xxx-CN.json"
+    ]
+  },
+  "lastUpdated": "2025-07-16T06:09:35.724Z",
   "version": "1.0.0",
-  "generatedAt": "2025-07-15T13:08:45.766Z",
-  "totalGames": 14
+  "generatedAt": "2025-07-16T06:09:35.726Z",
+  "totalGames": 8,
+  "languages": [
+    "en",
+    "zh"
+  ]
 }

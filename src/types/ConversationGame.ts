@@ -16,7 +16,7 @@ export interface Navigation {
   prevButton: string;
 }
 
-export interface Results {
+export interface EndScreen {
   title: string;
   subtitle: string;
   restartButton: string;
@@ -25,7 +25,7 @@ export interface Results {
 export interface UIConfig {
   startScreen: StartScreen;
   navigation: Navigation;
-  results: Results;
+  endScreen: EndScreen;
 }
 
 export interface Category {

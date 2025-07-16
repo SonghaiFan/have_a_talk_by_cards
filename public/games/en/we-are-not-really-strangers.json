@@ -20,7 +20,7 @@
       "nextButton": "Next Card",
       "prevButton": "Previous Card"
     },
-    "results": {
+    "endScreen": {
       "title": "Connection Complete",
       "subtitle": "You are no longer strangers",
       "restartButton": "Connect Again"

@@ -41,24 +41,22 @@ function App() {
 
       const loadedGames: ConversationGame[] = [];
 
-      // Filter to only process base English files (not language-specific versions)
-      const baseGameFiles = gameFiles.filter((file) => {
-        // Only process files that don't have language suffixes
-        return !file.includes("-CN.json") && !file.includes("-TW.json");
-      });
+      // Get the language folder
+      const languageFolder = i18n.language.startsWith("zh") ? "zh" : "en";
 
-      for (const file of baseGameFiles) {
+      for (const file of gameFiles) {
         try {
-          // Determine the language-specific file name
-          const languageFile = getLanguageSpecificFile(file, i18n.language);
+          // Determine the correct file path based on language
+          const filePath = getLanguageSpecificFilePath(file, languageFolder);
 
-          const response = await fetch(`/games/${languageFile}`);
+          const response = await fetch(filePath);
           if (response.ok) {
             const game = await response.json();
             loadedGames.push(game);
           } else {
             // Fallback to English version if language-specific version doesn't exist
-            const fallbackResponse = await fetch(`/games/${file}`);
+            const fallbackPath = `/games/en/${file}`;
+            const fallbackResponse = await fetch(fallbackPath);
             if (fallbackResponse.ok) {
               const game = await fallbackResponse.json();
               loadedGames.push(game);
@@ -87,28 +85,21 @@ function App() {
     }
   };
 
-  // Helper function to get language-specific file name
-  const getLanguageSpecificFile = (
+  // Helper function to get language-specific file path
+  const getLanguageSpecificFilePath = (
     fileName: string,
-    language: string
+    languageFolder: string
   ): string => {
-    if (language === "en") {
-      return fileName; // English files don't have suffix
+    if (languageFolder === "en") {
+      return `/games/en/${fileName}`;
     }
 
+    // For Chinese, we need to convert the base filename to include -CN suffix
     const fileParts = fileName.split(".");
     const extension = fileParts.pop();
     const baseName = fileParts.join(".");
 
-    // Map language codes to file suffixes
-    const languageSuffixes: { [key: string]: string } = {
-      zh: "-CN",
-      "zh-CN": "-CN",
-      "zh-TW": "-CN", // Use same Chinese version for now
-    };
-
-    const suffix = languageSuffixes[language] || "";
-    return `${baseName}${suffix}.${extension}`;
+    return `/games/zh/${baseName}-CN.${extension}`;
   };
 
   const handleGameSelect = (game: ConversationGame) => {

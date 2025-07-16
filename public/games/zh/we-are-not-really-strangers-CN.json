@@ -20,7 +20,7 @@
       "nextButton": "下一张卡牌",
       "prevButton": "上一张卡牌"
     },
-    "results": {
+    "endScreen": {
       "title": "连接完成",
       "subtitle": "你们不再是陌生人了",
       "restartButton": "再次连接"

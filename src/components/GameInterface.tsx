@@ -208,7 +208,9 @@ const GameInterface: React.FC<GameInterfaceProps> = ({ game, onExit }) => {
       );
 
     case GameStage.ENDING:
-      return <GameEnding onRestart={handleRestart} onExit={onExit} />;
+      return (
+        <GameEnding game={game} onRestart={handleRestart} onExit={onExit} />
+      );
 
     default:
       return null;

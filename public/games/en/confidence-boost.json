@@ -23,7 +23,7 @@
       "nextButton": "Next",
       "prevButton": "Back"
     },
-    "results": {
+    "endScreen": {
       "title": "You Did It!",
       "subtitle": "You took time to remember your strengths. Carry this confidence with you—you're more capable than you think.",
       "restartButton": "Do It Again"

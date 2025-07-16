@@ -19,7 +19,7 @@
       "nextButton": "下一个问题",
       "prevButton": "上一个问题"
     },
-    "results": {
+    "endScreen": {
       "title": "你已抵达终点",
       "subtitle": "但爱，从这里才刚刚开始",
       "restartButton": "再次出发"

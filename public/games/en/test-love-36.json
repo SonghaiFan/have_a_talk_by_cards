@@ -21,9 +21,9 @@
       "nextButton": "Next Question",
       "prevButton": "Previous Question"
     },
-    "results": {
+    "endScreen": {
       "title": "Experiment Completed",
-      "subtitle": "Congratulations on completing the 36-question intimate relationship experiment",
+      "subtitle": "Congratulations on completing the intimate relationship experiment",
       "restartButton": "Restart"
     }
   },

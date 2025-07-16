@@ -21,9 +21,9 @@
       "nextButton": "下一题",
       "prevButton": "上一题"
     },
-    "results": {
+    "endScreen": {
       "title": "实验完成",
-      "subtitle": "恭喜你完成了36个问题的亲密关系实验",
+      "subtitle": "恭喜你完成了亲密关系实验",
       "restartButton": "重新开始"
     }
   },
