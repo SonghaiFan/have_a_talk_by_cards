@@ -97,7 +97,7 @@
   appearance: none;
   width: 25px;
   height: 25px;
-  background: var(--color-primary);
+  background: var(--slider-thumb);
   border-radius: 50%;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -115,7 +115,7 @@
 .slider::-moz-range-thumb {
   width: 24px;
   height: 24px;
-  background: var(--color-primary);
+  background: var(--slider-thumb);
   border-radius: 50%;
   cursor: pointer;
   border: none;
@@ -153,5 +153,5 @@
 .slider::-moz-range-progress {
   height: 8px;
   border-radius: 4px;
-  background: var(--color-primary);
+  background: var(--slider-thumb);
 }

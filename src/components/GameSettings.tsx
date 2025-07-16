@@ -27,7 +27,7 @@ const GameSettings: React.FC<GameSettingsProps> = ({
   const { t } = useTranslation();
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 flex flex-col items-center justify-center px-8 py-16">
+    <div className="min-h-screen bg-white dark:bg-black flex flex-col items-center justify-center px-8 py-16">
       {/* Back Button */}
       <motion.button
         initial={{ opacity: 0, x: -20 }}

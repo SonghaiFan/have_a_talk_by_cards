@@ -18,7 +18,7 @@ const GameEnding: React.FC<GameEndingProps> = ({ game, onRestart, onExit }) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
-      className="min-h-screen bg-white dark:bg-gray-900 flex flex-col items-center justify-center px-4 sm:px-8 py-8 sm:py-16"
+      className="min-h-screen bg-white dark:bg-black flex flex-col items-center justify-center px-4 sm:px-8 py-8 sm:py-16"
     >
       <div className="text-center max-w-2xl">
         <motion.h1

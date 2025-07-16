@@ -63,9 +63,9 @@ const TimePercentageSlider: React.FC<TimePercentageSliderProps> = ({
           <div className="px-2 sm:px-4">
             <div className="relative h-3 sm:h-2 mb-6 py-2">
               <div
-                className="absolute inset-0 w-full h-2 bg-gray-100 rounded-full"
+                className="absolute inset-0 w-full h-2 bg-gray-100 dark:bg-gray-700 rounded-full"
                 style={{
-                  background: `linear-gradient(to right, var(--color-primary) 0%, var(--color-primary) ${progressPercentage}%, #f3f4f6 ${progressPercentage}%, #f3f4f6 100%)`,
+                  background: `linear-gradient(to right, var(--slider-thumb) 0%, var(--slider-thumb) ${progressPercentage}%, var(--slider-track) ${progressPercentage}%, var(--slider-track) 100%)`,
                   zIndex: 1,
                 }}
               />

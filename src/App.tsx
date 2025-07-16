@@ -112,7 +112,7 @@ function App() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex flex-col justify-center items-center bg-white dark:bg-gray-900">
+      <div className="min-h-screen flex flex-col justify-center items-center bg-white dark:bg-black">
         <div className="w-8 h-8 border-2 border-gray-300 dark:border-gray-600 border-t-primary rounded-full animate-spin mb-6"></div>
         <p className="text-lg text-gray-600 dark:text-gray-300 font-light">
           Loading conversations...

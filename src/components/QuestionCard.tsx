@@ -17,6 +17,7 @@ interface QuestionCardProps {
   cardColor: string;
   textColor: string;
   onCardClick: () => void;
+  isDarkMode?: boolean;
 }
 
 const QuestionCard: React.FC<QuestionCardProps> = ({
@@ -28,6 +29,7 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
   cardColor,
   textColor,
   onCardClick,
+  isDarkMode = false,
 }) => {
   // Mouse movement tracking with optimized values
   const cardRef = useRef<HTMLDivElement>(null);
@@ -214,11 +216,16 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
                             (option: string, index: number) => (
                               <p
                                 key={index}
-                                className={`text-xs sm:text-sm font-light leading-relaxed ${
-                                  isWildcard
-                                    ? "text-white"
-                                    : "text-gray-500 dark:text-gray-400"
-                                }`}
+                                className="text-xs sm:text-sm font-light leading-relaxed"
+                                style={{
+                                  color: isDarkMode
+                                    ? isWildcard
+                                      ? "#f3f4f6"
+                                      : "#ffffff"
+                                    : isWildcard
+                                    ? "#ffffff"
+                                    : "#6b7280",
+                                }}
                               >
                                 • {option}
                               </p>
@@ -228,18 +235,28 @@ const QuestionCard: React.FC<QuestionCardProps> = ({
                             ([key, value]) => (
                               <p
                                 key={key}
-                                className={`text-xs sm:text-sm font-light leading-relaxed ${
-                                  isWildcard
-                                    ? "text-white"
-                                    : "text-gray-500 dark:text-gray-400"
-                                }`}
+                                className="text-xs sm:text-sm font-light leading-relaxed"
+                                style={{
+                                  color: isDarkMode
+                                    ? isWildcard
+                                      ? "#f3f4f6"
+                                      : "#ffffff"
+                                    : isWildcard
+                                    ? "#ffffff"
+                                    : "#6b7280",
+                                }}
                               >
                                 <span
-                                  className={`font-medium ${
-                                    isWildcard
-                                      ? "text-white"
-                                      : "text-gray-800 dark:text-gray-200"
-                                  }`}
+                                  className="font-medium"
+                                  style={{
+                                    color: isDarkMode
+                                      ? isWildcard
+                                        ? "#f3f4f6"
+                                        : "#ffffff"
+                                      : isWildcard
+                                      ? "#ffffff"
+                                      : "#1f2937",
+                                  }}
                                 >
                                   {key}.
                                 </span>{" "}
