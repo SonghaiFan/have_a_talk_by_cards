@@ -1,14 +1,14 @@
 {
-  "testID": "we-are-not-strangers",
+  "testID": "meaningful-connections",
   "app": {
-    "title": "我们不是陌生人",
+    "title": "有意义的连接",
     "subtitle": "帮助我们真正了解彼此的问题",
     "language": "chinese",
     "version": "1.0.0"
   },
   "ui": {
     "startScreen": {
-      "title": "我们不是陌生人",
+      "title": "有意义的连接",
       "description": [
         "深思熟虑的问题，架起陌生人与朋友之间的桥梁。",
         "坦诚分享。用心倾听。真诚连接。"

@@ -1,14 +1,14 @@
 {
-  "testID": "we-are-not-strangers",
+  "testID": "meaningful-connections",
   "app": {
-    "title": "WE ARE NOT STRANGERS",
+    "title": "Meaningful Connections",
     "subtitle": "Questions that help us really know each other",
     "language": "english",
     "version": "1.0.0"
   },
   "ui": {
     "startScreen": {
-      "title": "We Are Not Strangers",
+      "title": "Meaningful Connections",
       "description": [
         "Thoughtful questions to bridge the gap between strangers and friends.",
         "Share openly. Listen deeply. Connect authentically."
