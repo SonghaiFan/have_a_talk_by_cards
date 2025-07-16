@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import { motion } from "motion/react";
 import { useTranslation } from "react-i18next";
 import { ConversationGame } from "../types/ConversationGame";
 import Card from "./Card";
+import QuestionCard from "./QuestionCard";
 
 interface GamePlayProps {
   game: ConversationGame;
@@ -177,148 +178,17 @@ const GamePlay: React.FC<GamePlayProps> = ({
             </motion.div>
           )}
 
-          {/* Question Card - Animated Poker Card with Flip */}
-          <div className="flex justify-center items-center">
-            <div className="relative perspective-1000">
-              <AnimatePresence mode="wait" custom={direction}>
-                <motion.div
-                  key={currentQuestionIndex}
-                  className="relative w-[340px] sm:w-[440px] md:w-[520px] h-[220px] sm:h-[280px] md:h-[340px]"
-                  style={{
-                    transformStyle: "preserve-3d",
-                  }}
-                  custom={direction}
-                  variants={cardVariants}
-                  initial="enter"
-                  animate="center"
-                  exit="exit"
-                  transition={{
-                    x: { type: "spring", stiffness: 300, damping: 30 },
-                    opacity: { duration: 0.3 },
-                    scale: { duration: 0.3 },
-                    rotateY: { duration: 0.4 },
-                  }}
-                >
-                  {/* Card Container with Flip Animation */}
-                  <motion.div
-                    className="relative w-full h-full"
-                    style={{
-                      transformStyle: "preserve-3d",
-                    }}
-                    animate={{
-                      rotateY: isCardFlipped ? 180 : 0,
-                    }}
-                    transition={{
-                      duration: 0.6,
-                      ease: "easeInOut",
-                    }}
-                  >
-                    {/* Front Side - Question */}
-                    <Card
-                      size="large"
-                      variant="question"
-                      className={`absolute inset-0 text-center shadow-2xl ${
-                        currentQuestion?.more
-                          ? "cursor-pointer"
-                          : "cursor-default"
-                      }`}
-                      style={{
-                        backfaceVisibility: "hidden",
-                        backgroundColor: cardColor,
-                      }}
-                      onClick={
-                        currentQuestion?.more ? handleCardClick : undefined
-                      }
-                    >
-                      <div className="text-center h-full flex flex-col justify-center">
-                        <h2
-                          className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold leading-tight font-sans tracking-tight px-2"
-                          style={{ color: textColor }}
-                        >
-                          {currentQuestion?.question
-                            ? currentQuestion.question
-                                .split("\n")
-                                .map((line: string, idx: number) => (
-                                  <span key={idx}>
-                                    {line}
-                                    {idx !==
-                                      currentQuestion.question.split("\n")
-                                        .length -
-                                        1 && <br />}
-                                  </span>
-                                ))
-                            : null}
-                        </h2>
-                      </div>
-                    </Card>
-
-                    {/* Back Side - more */}
-                    <Card
-                      size="large"
-                      variant="question"
-                      className="absolute inset-0 shadow-2xl cursor-pointer"
-                      style={{
-                        backfaceVisibility: "hidden",
-                        transform: "rotateY(180deg)",
-                        backgroundColor: cardColor,
-                      }}
-                      onClick={handleCardClick}
-                    >
-                      <div className="text-center h-full flex flex-col justify-center">
-                        {currentQuestion?.more && (
-                          <div className="space-y-3 text-left">
-                            {Array.isArray(currentQuestion.more)
-                              ? // Handle array format (conversation prompts)
-                                currentQuestion.more.map(
-                                  (option: string, index: number) => (
-                                    <p
-                                      key={index}
-                                      className="text-xs sm:text-sm font-light leading-relaxed"
-                                      style={{
-                                        color: isWildcard
-                                          ? "#ffffff"
-                                          : "#6b7280",
-                                      }}
-                                    >
-                                      • {option}
-                                    </p>
-                                  )
-                                )
-                              : // Handle object format (multiple choice)
-                                Object.entries(currentQuestion.more).map(
-                                  ([key, value]) => (
-                                    <p
-                                      key={key}
-                                      className="text-xs sm:text-sm font-light leading-relaxed"
-                                      style={{
-                                        color: isWildcard
-                                          ? "#ffffff"
-                                          : "#6b7280",
-                                      }}
-                                    >
-                                      <span
-                                        className="font-medium"
-                                        style={{
-                                          color: isWildcard
-                                            ? "#ffffff"
-                                            : "#1f2937",
-                                        }}
-                                      >
-                                        {key}.
-                                      </span>{" "}
-                                      {value as string}
-                                    </p>
-                                  )
-                                )}
-                          </div>
-                        )}
-                      </div>
-                    </Card>
-                  </motion.div>
-                </motion.div>
-              </AnimatePresence>
-            </div>
-          </div>
+          {/* Question Card */}
+          <QuestionCard
+            currentQuestionIndex={currentQuestionIndex}
+            direction={direction}
+            isCardFlipped={isCardFlipped}
+            currentQuestion={currentQuestion}
+            isWildcard={isWildcard}
+            cardColor={cardColor}
+            textColor={textColor}
+            onCardClick={handleCardClick}
+          />
 
           {/* Category Description - Subtle */}
           {currentCategory && (
