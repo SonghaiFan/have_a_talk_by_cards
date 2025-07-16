@@ -189,12 +189,12 @@ const GameLibrary: React.FC<GameLibraryProps> = ({ games, onGameSelect }) => {
               >
                 {/* Game Title */}
                 <h2 className="text-xl sm:text-2xl font-bold text-black mb-3 sm:mb-4 text-center leading-tight px-2">
-                  {game.ui.startScreen.title}
+                  {game.app.title}
                 </h2>
 
                 {/* Game Description */}
                 <p className="text-xs sm:text-sm text-gray-700 font-medium text-center leading-relaxed px-2">
-                  {game.ui.startScreen.description[0]}
+                  {game.app.subtitle}
                 </p>
 
                 {/* Category Dots */}
