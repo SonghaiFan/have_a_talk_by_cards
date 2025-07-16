@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { motion } from "motion/react";
 import { useTranslation } from "react-i18next";
 import { ConversationGame } from "../types/ConversationGame";
-import Card from "./Card";
 import QuestionCard from "./QuestionCard";
 
 interface GamePlayProps {
@@ -100,28 +99,6 @@ const GamePlay: React.FC<GamePlayProps> = ({
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [currentQuestionIndex, isCardFlipped, currentQuestion, onExit]);
-
-  // Card dealing animation variants
-  const cardVariants = {
-    enter: (direction: number) => ({
-      x: direction > 0 ? 300 : -300,
-      opacity: 0,
-      scale: 0.8,
-      rotateY: direction > 0 ? 25 : -25,
-    }),
-    center: {
-      x: 0,
-      opacity: 1,
-      scale: 1,
-      rotateY: 0,
-    },
-    exit: (direction: number) => ({
-      x: direction < 0 ? 300 : -300,
-      opacity: 0,
-      scale: 0.8,
-      rotateY: direction < 0 ? 25 : -25,
-    }),
-  };
 
   return (
     <div
