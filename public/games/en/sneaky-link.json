@@ -37,17 +37,17 @@
     "categories": {
       "Level 1": {
         "name": "Level 1",
-        "color": "#F5B7B1",
+        "color": "#A90D6F",
         "description": "First time"
       },
       "Level 2": {
         "name": "Level 2",
-        "color": "#D98880",
+        "color": "#43092F",
         "description": "Second time"
       },
       "Level 3": {
         "name": "Level 3",
-        "color": "#922B21",
+        "color": "#000000",
         "description": "Third time"
       }
     }
@@ -74,8 +74,8 @@
           "question": "What's my name in your contacts?"
         },
         {
-          "type": "open",
-          "question": "If we had to try something new tonight, what would it be? Bonus: Do it."
+          "type": "wildcard",
+          "question": "WILDCARD: If we had to try something new tonight, what would it be? Bonus: Do it."
         },
         {
           "type": "open",
@@ -90,8 +90,8 @@
           "question": "My place or your place?"
         },
         {
-          "type": "open",
-          "question": "What's your favorite part of my body? Prove it."
+          "type": "wildcard",
+          "question": "WILDCARD: What's your favorite part of my body? Prove it."
         },
         {
           "type": "open",
@@ -119,8 +119,8 @@
       "category": "Level 3",
       "questions": [
         {
-          "type": "open",
-          "question": "Come up with a secret code word/phrase to text each other."
+          "type": "wildcard",
+          "question": "WILDCARD: Come up with a secret code word/phrase to text each other."
         },
         {
           "type": "open",

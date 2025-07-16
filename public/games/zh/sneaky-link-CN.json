@@ -37,17 +37,17 @@
       "Level 1": {
         "name": "Level 1",
         "color": "#A90D6F",
-        "description": "第一次"
+        "description": "第一层"
       },
       "Level 2": {
         "name": "Level 2",
         "color": "#43092F",
-        "description": "第二次"
+        "description": "第二层"
       },
       "Level 3": {
         "name": "Level 3",
         "color": "#000000",
-        "description": "第三次"
+        "description": "第三层"
       }
     }
   },
@@ -73,8 +73,8 @@
           "question": "我在你通讯录里的备注名是？"
         },
         {
-          "type": "open",
-          "question": "今晚必须尝试新花样，你的提议是？立即执行有加分哦"
+          "type": "wildcard",
+          "question": "特别行动：今晚必须尝试新花样，你的提议是？立即执行有加分哦"
         },
         {
           "type": "open",
@@ -89,8 +89,8 @@
           "question": "去你那里还是来我这里？"
         },
         {
-          "type": "open",
-          "question": "最喜欢我身体的哪个部位？证明给我看"
+          "type": "wildcard",
+          "question": "特别行动：最喜欢我身体的哪个部位？证明给我看"
         },
         {
           "type": "open",
@@ -118,8 +118,8 @@
       "category": "Level 3",
       "questions": [
         {
-          "type": "open",
-          "question": "为我们的秘密约会想个暗号"
+          "type": "wildcard",
+          "question": "特别行动：为我们的秘密约会想个暗号"
         },
         {
           "type": "open",

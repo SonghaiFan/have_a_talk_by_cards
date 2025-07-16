@@ -1,52 +1,47 @@
 {
   "testID": "strangers",
   "app": {
-    "title": "我们其实并不陌生",
-    "subtitle": "一款关于连接与脆弱的卡牌游戏",
-    "language": "中文",
+    "title": "我们并非真的陌生人",
+    "subtitle": "一场关于联结与脆弱的卡牌游戏",
+    "type": "connection-game",
     "version": "1.0.0"
   },
   "ui": {
     "startScreen": {
-      "title": "我们其实并不陌生",
+      "title": "我们并非真的陌生人",
       "description": [
-        "一款通过有意义的对话建立真实联系的变革性卡牌游戏。",
-        "从轻松愉快到深度脆弱——准备好以全新方式看待彼此。",
-        "最适合与想要更了解或重新连接的人一起玩。"
+        "通过深度对话建立真诚联结的变革性卡牌游戏",
+        "从轻松时刻到深刻脆弱——准备好以全新视角认识彼此",
+        "最适合与你想深入了解或重新联结的人共同体验"
       ],
-      "startButton": "开始连接"
+      "startButton": "开始联结"
     },
     "navigation": {
-      "nextButton": "下一张卡牌",
-      "prevButton": "上一张卡牌"
+      "nextButton": "下一张卡",
+      "prevButton": "上一张卡"
     },
     "endScreen": {
-      "title": "连接完成",
+      "title": "联结完成",
       "subtitle": "你们不再是陌生人了",
-      "restartButton": "再次连接"
+      "restartButton": "再次联结"
     }
   },
   "theme": {
     "categories": {
       "Getting to Know You": {
-        "name": "初识你我",
+        "name": "初识阶段",
         "color": "#FFCDD2",
-        "description": "第一印象与表面发现"
+        "description": "第一印象与表层了解"
       },
       "Deeper Connections": {
-        "name": "深入连接",
+        "name": "深度联结",
         "color": "#EF9A9A",
-        "description": "个人故事与有意义的见解"
+        "description": "个人故事与深刻洞见"
       },
       "Vulnerable Moments": {
         "name": "脆弱时刻",
         "color": "#C62828",
-        "description": "真诚坦率与情感亲密"
-      },
-      "Wildcards": {
-        "name": "百变卡",
-        "color": "#000000",
-        "description": "互动体验与特别时刻"
+        "description": "坦诚相待与情感亲密"
       }
     }
   },
@@ -56,15 +51,15 @@
       "questions": [
         {
           "type": "open",
-          "question": "你现在真的还好吗？"
+          "question": "你最近真的好吗？"
         },
         {
           "type": "open",
-          "question": "你父亲叫什么名字？说一件关于他的事。"
+          "question": "你父亲的名字是？请分享一件关于他的事"
         },
         {
           "type": "open",
-          "question": "你母亲叫什么名字？她最美的地方是什么？"
+          "question": "你母亲的名字是？她最美好的特质是什么？"
         },
         {
           "type": "open",
@@ -72,15 +67,15 @@
         },
         {
           "type": "open",
-          "question": "你觉得我在学校受欢迎吗？请解释。"
+          "question": "你觉得我学生时代受欢迎吗？为什么？"
         },
         {
           "type": "open",
-          "question": "你认为我最具代表性的特质是什么？"
+          "question": "你认为我最显著的特质是什么？"
         },
         {
           "type": "open",
-          "question": "如果向陌生人介绍我，你会怎么说？"
+          "question": "你会如何向陌生人描述我？"
         },
         {
           "type": "open",
@@ -88,19 +83,44 @@
         },
         {
           "type": "open",
-          "question": "我的Instagram让你觉得我是个怎样的人？"
+          "question": "从我的Instagram能看出什么关于我的信息？"
         },
         {
           "type": "open",
-          "question": "根据你对我的了解，你觉得我的社交媒体真实反映了我吗？"
+          "question": "根据你对我的了解，我的社交媒体真实吗？"
         },
         {
           "type": "open",
-          "question": "你会给你人生这一章节起什么标题？"
+          "question": "你会如何命名当前的人生章节？"
         },
         {
           "type": "open",
-          "question": "有什么你一直喜欢、永远不会厌倦的事？"
+          "question": "什么是你永不厌倦的乐趣？"
+        },
+        {
+          "type": "wildcard",
+          "question": "特别行动：一起拍张自拍",
+          "more": ["定格此刻", "保持自然真实", "珍藏这份记忆"]
+        },
+        {
+          "type": "wildcard",
+          "question": "特别行动：随机播放你的歌单，解释第一首出现的歌曲！",
+          "more": ["立即点击随机播放", "说明这首歌的意义", "分享背后的故事"]
+        },
+        {
+          "type": "wildcard",
+          "question": "特别行动：展示相册第一张照片并解释",
+          "more": ["不能跳过或选择", "必须是第一张照片", "讲述照片背后的故事"]
+        },
+        {
+          "type": "wildcard",
+          "question": "特别行动：想一件你不喜欢但多数人喜欢的事，数到3同时说出",
+          "more": ["一起倒数：1、2、3", "同时说出答案", "讨论彼此的非主流观点"]
+        },
+        {
+          "type": "wildcard",
+          "question": "特别行动：双方分享此刻最感恩的事",
+          "more": ["聚焦当下时刻", "什么让你充满感激？", "同时分享"]
         }
       ]
     },
@@ -109,23 +129,23 @@
       "questions": [
         {
           "type": "open",
-          "question": "你花最长时间才放下的教训是什么？"
+          "question": "你花最长时间才释怀的人生课题是什么？"
         },
         {
           "type": "open",
-          "question": "如果一切随你心意：你会和谁在一起？在哪里？在做什么？"
+          "question": "如果随心所欲：你想与谁相伴？身处何处？做些什么？"
         },
         {
           "type": "open",
-          "question": "你觉得我们为什么会相遇？"
+          "question": "你觉得我们为何相遇？"
         },
         {
           "type": "open",
-          "question": "你现在想念谁吗？你觉得他们也在想你吗？"
+          "question": "你现在想念某人吗？你觉得对方也在想你吗？"
         },
         {
           "type": "open",
-          "question": "用一个词形容你恋爱的感觉。"
+          "question": "用一词形容恋爱的感觉"
         },
         {
           "type": "open",
@@ -133,91 +153,116 @@
         },
         {
           "type": "open",
-          "question": "你最近对什么改变了看法？"
+          "question": "你最近改变过什么观点吗？"
         },
         {
           "type": "open",
-          "question": "关于我，什么是你最难理解的？"
+          "question": "我最让你费解的是什么？"
         },
         {
           "type": "open",
-          "question": "你最欣赏我什么？"
+          "question": "你最欣赏我哪一点？"
         },
         {
           "type": "open",
-          "question": "最近你最常感受到的情绪是什么？"
+          "question": "最近什么情绪常伴你？"
         },
         {
           "type": "open",
-          "question": "你经历过最无法解释的事情是什么？"
+          "question": "你经历过最不可思议的事是什么？"
         },
         {
           "type": "open",
-          "question": "你恋爱经历中最大的转折点是什么？"
+          "question": "你感情生活的最大转折点是什么？"
         },
         {
           "type": "open",
-          "question": "你觉得年幼的自己最难相信你现在的生活中哪一点？"
+          "question": "现在的哪些事会让过去的你难以置信？"
         },
         {
           "type": "open",
-          "question": "你最喜欢别人用哪个形容词来形容你？为什么？"
+          "question": "你最喜欢被用什么形容词描述？为什么？"
         },
         {
           "type": "open",
-          "question": "你上一次哭是什么时候？"
+          "question": "上次流泪是什么时候？"
         },
         {
           "type": "open",
-          "question": "和你约会最难的地方是什么？"
+          "question": "和你恋爱最大的挑战是什么？"
         },
         {
           "type": "open",
-          "question": "想一个你敬佩的人。是什么让你想到他/她？"
+          "question": "想到你敬佩的人时，最先浮现的是谁？为什么？"
         },
         {
           "type": "open",
-          "question": "你觉得我们最重要的相似之处是什么？"
+          "question": "我们最重要的共同点是什么？"
         },
         {
           "type": "open",
-          "question": "你在我身上看到了自己哪些部分？"
+          "question": "你在我身上看到哪些自己的影子？"
         },
         {
           "type": "open",
-          "question": "别人如何赢得你的脆弱？"
+          "question": "如何赢得你的信任？"
         },
         {
           "type": "open",
-          "question": "哪段回忆能立刻让你微笑？"
+          "question": "哪个记忆能让你瞬间微笑？"
         },
         {
           "type": "open",
-          "question": "你最常思考的是什么？"
+          "question": "你最常思考什么？"
         },
         {
           "type": "open",
-          "question": "你什么时候最有活力？"
+          "question": "何时你感觉最有活力？"
         },
         {
           "type": "open",
-          "question": "你最喜欢和哪类人在一起？"
+          "question": "你最喜欢和哪类人相处？"
         },
         {
           "type": "open",
-          "question": "如果你有一个警告标签，上面会写什么？"
+          "question": "如果你有警示标签，会写什么？"
         },
         {
           "type": "open",
-          "question": "有陌生人改变过你的人生吗？"
+          "question": "陌生人改变过你的人生吗？"
         },
         {
           "type": "open",
-          "question": "用一个词形容你和自己的关系。"
+          "question": "用一词形容你与自己的关系"
         },
         {
           "type": "open",
           "question": "你最早的幸福记忆是什么？"
+        },
+        {
+          "type": "wildcard",
+          "question": "特别行动：给最近想起的人发信息告知，双方执行",
+          "more": ["现在拿出手机", "同时发送信息", "分享发送内容"]
+        },
+        {
+          "type": "wildcard",
+          "question": "特别行动：打电话给你敬佩的人表达欣赏",
+          "more": ["立即拨打电话", "具体说明敬佩之处", "分享通话内容"]
+        },
+        {
+          "type": "wildcard",
+          "question": "特别行动：即兴哼唱你想到的第一句歌词，双方执行",
+          "more": ["不要过多思考", "直接开始哼唱", "享受欢乐时刻"]
+        },
+        {
+          "type": "wildcard",
+          "question": "特别行动：画出此刻感受并互相解读",
+          "more": ["使用现有画材", "不必追求完美", "解释画作含义"]
+        },
+        {
+          "type": "wildcard",
+          "question": "特别行动：我如何让你的生活增加1%的幸福？",
+          "more": ["考虑具体小事", "切实可行", "承诺实践"]
         }
       ]
     },
@@ -226,239 +271,176 @@
       "questions": [
         {
           "type": "open",
-          "question": "你最大的自卑是什么？"
+          "question": "哪个不安全感最阻碍你？"
         },
         {
           "type": "open",
-          "question": "你经历过最痛苦但不是身体上的痛是什么？"
+          "question": "你经历过最痛彻心扉的非肉体痛苦是什么？"
         },
         {
           "type": "open",
-          "question": "你的哪些不安全感无意中伤害了别人？"
+          "question": "你的不安全感是否无意伤害过他人？"
         },
         {
           "type": "open",
-          "question": "亲爱的养育我的人，谢谢你们________"
+          "question": "致养育我的人：感谢你们________"
         },
         {
           "type": "open",
-          "question": "最近是什么让你保持理智？"
+          "question": "最近是什么支撑着你的理智？"
         },
         {
           "type": "open",
-          "question": "在这个阶段我怎么陪伴你？"
+          "question": "这个阶段我该如何支持你？"
         },
         {
           "type": "open",
-          "question": "你过去曾容忍过哪些人或事，现在已经不再容忍？"
+          "question": "我过去容忍但如今不再接受的相处模式是什么？"
         },
         {
           "type": "open",
-          "question": "你现在最需要但没有表达出来的是什么？"
+          "question": "你此刻需要却未言明的是什么？"
         },
         {
           "type": "open",
-          "question": "过去一年你面对的最难的真相是什么？"
+          "question": "去年你面对的最艰难真相是什么？"
         },
         {
           "type": "open",
-          "question": "有什么感受是你不愿意和我分享的？"
+          "question": "什么感受让你难以与我分享？"
         },
         {
           "type": "open",
-          "question": "你现在正在努力解决但别人看不到的是什么？"
+          "question": "你正在默默应对什么难题？"
         },
         {
           "type": "open",
-          "question": "你的内心在告诉你什么？"
+          "question": "你的内心在诉说什么？"
         },
         {
           "type": "open",
-          "question": "你能承认的最有毒的性格是什么？"
+          "question": "你愿意承认的最有害特质是什么？"
         },
         {
           "type": "open",
-          "question": "你现在在过度思考什么？"
+          "question": "你此刻在过度思考什么？"
         },
         {
           "type": "open",
-          "question": "你上一段感情让你对自己有了什么新的认识？"
+          "question": "上一段感情教会你什么自我认知？"
         },
         {
           "type": "open",
-          "question": "你对自己的哪种信念已经不再适用？"
+          "question": "哪个自我认知已不再适用？"
         },
         {
           "type": "open",
-          "question": "你上一次对妈妈撒谎是什么？"
+          "question": "你最近对母亲隐瞒了什么？"
         },
         {
           "type": "open",
-          "question": "你还在努力向自己证明什么？"
+          "question": "你仍在向自己证明什么？"
         },
         {
           "type": "open",
-          "question": "你犯过的最大错误是什么？"
+          "question": "你犯过最大的错误是什么？"
         },
         {
           "type": "open",
-          "question": "你最想戒掉的口头禅是什么？"
+          "question": "你最想改掉的口头禅是什么？"
         },
         {
           "type": "open",
-          "question": "你觉得我做什么能极大改善我的生活？"
+          "question": "做什么能显著改善我的人生？"
         },
         {
           "type": "open",
-          "question": "你觉得我现在最需要听到什么？"
+          "question": "我现在最需要听到什么？"
         },
         {
           "type": "open",
-          "question": "你觉得我最害怕的是什么？"
+          "question": "你认为我最恐惧什么？"
         },
         {
           "type": "open",
-          "question": "你最害怕回答哪个问题？"
+          "question": "哪个问题是你最害怕回答的？"
         },
         {
           "type": "open",
-          "question": "这次对话让你对自己有什么新的认识？"
+          "question": "这次对话让你对自己有何新认知？"
         },
         {
           "type": "open",
-          "question": "你觉得我对自己有什么不了解但应该知道的？"
+          "question": "我该了解自己哪些尚未察觉的特质？"
         },
         {
           "type": "open",
-          "question": "什么会让你觉得和我更亲近？"
+          "question": "什么能让你感觉更亲近我？"
         },
         {
           "type": "open",
-          "question": "用一个词形容你现在的感受。"
+          "question": "用一词描述此刻感受"
         },
         {
           "type": "open",
-          "question": "你觉得我最有吸引力但不是外表的特质是什么？"
+          "question": "我最吸引你的非物理特质是什么？"
         },
         {
           "type": "open",
-          "question": "你觉得自己最难被爱的地方是什么？"
+          "question": "你觉得自己最难被爱的部分是什么？"
         },
         {
           "type": "open",
-          "question": "你有对过去感到羞愧的事吗？"
+          "question": "过去有令你羞愧的事吗？"
         },
         {
           "type": "open",
-          "question": "有什么你坚信但身边人都不相信的事？"
+          "question": "你坚信但周围无人认同的观点是什么？"
         },
         {
           "type": "open",
-          "question": "最近你最为自己拒绝了什么而感到自豪？"
+          "question": "最近最自豪的拒绝经历是什么？"
         },
         {
           "type": "open",
-          "question": "有什么应该被教但却没有被教的事？"
+          "question": "什么重要课题应该被教授却未被重视？"
         },
         {
           "type": "open",
-          "question": "如果你今天去世，你会对自己的人生有什么遗憾？"
+          "question": "如果今天离世，你会有何遗憾？"
         },
         {
           "type": "open",
-          "question": "你喜欢的类型随着时间有怎样的变化？"
+          "question": "你的理想型如何随时间改变？"
         },
         {
           "type": "open",
-          "question": "有什么称呼（名字、昵称、侮辱等）是你最讨厌被叫的？"
-        }
-      ]
-    },
-    {
-      "category": "Wildcards",
-      "questions": [
-        {
-          "type": "wildcard",
-          "question": "百变卡：坦白一件事。",
-          "more": [
-            "这是一个真诚坦率的时刻",
-            "分享一件你从未告诉过别人的事",
-            "勇敢并展现脆弱"
-          ]
+          "question": "你最讨厌被如何称呼？（名字、昵称、侮辱等）"
         },
         {
           "type": "wildcard",
-          "question": "百变卡：最近你脑海里一直出现的人是谁？给他们发条消息，让他们知道你在想他们。双方都要做。",
-          "more": ["现在就拿出手机", "一起发送消息", "分享你写了什么"]
+          "question": "特别行动：坦白一件事",
+          "more": ["完全坦诚的时刻", "分享未曾告人之事", "展现勇气与脆弱"]
         },
         {
           "type": "wildcard",
-          "question": "百变卡：打电话给你敬佩的人，告诉他们你欣赏他们的原因。",
-          "more": ["现在就打电话", "具体说出你欣赏的地方", "之后分享你们的对话"]
+          "question": "特别行动：对视30秒，你注意到什么？",
+          "more": ["设置30秒计时", "对视期间保持沉默", "结束后分享观察"]
         },
         {
           "type": "wildcard",
-          "question": "百变卡：唱出你脑海中能想到的最喜欢的歌词。双方都要唱。",
-          "more": [
-            "不要想太多，直接唱",
-            "尽情享受这份欢乐",
-            "享受这份傻气的时刻"
-          ]
+          "question": "特别行动：互写信件交换，离开后再阅读",
+          "more": ["写下真挚话语", "折好信件交换", "承诺事后阅读"]
         },
         {
           "type": "wildcard",
-          "question": "百变卡：互相凝视30秒。你注意到了什么？",
-          "more": ["设置30秒计时器", "凝视时不许说话", "之后分享你的观察"]
+          "question": "特别行动：瞪眼比赛，先眨眼者需倾诉烦恼并寻求建议",
+          "more": ["立即开始比赛", "胜者为败者提供建议", "保持支持态度"]
         },
         {
           "type": "wildcard",
-          "question": "百变卡：给对方写一条信息并交换，离开后再打开。",
-          "more": ["写下有意义的话", "折好纸条并交换", "承诺之后再看"]
-        },
-        {
-          "type": "wildcard",
-          "question": "百变卡：一起自拍一张。",
-          "more": ["记录下这一刻", "自然真实地拍", "作为回忆保存"]
-        },
-        {
-          "type": "wildcard",
-          "question": "百变卡：对视比赛。第一个眨眼的人要说出一个自己的烦恼并请对方给建议。",
-          "more": ["现在开始对视比赛", "获胜者给失败者建议", "要支持和帮助对方"]
-        },
-        {
-          "type": "wildcard",
-          "question": "百变卡：随机播放你的音乐库，解释第一首出现的歌！",
-          "more": ["现在就点随机播放", "解释这首歌对你的意义", "分享背后的故事"]
-        },
-        {
-          "type": "wildcard",
-          "question": "百变卡：让对方闭上眼睛并保持闭眼。（等15秒后拥抱对方）",
-          "more": ["一人闭上眼睛", "准确等待15秒", "给一个有意义的拥抱"]
-        },
-        {
-          "type": "wildcard",
-          "question": "百变卡：双方分享此刻你最感激的事情。",
-          "more": ["想想现在这一刻", "什么让你心怀感激？", "同时分享"]
-        },
-        {
-          "type": "wildcard",
-          "question": "百变卡：画出你现在的感受，然后互相比较。",
-          "more": ["用任何可用的材料", "不要过度思考画作", "向对方解释你的画"]
-        },
-        {
-          "type": "wildcard",
-          "question": "百变卡：展示你相册里的第一张照片，并解释。",
-          "more": ["不许跳过或挑选", "展示最早的那张照片", "讲述背后的故事"]
-        },
-        {
-          "type": "wildcard",
-          "question": "百变卡：想一件你不喜欢但大多数人喜欢的事，数到3一起说出来。",
-          "more": ["一起数：1，2，3", "同时说出来", "讨论你们的不受欢迎观点"]
-        },
-        {
-          "type": "wildcard",
-          "question": "百变卡：我怎么能让你的生活多1%的幸福？",
-          "more": ["想一些小而具体的行动", "务实且现实", "承诺去尝试"]
+          "question": "特别行动：请对方闭眼15秒后拥抱TA",
+          "more": ["一人闭眼等待", "精确计时15秒", "给予真挚拥抱"]
         }
       ]
     }

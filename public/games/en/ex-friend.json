@@ -1,0 +1,116 @@
+{
+  "testID": "ex-friend",
+  "app": {
+    "title": "Ex-Friend Edition",
+    "subtitle": "A guided conversation to process friendship breakups with care and intention.",
+    "language": "english",
+    "version": "1.0.0"
+  },
+  "ui": {
+    "startScreen": {
+      "title": "Ex-Friend Edition",
+      "description": [
+        "Friendship make-ups are soooo awkward and intimidating. It feels impossible to break the ice and have a meaningful conversation that leaves both sides feeling heard. Till now.",
+        "Take turns asking and answering each question. For this specific pack, we recommend that both players answer each card. Optional: have tissues and wine ready.",
+        "You may decide to mend the friendship or go your separate ways. Regardless of the outcome, you'll know you did your part.",
+        "",
+        "Things to remember while playing:",
+        "1. Avoid viewing conflict as something you can win. No one wins unless the conflict is resolved on both sides.",
+        "2. Avoid using the phrases \"you always\" or \"you never.\"",
+        "3. While playing, actively look for points of agreement rather than points of division.",
+        "4. When someone shares how you've hurt their feelings, believe them. It doesn't mean you're a bad person. View it as an opportunity to grow.",
+        "5. Friendships don't need to last forever to be successful. It's okay to grow in different directions. It's okay to love each other from a distance."
+      ],
+      "startButton": "Begin"
+    },
+    "navigation": {
+      "nextButton": "Next Question",
+      "prevButton": "Previous Question"
+    },
+    "endScreen": {
+      "title": "Will you be my friend again?",
+      "subtitle": "YES or NO",
+      "restartButton": "NO"
+    }
+  },
+  "theme": {
+    "categories": {
+      "reflection": {
+        "name": "Reflection",
+        "color": "#F3F4F6",
+        "description": "Questions to process what happened"
+      }
+    }
+  },
+  "questions": [
+    {
+      "category": "reflection",
+      "questions": [
+        {
+          "type": "open",
+          "question": "BOTH PLAYERS EXPLAIN THE SITUATION FROM THE OTHER PERSON'S POV TO THE BEST OF YOUR ABILITY."
+        },
+        {
+          "type": "open",
+          "question": "MY PART IN THIS WAS ______"
+        },
+        {
+          "type": "open",
+          "question": "TAKE 3 MINUTES TO EXPLAIN YOUR POINT OF VIEW WITH NO INTERRUPTIONS. BOTH PLAYERS."
+        },
+        {
+          "type": "wildcard",
+          "question": "WILDCARD: BOTH PLAYERS WRITE DOWN YOUR MOST COMMON DEFENSE MECHANISM AND HOW IT HOLDS YOU BACK THE MOST. READ OUT LOUD."
+        },
+        {
+          "type": "open",
+          "question": "WHAT HURT YOU THE MOST?"
+        },
+        {
+          "type": "open",
+          "question": "WHAT IS ONE THING YOU WISH YOU COULD HAVE DONE DIFFERENTLY?"
+        },
+        {
+          "type": "open",
+          "question": "DID YOU SET ANY UNFAIR EXPECTATIONS ON ME?"
+        },
+        {
+          "type": "open",
+          "question": "WHEN DID YOU FEEL MOST DISTANT FROM ME?"
+        },
+        {
+          "type": "open",
+          "question": "FINISH THE SENTENCE: SOMETHING I'M WORKING ON IS ______"
+        },
+        {
+          "type": "wildcard",
+          "question": "WILDCARD: REMINDER EVERYONE'S TRUTH LOOKS DIFFERENT."
+        },
+        {
+          "type": "open",
+          "question": "WAS THERE ANYTHING YOU WERE GOING THROUGH THAT I DIDN'T SEE?"
+        },
+        {
+          "type": "open",
+          "question": "IT WAS VERY CLEAR OUR FRIENDSHIP WASN'T THE SAME WHEN"
+        },
+        {
+          "type": "open",
+          "question": "WHEN DO YOU MISS ME MOST?"
+        },
+        {
+          "type": "wildcard",
+          "question": "WILDCARD: APOLOGIZE FOR SOMETHING (BIG OR SMALL)."
+        },
+        {
+          "type": "open",
+          "question": "WHAT'S A LIFE UPDATE THAT I'VE MISSED?"
+        },
+        {
+          "type": "open",
+          "question": "WHAT'S SOMETHING ABOUT OUR FRIENDSHIP THAT YOU DON'T GET FROM ANYONE ELSE?"
+        }
+      ]
+    }
+  ]
+}

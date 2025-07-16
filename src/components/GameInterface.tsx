@@ -39,16 +39,15 @@ const GameInterface: React.FC<GameInterfaceProps> = ({ game, onExit }) => {
   }, [game]);
 
   const generateCustomQuestions = () => {
-    // Separate wildcard questions from regular questions
-    const regularCategoryQuestions: any[] = [];
-    const wildcardQuestions: any[] = [];
+    // Process all questions within each category (no separation needed)
+    const categoryQuestions: any[] = [];
 
     game.questions
       .filter((categoryData: any) =>
         selectedCategories.includes(categoryData.category)
       )
       .forEach((categoryData: any) => {
-        const categoryQuestions = categoryData.questions.map(
+        const questions = categoryData.questions.map(
           (question: any, qIndex: number) => ({
             ...question,
             categoryIndex: game.questions.findIndex(
@@ -59,53 +58,28 @@ const GameInterface: React.FC<GameInterfaceProps> = ({ game, onExit }) => {
           })
         );
 
-        // Separate wildcard questions from regular questions
-        const wildcards = categoryQuestions.filter(
-          (q: any) => q.type === "wildcard"
-        );
-        const regulars = categoryQuestions.filter(
-          (q: any) => q.type !== "wildcard"
-        );
-
-        wildcardQuestions.push(...wildcards);
-        if (regulars.length > 0) {
-          regularCategoryQuestions.push({
+        if (questions.length > 0) {
+          categoryQuestions.push({
             category: categoryData.category,
-            questions: regulars,
+            questions: questions,
           });
         }
       });
 
     // Calculate total questions to take
-    const totalAvailableQuestions =
-      regularCategoryQuestions.reduce(
-        (sum, catData) => sum + catData.questions.length,
-        0
-      ) + wildcardQuestions.length;
+    const totalAvailableQuestions = categoryQuestions.reduce(
+      (sum, catData) => sum + catData.questions.length,
+      0
+    );
 
     const totalQuestions = Math.round(
       (totalAvailableQuestions * questionPercentage) / 100
     );
 
-    // Calculate how many wildcard questions to include
-    const wildcardCount = Math.min(
-      wildcardQuestions.length,
-      Math.round(totalQuestions * 0.2) // Max 20% wildcards
-    );
-
-    // Remaining questions for regular categories
-    const regularQuestionsNeeded = totalQuestions - wildcardCount;
-
-    // Distribute regular questions proportionally across categories
-    const questionsPerCategory = regularCategoryQuestions.map((catData) => {
-      const totalRegularQuestions = regularCategoryQuestions.reduce(
-        (sum, cat) => sum + cat.questions.length,
-        0
-      );
-      const proportion = catData.questions.length / totalRegularQuestions;
-      const questionsForCategory = Math.round(
-        proportion * regularQuestionsNeeded
-      );
+    // Distribute questions proportionally across categories
+    const questionsPerCategory = categoryQuestions.map((catData) => {
+      const proportion = catData.questions.length / totalAvailableQuestions;
+      const questionsForCategory = Math.round(proportion * totalQuestions);
       return {
         ...catData,
         targetCount: Math.max(1, questionsForCategory), // Ensure at least 1 question per category
@@ -113,40 +87,26 @@ const GameInterface: React.FC<GameInterfaceProps> = ({ game, onExit }) => {
     });
 
     // Adjust for rounding differences
-    const actualRegularTotal = questionsPerCategory.reduce(
+    const actualTotal = questionsPerCategory.reduce(
       (sum, cat) => sum + cat.targetCount,
       0
     );
-    if (actualRegularTotal > regularQuestionsNeeded) {
+    if (actualTotal > totalQuestions) {
       // Remove questions from the category with the most questions
       const maxCategory = questionsPerCategory.reduce((max, cat) =>
         cat.targetCount > max.targetCount ? cat : max
       );
-      maxCategory.targetCount -= actualRegularTotal - regularQuestionsNeeded;
+      maxCategory.targetCount -= actualTotal - totalQuestions;
     }
 
-    // Randomly sample questions from each regular category, maintaining category order
-    const regularQuestions: any[] = [];
+    // Randomly sample questions from each category, maintaining category order
+    const finalQuestions: any[] = [];
     questionsPerCategory.forEach((catData) => {
       const shuffledQuestions = [...catData.questions].sort(
         () => 0.5 - Math.random()
       );
       const selectedQuestions = shuffledQuestions.slice(0, catData.targetCount);
-      regularQuestions.push(...selectedQuestions);
-    });
-
-    // Randomly select wildcard questions
-    const selectedWildcards = [...wildcardQuestions]
-      .sort(() => 0.5 - Math.random())
-      .slice(0, wildcardCount);
-
-    // Insert wildcards randomly into the regular questions sequence
-    const finalQuestions = [...regularQuestions];
-    selectedWildcards.forEach((wildcard) => {
-      const randomIndex = Math.floor(
-        Math.random() * (finalQuestions.length + 1)
-      );
-      finalQuestions.splice(randomIndex, 0, wildcard);
+      finalQuestions.push(...selectedQuestions);
     });
 
     // After all other logic, move 'end' type questions to the end

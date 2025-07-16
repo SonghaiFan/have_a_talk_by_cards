@@ -27,6 +27,17 @@ const GamePlay: React.FC<GamePlayProps> = ({
     ? game.theme.categories[currentQuestion.category]
     : null;
 
+  // Determine colors based on question type
+  const isWildcard = currentQuestion?.type === "wildcard";
+  const backgroundColor = isWildcard
+    ? "#ffffff"
+    : currentCategory?.color || "#ffffff";
+  const cardColor = isWildcard
+    ? currentCategory?.color || "#ffffff"
+    : "#ffffff";
+  const textColor = isWildcard ? "#ffffff" : "#1f2937"; // white for wildcard, dark for regular
+  const headerTextColor = isWildcard ? "#1f2937" : "#ffffff"; // dark for wildcard, white for regular
+
   const handleNext = () => {
     setDirection(1);
     setIsCardFlipped(false);
@@ -114,18 +125,22 @@ const GamePlay: React.FC<GamePlayProps> = ({
   return (
     <div
       className="min-h-screen flex flex-col transition-colors duration-500"
-      style={{ backgroundColor: currentCategory?.color || "#ffffff" }}
+      style={{ backgroundColor: backgroundColor }}
     >
       {/* Header - Minimal Navigation */}
       <header className="flex justify-between items-center p-4 sm:p-8">
         <button
-          className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center text-xl sm:text-2xl text-white hover:text-gray-200 transition-colors duration-200"
+          className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center text-xl sm:text-2xl hover:text-gray-200 transition-colors duration-200"
+          style={{ color: headerTextColor }}
           onClick={onExit}
         >
           ←
         </button>
 
-        <div className="text-xs sm:text-sm font-medium text-white opacity-90">
+        <div
+          className="text-xs sm:text-sm font-medium opacity-90"
+          style={{ color: headerTextColor }}
+        >
           {t("gameInterface.progressIndicator", {
             current: currentQuestionIndex + 1,
             total: questions.length,
@@ -149,9 +164,13 @@ const GamePlay: React.FC<GamePlayProps> = ({
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   transition={{ delay: 0.4, type: "spring", stiffness: 200 }}
-                  className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-white opacity-90"
+                  className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full opacity-90"
+                  style={{ backgroundColor: headerTextColor }}
                 />
-                <span className="text-xs sm:text-sm font-medium text-white opacity-90 uppercase tracking-wider">
+                <span
+                  className="text-xs sm:text-sm font-medium opacity-90 uppercase tracking-wider"
+                  style={{ color: headerTextColor }}
+                >
                   {currentCategory.name}
                 </span>
               </div>
@@ -205,13 +224,17 @@ const GamePlay: React.FC<GamePlayProps> = ({
                       }`}
                       style={{
                         backfaceVisibility: "hidden",
+                        backgroundColor: cardColor,
                       }}
                       onClick={
                         currentQuestion?.more ? handleCardClick : undefined
                       }
                     >
                       <div className="text-center h-full flex flex-col justify-center">
-                        <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-gray-900 leading-tight font-sans tracking-tight px-2">
+                        <h2
+                          className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold leading-tight font-sans tracking-tight px-2"
+                          style={{ color: textColor }}
+                        >
                           {currentQuestion?.question
                             ? currentQuestion.question
                                 .split("\n")
@@ -237,6 +260,7 @@ const GamePlay: React.FC<GamePlayProps> = ({
                       style={{
                         backfaceVisibility: "hidden",
                         transform: "rotateY(180deg)",
+                        backgroundColor: cardColor,
                       }}
                       onClick={handleCardClick}
                     >
@@ -249,7 +273,12 @@ const GamePlay: React.FC<GamePlayProps> = ({
                                   (option: string, index: number) => (
                                     <p
                                       key={index}
-                                      className="text-xs sm:text-sm text-gray-600 font-light leading-relaxed"
+                                      className="text-xs sm:text-sm font-light leading-relaxed"
+                                      style={{
+                                        color: isWildcard
+                                          ? "#ffffff"
+                                          : "#6b7280",
+                                      }}
                                     >
                                       • {option}
                                     </p>
@@ -260,9 +289,21 @@ const GamePlay: React.FC<GamePlayProps> = ({
                                   ([key, value]) => (
                                     <p
                                       key={key}
-                                      className="text-xs sm:text-sm text-gray-600 font-light leading-relaxed"
+                                      className="text-xs sm:text-sm font-light leading-relaxed"
+                                      style={{
+                                        color: isWildcard
+                                          ? "#ffffff"
+                                          : "#6b7280",
+                                      }}
                                     >
-                                      <span className="font-medium text-gray-800">
+                                      <span
+                                        className="font-medium"
+                                        style={{
+                                          color: isWildcard
+                                            ? "#ffffff"
+                                            : "#1f2937",
+                                        }}
+                                      >
                                         {key}.
                                       </span>{" "}
                                       {value as string}
@@ -287,7 +328,10 @@ const GamePlay: React.FC<GamePlayProps> = ({
               transition={{ delay: 0.4 }}
               className="text-center mt-4 sm:mt-8"
             >
-              <p className="text-xs sm:text-sm text-white opacity-70 font-light px-4">
+              <p
+                className="text-xs sm:text-sm opacity-70 font-light px-4"
+                style={{ color: headerTextColor }}
+              >
                 {currentCategory.description}
               </p>
             </motion.div>
@@ -305,7 +349,8 @@ const GamePlay: React.FC<GamePlayProps> = ({
         <motion.button
           whileHover={{ scale: 1.08, x: -2, transition: { duration: 0.2 } }}
           whileTap={{ scale: 0.95 }}
-          className="flex items-center gap-1 sm:gap-2 text-white transition-colors duration-200 disabled:opacity-40 disabled:cursor-not-allowed"
+          className="flex items-center gap-1 sm:gap-2 transition-colors duration-200 disabled:opacity-40 disabled:cursor-not-allowed"
+          style={{ color: headerTextColor }}
           onClick={handlePrevious}
           disabled={currentQuestionIndex === 0}
         >
@@ -314,9 +359,17 @@ const GamePlay: React.FC<GamePlayProps> = ({
         </motion.button>
 
         {/* Progress Indicator - Animated */}
-        <div className="flex-1 mx-4 sm:mx-8 h-1 bg-white/20 rounded-full overflow-hidden">
+        <div
+          className="flex-1 mx-4 sm:mx-8 h-1 rounded-full overflow-hidden"
+          style={{
+            backgroundColor: isWildcard
+              ? "#e5e7eb"
+              : "rgba(255, 255, 255, 0.2)",
+          }}
+        >
           <motion.div
-            className="h-full bg-white rounded-full"
+            className="h-full rounded-full"
+            style={{ backgroundColor: headerTextColor }}
             animate={{
               width: `${
                 ((currentQuestionIndex + 1) / questions.length) * 100
@@ -332,7 +385,8 @@ const GamePlay: React.FC<GamePlayProps> = ({
         <motion.button
           whileHover={{ scale: 1.08, x: 2, transition: { duration: 0.2 } }}
           whileTap={{ scale: 0.95 }}
-          className="flex items-center gap-1 sm:gap-2 text-white transition-colors duration-200"
+          className="flex items-center gap-1 sm:gap-2 transition-colors duration-200"
+          style={{ color: headerTextColor }}
           onClick={handleNext}
         >
           <span className="text-sm sm:text-base">{t("common.next")}</span>
@@ -345,7 +399,8 @@ const GamePlay: React.FC<GamePlayProps> = ({
         initial={{ opacity: 0 }}
         animate={{ opacity: 0.3 }}
         transition={{ delay: 1 }}
-        className="fixed bottom-4 left-1/2 -translate-x-1/2 text-xs text-white text-opacity-60 font-light text-center hidden sm:block"
+        className="fixed bottom-4 left-1/2 -translate-x-1/2 text-xs font-light text-center hidden sm:block"
+        style={{ color: headerTextColor }}
       >
         <p>{t("navigation.keyboardHints")}</p>
       </motion.div>

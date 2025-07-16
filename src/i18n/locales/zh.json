@@ -19,12 +19,9 @@
     "noGames": "暂无对话游戏可用。"
   },
   "gameInterface": {
-    "createYourJourney": "创建你的旅程",
+    "createYourJourney": "创建你的对话",
     "createJourneySubtitle": "每一次有意义的对话都始于用心",
-    "beginTheJourney": "开始旅程",
-    "wellDone": "做得很好",
-    "thankYou": "感谢你用心连接",
-    "chooseIntensity": "选择你们一起旅程的深度",
+    "beginTheJourney": "开始对话",
     "clickToReveal": "点击查看更多",
     "progressIndicator": "第 {{current}} / {{total}} 个"
   },
@@ -33,8 +30,8 @@
     "subtitle": "选择吸引你的对话主题"
   },
   "timePercentage": {
-    "title": "你想聊得多深？",
-    "subtitle": "选择你们一起旅程的深度",
+    "title": "你想聊多久？",
+    "subtitle": "选择你们一起对话的时长",
     "labels": {
       "light": "轻松",
       "gentle": "温和",

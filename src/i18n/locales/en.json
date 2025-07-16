@@ -19,12 +19,9 @@
     "noGames": "No conversation games available."
   },
   "gameInterface": {
-    "createYourJourney": "Create Your Journey",
+    "createYourJourney": "Create Your Conversation",
     "createJourneySubtitle": "Every meaningful conversation begins with intention",
-    "beginTheJourney": "Begin the Journey",
-    "wellDone": "Well done",
-    "thankYou": "Thank you for connecting with intention",
-    "chooseIntensity": "Choose the intensity of your journey together",
+    "beginTheJourney": "Begin the Conversation",
     "clickToReveal": "Click to reveal more",
     "progressIndicator": "{{current}} of {{total}}"
   },
@@ -33,8 +30,8 @@
     "subtitle": "Choose the conversations that call to you"
   },
   "timePercentage": {
-    "title": "How deep do you want to go?",
-    "subtitle": "Choose the intensity of your journey together",
+    "title": "How long do you want to talk?",
+    "subtitle": "Choose the duration of your conversation",
     "labels": {
       "light": "Light",
       "gentle": "Gentle",

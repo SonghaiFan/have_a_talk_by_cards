@@ -1,0 +1,116 @@
+{
+  "testID": "ex-friend",
+  "app": {
+    "title": "前好友-特别版",
+    "subtitle": "用关怀与诚意梳理友谊的结束",
+    "language": "chinese",
+    "version": "1.0.0"
+  },
+  "ui": {
+    "startScreen": {
+      "title": "前好友-特别版",
+      "description": [
+        "朋友间的破冰总是尴尬又艰难。直到现在，我们都难以开启真正让彼此被听见的对话。",
+        "请轮流问答每个问题。建议双方都回答每张卡片。可选准备：纸巾与酒饮。",
+        "你们可能选择修复关系或各自前行。无论结果如何，你已尽己所能。",
+        "",
+        "对话守则：",
+        "1. 不要将冲突视为竞赛——唯有双方和解才是真正的胜利",
+        "2. 避免使用「你总是...」或「你从不...」的指责",
+        "3. 主动寻找共识而非分歧",
+        "4. 当对方分享受伤感受时，请相信这份真实。这不代表你是坏人，而是成长的契机",
+        "5. 友谊不必永恒才算成功。允许各自成长，也可以遥遥相伴"
+      ],
+      "startButton": "开始"
+    },
+    "navigation": {
+      "nextButton": "下一题",
+      "prevButton": "上一题"
+    },
+    "endScreen": {
+      "title": "我们还能回到过去吗？",
+      "subtitle": "是或否",
+      "restartButton": "否"
+    }
+  },
+  "theme": {
+    "categories": {
+      "reflection": {
+        "name": "反思",
+        "color": "#F3F4F6",
+        "description": "梳理过往的对话指引"
+      }
+    }
+  },
+  "questions": [
+    {
+      "category": "reflection",
+      "questions": [
+        {
+          "type": "open",
+          "question": "请双方从对方的角度描述当时的情况"
+        },
+        {
+          "type": "open",
+          "question": "我在这件事中的责任是______"
+        },
+        {
+          "type": "open",
+          "question": "请用三分钟完整陈述你的观点，期间不被打断（双方轮流）"
+        },
+        {
+          "type": "wildcard",
+          "question": "请写下你最常使用的心理防御机制及其影响，并互相分享"
+        },
+        {
+          "type": "open",
+          "question": "最让你受伤的是什么？"
+        },
+        {
+          "type": "open",
+          "question": "你希望当时用怎样的不同方式处理？"
+        },
+        {
+          "type": "open",
+          "question": "你曾对我有过不公平的期待吗？"
+        },
+        {
+          "type": "open",
+          "question": "你何时感到我们最疏远？"
+        },
+        {
+          "type": "open",
+          "question": "请补充：我正在努力______"
+        },
+        {
+          "type": "wildcard",
+          "question": "提醒：每个人的真相都有不同面貌"
+        },
+        {
+          "type": "open",
+          "question": "是否有我未曾察觉的、你正在经历的困境？"
+        },
+        {
+          "type": "open",
+          "question": "当______时，我们的友谊已不再如初"
+        },
+        {
+          "type": "open",
+          "question": "你最想念我的时刻是？"
+        },
+        {
+          "type": "wildcard",
+          "question": "特别行动：请为某件事道歉（无论大小）"
+        },
+        {
+          "type": "open",
+          "question": "你最近有哪些生活新动态？"
+        },
+        {
+          "type": "open",
+          "question": "我们的友谊中有什么是独一无二的？"
+        }
+      ]
+    }
+  ]
+}

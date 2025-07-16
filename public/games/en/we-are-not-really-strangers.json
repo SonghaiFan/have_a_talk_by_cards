@@ -42,11 +42,6 @@
         "name": "Vulnerable Moments",
         "color": "#C62828",
         "description": "Raw honesty and emotional intimacy"
-      },
-      "Wildcards": {
-        "name": "Wildcards",
-        "color": "#000000",
-        "description": "Interactive experiences and special moments"
       }
     }
   },
@@ -101,6 +96,51 @@
         {
           "type": "open",
           "question": "What's something you enjoy that you never get tired of?"
+        },
+        {
+          "type": "wildcard",
+          "question": "WILDCARD: Take a selfie together.",
+          "more": [
+            "Capture this moment",
+            "Be natural and genuine",
+            "Keep it as a memory"
+          ]
+        },
+        {
+          "type": "wildcard",
+          "question": "WILDCARD: Press shuffle on your music library. Explain the first song that comes up!",
+          "more": [
+            "Hit shuffle right now",
+            "Explain why this song matters",
+            "Share the story behind it"
+          ]
+        },
+        {
+          "type": "wildcard",
+          "question": "WILDCARD: Show the first photo in your camera roll. Explain.",
+          "more": [
+            "No skipping or choosing",
+            "Show the very first photo",
+            "Tell the story behind it"
+          ]
+        },
+        {
+          "type": "wildcard",
+          "question": "WILDCARD: Think of something you dislike that most people don't. On the count of 3 say it out loud.",
+          "more": [
+            "Count together: 1, 2, 3",
+            "Say it simultaneously",
+            "Discuss your unpopular opinions"
+          ]
+        },
+        {
+          "type": "wildcard",
+          "question": "WILDCARD: Both players share something you're most grateful for in this current moment.",
+          "more": [
+            "Think about right now",
+            "What fills you with gratitude?",
+            "Share at the same time"
+          ]
         }
       ]
     },
@@ -218,6 +258,51 @@
         {
           "type": "open",
           "question": "What has been your earliest recollection of happiness?"
+        },
+        {
+          "type": "wildcard",
+          "question": "WILDCARD: Who's been on your mind lately? Send them a text letting them know you're thinking of them. Both players.",
+          "more": [
+            "Take out your phones right now",
+            "Send the message together",
+            "Share what you wrote"
+          ]
+        },
+        {
+          "type": "wildcard",
+          "question": "WILDCARD: Call someone you admire. Let them know why you appreciate them.",
+          "more": [
+            "Make the call right now",
+            "Be specific about what you admire",
+            "Share the conversation afterward"
+          ]
+        },
+        {
+          "type": "wildcard",
+          "question": "WILDCARD: Sing your favorite song lyrics you can think of off the top of your head. Both players.",
+          "more": [
+            "Don't think too hard about it",
+            "Just start singing",
+            "Enjoy the moment of silliness"
+          ]
+        },
+        {
+          "type": "wildcard",
+          "question": "WILDCARD: Draw your current feelings then compare.",
+          "more": [
+            "Use any materials available",
+            "Don't overthink the art",
+            "Explain your drawings to each other"
+          ]
+        },
+        {
+          "type": "wildcard",
+          "question": "WILDCARD: How can I add 1% more happiness in your life?",
+          "more": [
+            "Think of small, specific actions",
+            "Be practical and realistic",
+            "Commit to trying it"
+          ]
         }
       ]
     },
@@ -371,12 +456,7 @@
         {
           "type": "open",
           "question": "What is something that you hate being called? (a name, a nickname, an insult, etc)"
-        }
-      ]
-    },
-    {
-      "category": "Wildcards",
-      "questions": [
+        },
         {
           "type": "wildcard",
           "question": "WILDCARD: Admit something.",
@@ -384,33 +464,6 @@
             "This is a moment for raw honesty",
             "Share something you haven't told anyone",
             "Be brave and vulnerable"
-          ]
-        },
-        {
-          "type": "wildcard",
-          "question": "WILDCARD: Who's been on your mind lately? Send them a text letting them know you're thinking of them. Both players.",
-          "more": [
-            "Take out your phones right now",
-            "Send the message together",
-            "Share what you wrote"
-          ]
-        },
-        {
-          "type": "wildcard",
-          "question": "WILDCARD: Call someone you admire. Let them know why you appreciate them.",
-          "more": [
-            "Make the call right now",
-            "Be specific about what you admire",
-            "Share the conversation afterward"
-          ]
-        },
-        {
-          "type": "wildcard",
-          "question": "WILDCARD: Sing your favorite song lyrics you can think of off the top of your head. Both players.",
-          "more": [
-            "Don't think too hard about it",
-            "Just start singing",
-            "Enjoy the moment of silliness"
           ]
         },
         {
@@ -433,15 +486,6 @@
         },
         {
           "type": "wildcard",
-          "question": "WILDCARD: Take a selfie together.",
-          "more": [
-            "Capture this moment",
-            "Be natural and genuine",
-            "Keep it as a memory"
-          ]
-        },
-        {
-          "type": "wildcard",
           "question": "WILDCARD: Staring contest. First person to blink must reveal a personal problem and ask the other for advice.",
           "more": [
             "Start the staring contest now",
@@ -451,65 +495,11 @@
         },
         {
           "type": "wildcard",
-          "question": "WILDCARD: Press shuffle on your music library. Explain the first song that comes up!",
-          "more": [
-            "Hit shuffle right now",
-            "Explain why this song matters",
-            "Share the story behind it"
-          ]
-        },
-        {
-          "type": "wildcard",
           "question": "WILDCARD: Tell the other person to close their eyes and to keep them closed. (wait 15 seconds and hug them)",
           "more": [
             "One person closes their eyes",
             "Wait exactly 15 seconds",
             "Give a meaningful hug"
-          ]
-        },
-        {
-          "type": "wildcard",
-          "question": "WILDCARD: Both players share something you're most grateful for in this current moment.",
-          "more": [
-            "Think about right now",
-            "What fills you with gratitude?",
-            "Share at the same time"
-          ]
-        },
-        {
-          "type": "wildcard",
-          "question": "WILDCARD: Draw your current feelings then compare.",
-          "more": [
-            "Use any materials available",
-            "Don't overthink the art",
-            "Explain your drawings to each other"
-          ]
-        },
-        {
-          "type": "wildcard",
-          "question": "WILDCARD: Show the first photo in your camera roll. Explain.",
-          "more": [
-            "No skipping or choosing",
-            "Show the very first photo",
-            "Tell the story behind it"
-          ]
-        },
-        {
-          "type": "wildcard",
-          "question": "WILDCARD: Think of something you dislike that most people don't. On the count of 3 say it out loud.",
-          "more": [
-            "Count together: 1, 2, 3",
-            "Say it simultaneously",
-            "Discuss your unpopular opinions"
-          ]
-        },
-        {
-          "type": "wildcard",
-          "question": "WILDCARD: How can I add 1% more happiness in your life?",
-          "more": [
-            "Think of small, specific actions",
-            "Be practical and realistic",
-            "Commit to trying it"
           ]
         }
       ]
