@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "motion/react";
 import { ConversationGame } from "../types/ConversationGame";
+import Button from "./Button";
 
 interface GameLandingProps {
   game: ConversationGame;
@@ -48,17 +49,18 @@ const GameLanding: React.FC<GameLandingProps> = ({ game, onStart, onExit }) => {
             )
           )}
 
-          <motion.button
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8 }}
-            whileHover={{ y: -2, transition: { duration: 0.2 } }}
-            whileTap={{ scale: 0.98 }}
-            className="mt-8 sm:mt-12 bg-gray-900 dark:bg-white text-white dark:text-gray-900 px-8 sm:px-12 py-3 sm:py-4 rounded-xl text-base sm:text-lg font-semibold tracking-wide transition-all duration-200 hover:bg-gray-700 dark:hover:bg-gray-200"
-            onClick={onStart}
-          >
-            {game.ui.startScreen.startButton}
-          </motion.button>
+          <div className="flex justify-center">
+            <Button
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8 }}
+              className="mt-8 sm:mt-12 font-semibold"
+              variant="primary"
+              onClick={onStart}
+            >
+              {game.ui.startScreen.startButton}
+            </Button>
+          </div>
         </motion.div>
       </div>
     </div>

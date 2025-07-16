@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "motion/react";
 import { useTranslation } from "react-i18next";
 import { ConversationGame } from "../types/ConversationGame";
+import Button from "./Button";
 
 interface GameEndingProps {
   game: ConversationGame;
@@ -40,23 +41,13 @@ const GameEnding: React.FC<GameEndingProps> = ({ game, onRestart, onExit }) => {
           transition={{ delay: 0.6 }}
           className="flex flex-col sm:flex-row gap-4 justify-center px-4"
         >
-          <motion.button
-            whileHover={{ y: -2, transition: { duration: 0.2 } }}
-            whileTap={{ scale: 0.98 }}
-            className="bg-gray-900 dark:bg-white text-white dark:text-gray-900 px-8 py-4 rounded-lg font-medium transition-all duration-200 hover:bg-gray-700 dark:hover:bg-gray-200 touch-manipulation min-h-[48px] flex items-center justify-center"
-            onClick={onRestart}
-          >
+          <Button variant="primary" onClick={onRestart}>
             {endScreen.restartButton}
-          </motion.button>
+          </Button>
 
-          <motion.button
-            whileHover={{ y: -2, transition: { duration: 0.2 } }}
-            whileTap={{ scale: 0.98 }}
-            className="border-2 border-gray-900 dark:border-white text-gray-900 dark:text-white px-8 py-4 rounded-lg font-medium transition-all duration-200 hover:bg-gray-900 dark:hover:bg-white hover:text-white dark:hover:text-gray-900 touch-manipulation min-h-[48px] flex items-center justify-center"
-            onClick={onExit}
-          >
+          <Button variant="secondary" onClick={onExit}>
             {t("common.exit")}
-          </motion.button>
+          </Button>
         </motion.div>
       </div>
     </div>

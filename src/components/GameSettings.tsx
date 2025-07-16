@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import { ConversationGame } from "../types/ConversationGame";
 import CategorySelector from "./CategorySelector";
 import TimePercentageSlider from "./TimePercentageSlider";
+import Button from "./Button";
 
 interface GameSettingsProps {
   game: ConversationGame;
@@ -99,17 +100,15 @@ const GameSettings: React.FC<GameSettingsProps> = ({
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1 }}
-            className="pt-4"
+            className="pt-4 flex justify-center"
           >
-            <motion.button
-              whileHover={{ y: -2, transition: { duration: 0.2 } }}
-              whileTap={{ scale: 0.98 }}
-              className="bg-gray-900 dark:bg-white text-white dark:text-gray-900 px-8 sm:px-12 py-3 sm:py-4 rounded-xl text-base sm:text-lg font-light tracking-wide transition-all duration-200 hover:bg-gray-700 dark:hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed shadow-lg hover:shadow-xl"
+            <Button
+              variant="primary"
               onClick={onStartGame}
               disabled={selectedCategories.length === 0}
             >
               {t("gameInterface.beginTheJourney")}
-            </motion.button>
+            </Button>
           </motion.div>
         </div>
       </div>
