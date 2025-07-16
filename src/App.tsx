@@ -4,12 +4,15 @@ import "./App.css";
 import { ConversationGame } from "./types/ConversationGame";
 import GameLibrary from "./components/GameLibrary";
 import GameController from "./components/GameController";
+import MinimumScreenSize from "./components/MinimumScreenSize";
+import { useScreenSize } from "./hooks/useScreenSize";
 
 function App() {
   const { i18n } = useTranslation();
   const [games, setGames] = useState<ConversationGame[]>([]);
   const [currentGame, setCurrentGame] = useState<ConversationGame | null>(null);
   const [loading, setLoading] = useState(true);
+  const { isMinimumSizeMet } = useScreenSize();
 
   useEffect(() => {
     loadGames();
@@ -110,9 +113,14 @@ function App() {
     setCurrentGame(null);
   };
 
+  // Check if screen meets minimum size requirements
+  if (!isMinimumSizeMet) {
+    return <MinimumScreenSize />;
+  }
+
   if (loading) {
     return (
-      <div className="min-h-screen flex flex-col justify-center items-center bg-white dark:bg-black">
+      <div className="h-screen w-screen flex flex-col justify-center items-center bg-white dark:bg-black overflow-hidden">
         <div className="w-8 h-8 border-2 border-gray-300 dark:border-gray-600 border-t-primary rounded-full animate-spin mb-6"></div>
         <p className="text-lg text-gray-600 dark:text-gray-300 font-light">
           Loading conversations...
@@ -121,17 +129,19 @@ function App() {
     );
   }
 
-  if (currentGame) {
-    return (
-      <GameController
-        key={currentGame.testID}
-        game={currentGame}
-        onExit={handleGameExit}
-      />
-    );
-  }
-
-  return <GameLibrary games={games} onGameSelect={handleGameSelect} />;
+  return (
+    <div className="h-screen w-screen overflow-hidden">
+      {currentGame ? (
+        <GameController
+          key={currentGame.testID}
+          game={currentGame}
+          onExit={handleGameExit}
+        />
+      ) : (
+        <GameLibrary games={games} onGameSelect={handleGameSelect} />
+      )}
+    </div>
+  );
 }
 
 export default App;

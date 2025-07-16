@@ -64,5 +64,14 @@
   "languageSwitcher": {
     "english": "English",
     "chinese": "中文"
+  },
+  "minimumScreen": {
+    "title": "屏幕太小",
+    "description": "CueCards 需要最少 360×640 像素的屏幕尺寸才能正常显示。请使用更大的屏幕或旋转您的设备。",
+    "suggestions": {
+      "rotate": "尝试旋转您的设备",
+      "desktop": "使用平板电脑或桌面设备",
+      "zoom": "调整浏览器缩放级别"
+    }
   }
 }

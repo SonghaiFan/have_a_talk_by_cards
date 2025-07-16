@@ -1,5 +1,42 @@
 @import "tailwindcss";
 
+/* Viewport fixes for responsive design */
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+/* Ensure mobile viewport is handled properly */
+@media screen and (max-width: 768px) {
+  html {
+    /* Fix for mobile browsers address bar */
+    height: 100vh;
+    height: 100dvh; /* Use dynamic viewport height when available */
+  }
+}
+
+/* Minimum screen size restrictions */
+@media screen and (max-width: 359px), screen and (max-height: 639px) {
+  /* Hide certain elements on very small screens */
+  .hide-on-small-screen {
+    display: none !important;
+  }
+
+  /* Ensure text remains readable */
+  body {
+    font-size: 14px;
+  }
+}
+
 @theme {
   --color-primary: #1a1a1a;
   --color-secondary: #4a4a4a;

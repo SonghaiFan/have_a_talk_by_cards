@@ -145,14 +145,21 @@ const GamePlay: React.FC<GamePlayProps> = ({
 
   return (
     <div
-      className="min-h-screen flex flex-col transition-colors duration-500 relative"
+      className="h-full w-full flex flex-col transition-colors duration-500"
       style={{ backgroundColor: backgroundColor }}
     >
       {/* Dark mode darkening overlay */}
-      {isDarkTheme && !isWildMode && (
-        <div
-          className="absolute inset-0 bg-black opacity-40 pointer-events-none"
+      {isDarkTheme && (
+        <motion.div
+          className="absolute inset-0 bg-black pointer-events-none"
           style={{ zIndex: 0 }}
+          animate={{
+            opacity: isWildMode ? 0 : 0.5,
+          }}
+          transition={{
+            duration: 0.5,
+            ease: "easeInOut",
+          }}
         />
       )}
 
@@ -194,7 +201,7 @@ const GamePlay: React.FC<GamePlayProps> = ({
                   animate={{ scale: 1 }}
                   transition={{ delay: 0.4, type: "spring", stiffness: 200 }}
                   className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full opacity-90"
-                  style={{ backgroundColor: cardColor }}
+                  style={{ backgroundColor: uiColor }}
                 />
                 <span
                   className="text-xs sm:text-sm font-medium opacity-90 uppercase tracking-wider"

@@ -97,7 +97,7 @@ const GameLibrary: React.FC<GameLibraryProps> = ({ games, onGameSelect }) => {
   }, [selectedGameIndex, filteredGames]);
 
   return (
-    <div className="min-h-screen bg-white dark:bg-black flex flex-col items-center px-4 sm:px-8 py-8 sm:py-16">
+    <div className="h-full w-full bg-white dark:bg-black flex flex-col items-center px-4 sm:px-8 py-8 sm:py-16 overflow-y-auto">
       {/* Language Switcher */}
       <div className="absolute top-4 right-4 sm:top-8 sm:right-8">
         <LanguageSwitcher />

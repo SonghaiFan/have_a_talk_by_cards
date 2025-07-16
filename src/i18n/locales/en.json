@@ -64,5 +64,14 @@
   "languageSwitcher": {
     "english": "English",
     "chinese": "中文"
+  },
+  "minimumScreen": {
+    "title": "Screen Too Small",
+    "description": "CueCards requires a minimum screen size of 360×640 pixels to display properly. Please use a larger screen or rotate your device.",
+    "suggestions": {
+      "rotate": "Try rotating your device",
+      "desktop": "Use a tablet or desktop",
+      "zoom": "Adjust browser zoom level"
+    }
   }
 }
